@@ -52,7 +52,6 @@ class MM2SpaceCenter:
 
         w_w = 220 ## windowWidth ## was 200
         
-        self.messageText = '  😎 Activated' ##intentionally added 2 spaces at beginning, these get removed when paistring is too long
 
         self.wordCount = 20
         self.minLength = 3
@@ -66,14 +65,6 @@ class MM2SpaceCenter:
         
         yPos = topMargin
 
-
-        #self.w.statusBar = Box((3, 0, -3, 30))
-        #self.w.statusBar.text = TextBox((0, 0, -20, 50), self.messageText, sizeStyle="regular") ## revert to just a text box to save space
-
-        self.w.statusBar = TextBox((0, yPos, -10, 17), self.messageText, sizeStyle="regular") ## revert to just a text box to save space
-
-
-        yPos += 22
         wordCountInputWidth = 34 ## was 45, I don't think over 999 is a good idea or needed
                 
         topLineLabels = {
@@ -794,19 +785,8 @@ class MM2SpaceCenter:
             #pairstring = self.getPairstring(self.pair)
             previousText = '\\n no words for pair ' + pairstring
                             
-            self.messageText = '  😞 not found: '+ pairstring
             #print(len(pairstring)) ## debugging
 
-
-            ## truncate message for longer pairstring
-            if len(pairstring) > 19:
-                self.messageText = '😞… '+ pairstring
-
-            if len(pairstring) > 29:
-                truncatedPairstring = pairstring[0:29]
-                self.messageText = '😞'+ truncatedPairstring+'…'
-
-            self.w.statusBar.set(self.messageText) 
             
         
             if makeUpper == True:
@@ -918,19 +898,6 @@ class MM2SpaceCenter:
             text = text.replace(pair2charString, '/'+'/'.join(self.pair)+' ' )                        
 
             self.setSpaceCenter(self.font, text)
-
-            self.messageText = '  😎 found: '+ pairstring
-            #print(len(pairstring)) ## debugging
- 
-            ## truncate message for longer pairstring             
-            if len(pairstring) > 19:
-                self.messageText = '😎… '+ pairstring
-
-            if len(pairstring) > 29:
-                truncatedPairstring = pairstring[0:29]
-                self.messageText = '😎'+ truncatedPairstring+'…'
-
-            self.w.statusBar.set(self.messageText)
 
 
 def run():
