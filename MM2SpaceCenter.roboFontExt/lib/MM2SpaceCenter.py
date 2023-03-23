@@ -25,6 +25,7 @@ class MM2SpaceCenter:
 
     To do:       
     - Make sure space center "Show Kerning" is set to on
+        - Remember pre-MM2 setting, revert when MM2 closes.
     - Add ability to change word length
     - Rebuild this with EZUI, so more features can be thrown in quickly in the future.
     - Make this window into a temporary preferences UI, where you can set-it-and-forget it.
@@ -43,7 +44,6 @@ class MM2SpaceCenter:
     def deactivateModule(self, sender):
 
         removeObserver(self, "MetricsMachine.currentPairChanged")
-        removeObserver(self, "FutureProof.currentPairChanged")
 
         print ('MM2SpaceCenter is now deactivated.')
         print()
