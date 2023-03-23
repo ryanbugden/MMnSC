@@ -649,7 +649,16 @@ class MM2SpaceCenter:
         #convert MM tuple into search pair to check uc, lc, mixed case. Maybe need a different var name here? 
         pair2charString = ''.join(self.pair2char(self.pair))
 
-        
+
+        # search for non-suffixed
+        searchString = ""
+        for g_name in self.pair:
+            no_suff = g_name.split(".")[0]
+            rep = chr(self.font[no_suff].unicode)
+            searchString += rep
+
+        print(searchString)
+
         #check Encoding
         
         #print (pairstring)
@@ -661,12 +670,12 @@ class MM2SpaceCenter:
             #print (pairstring, 'upper')
             makeUpper = True
             #make lower for searching
-            searchString = pair2charString.lower()
+            searchString = searchString.lower()
 
         else:
             #print(pairstring, 'not upper')
             makeUpper = False
-            searchString = pair2charString
+            searchString = searchString
             pass
 
         #check for mixed case
@@ -845,11 +854,11 @@ class MM2SpaceCenter:
             ## for non uc pair, if not auto, use context dropdown 
             else:
                 ## auto will choose lc string
-                spacingString = self.lcString(pairstring)
+                spacingString = self.lcString(searchString)
 
                 ## non-auto option will use dropdown context
                 if self.context != 'Auto':
-                    spacingString = self.getSpacingString(pairstring)
+                    spacingString = self.getSpacingString(searchString)
                                     
                 if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + spacingString + previousText
