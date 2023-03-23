@@ -37,7 +37,7 @@ class MM2SpaceCenter:
 
         addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
 
-        print ('MM2SpaceCenter is now activated.')
+        print('MM2SpaceCenter is now activated.')
         print()
 
 
@@ -45,7 +45,7 @@ class MM2SpaceCenter:
 
         removeObserver(self, "MetricsMachine.currentPairChanged")
 
-        print ('MM2SpaceCenter is now deactivated.')
+        print('MM2SpaceCenter is now deactivated.')
         print()
 
 
@@ -641,8 +641,6 @@ class MM2SpaceCenter:
             no_suff = g_name.split(".")[0]
             rep = chr(self.font[no_suff].unicode)
             searchString += rep
-
-        print(searchString)
 
         #check Encoding
         
