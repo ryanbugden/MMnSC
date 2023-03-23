@@ -1,44 +1,58 @@
-# MM2SpaceCenter by CJ Dunn, 2019. Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, Nina Stössinger for help and inspiration with this script
-
-# #when pair changes: get pair and set to space center
-
-#you must have a UFO open and have MetricsMachine open
-
 import sys, os
 import random
 from mojo.UI import CurrentSpaceCenter, OpenSpaceCenter
 
 import metricsMachine
 
-
 from vanilla import FloatingWindow, Button, TextBox, List, Window
 from defconAppKit.windows.baseWindow import BaseWindowController
-from mojo.events import addObserver, removeObserver, postEvent
+from mojo.events import addObserver, removeObserver
 from vanilla import *
 from lib.UI.integerEditText import NumberEditText
 from mojo.extensions import *
 import codecs
 
+
+
 class MM2SpaceCenter:
     
+    '''
+    MM2SpaceCenter by CJ Dunn
+    2019
+
+    Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
+    Nina Stössinger for help and inspiration with this script
+
+    To do:       
+    - Make sure space center "Show Kerning" is set to on
+    - Add ability to change word length
+    - Rebuild this with EZUI, so more features can be thrown in quickly in the future.
+    - Make this window into a temporary preferences UI, where you can set-it-and-forget it.
+        - Activate and deactivate from a button in Space Center itself?
+        - Save preferences in RF lib.
+    '''
+    
     def activateModule(self):
+
         addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
 
-        print ('MM2SpaceCenter activated')
+        print ('MM2SpaceCenter is now activated.')
+        print()
 
 
     def deactivateModule(self, sender):
+
         removeObserver(self, "MetricsMachine.currentPairChanged")
         removeObserver(self, "FutureProof.currentPairChanged")
 
-        print ('MM2SpaceCenter deactivated')
+        print ('MM2SpaceCenter is now deactivated.')
+        print()
 
 
     def __init__(self, ):
-        #self.font = metricsMachine.CurrentFont()
-        #self.pair = metricsMachine.GetCurrentPair()
 
         self.font = CurrentFont()
+
         try:
             self.pair = metricsMachine.GetCurrentPair() 
         except:
@@ -52,7 +66,6 @@ class MM2SpaceCenter:
 
         w_w = 220 ## windowWidth ## was 200
         
-
         self.wordCount = 20
         self.minLength = 3
         self.maxLength = 15
@@ -72,10 +85,9 @@ class MM2SpaceCenter:
             "contextLabel": [second_col_x, 78, 'If no words:', 'left'],
         }   
 
-
         self.w.wordCount = NumberEditText((leftMargin, 0+yPos, wordCountInputWidth, 22), text=self.wordCount, callback=self.wordCountCallback, allowFloat=False, allowNegative=False)
-        # EditText( (leftMargin, 0+yPos, wordCountInputWidth, 22), text=self.wordCount, placeholder=self.wordCount, callback=self.wordCountCallback) 
         self.w.wordCount.getNSTextField().setFocusRingType_(1)
+        
         for label, values in topLineLabels.items():
             setattr( self.w, label, TextBox( ( values[0], 3+yPos, values[1], 22), text=values[2], alignment=values[3] ) )
 
@@ -94,7 +106,6 @@ class MM2SpaceCenter:
         self.source = None 
         self.source = self.w.source.get() #get value, to use for other functions
         
-
         ##### add drop down to choose context: auto, UC, lc, figs, ??, not functional yet, but made as a placeholder
         
         self.contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
@@ -106,35 +117,28 @@ class MM2SpaceCenter:
         self.context = None
         self.context = self.contextOptions[self.w.context.get()] #get the list item string, not just list index
         
-
-        #yPos += lineHeight * 1.5
         yPos += lineHeight * 1.3
 
-
+        self.w.line = HorizontalLine((leftMargin, yPos, -leftMargin, 1))
         
-        #self.w.line = HorizontalLine((leftMargin, yPos, -leftMargin, 1))
-        
-        #yPos += 6
-
+        yPos += 6
         
         checkBoxSize = 18
+
         self.w.listOutput = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
         self.w.listLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Output as list sorted by width", sizeStyle="small")
 
-        yPos += lineHeight * 1.0
-        
-        checkBoxSize = 18
+        yPos += lineHeight * 1
+
         self.w.openCloseContext = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
         self.w.openCloseContextLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Show open+close context {n}", sizeStyle="small")
 
-        yPos += lineHeight * 1.0
+        yPos += lineHeight * 1
         
-
         self.w.mirroredPair = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
         self.w.mirroredPairLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Show mirrored pair (LRLR)", sizeStyle="small")
         
-        yPos += lineHeight * 1.0
-
+        yPos += lineHeight * 1
 
         self.w.allUppercase = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
         self.w.allUppercaseLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "All uppercase context", sizeStyle="small")
@@ -150,19 +154,21 @@ class MM2SpaceCenter:
         
 
     def sortedCallback(self, sender):
+
         self.sorted = self.w.listOutput.get()
         self.wordsForMMPair()  
         
         
     def wordCountCallback(self,sender):
+
         #print ('old', self.wordCount)
         self.wordCount = self.w.wordCount.get() or 1
         #update space center
         self.wordsForMMPair()        
         
 
-    #from word-o-mat
     def loadDictionaries(self):
+
         """Load the available wordlists and read their contents."""
         self.dictWords = {}
         self.allWords = []
@@ -197,10 +203,9 @@ class MM2SpaceCenter:
             lines = userFile.read()
         self.dictWords["user"] = lines.splitlines()
 
-        #print ('load dicts')
-
 
     def changeSourceCallback(self, sender):
+
         """On changing source/wordlist, check if a custom word list should be loaded."""
         customIndex = len(self.textfiles) + 2
         if sender.get() == customIndex: # Custom word list
@@ -213,21 +218,18 @@ class MM2SpaceCenter:
             if filePath is not None:
                 with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
                     lines = fo.read()
-                # self.customWords = lines.splitlines()
+
                 self.customWords = []
                 for line in lines.splitlines():
                     w = line.strip() # strip whitespace from beginning/end
                     self.customWords.append(w)
-                    
-        ### self.source = self.w.source.get() ### commented out by Wei
         
-        #update space center
+        # update space center
         self.wordsForMMPair()
-        
-        #print ('source changed')
 
         
     def changeContextCallback(self, sender):
+
         """On changing source/wordlist, check if a custom word list should be loaded."""
         
         self.context = self.context = self.contextOptions[self.w.context.get()]
@@ -238,7 +240,11 @@ class MM2SpaceCenter:
             
 
     def sortWordsByWidth(self, wordlist):
-        """Sort output word list by width."""
+
+        '''
+        Sort output word list by width.
+        '''
+
         f = self.font
         wordWidths = []
 
@@ -265,8 +271,11 @@ class MM2SpaceCenter:
 
 
     def findKerning(self, chars):
-        """Helper function to find kerning between two given glyphs.
-        This assumes MetricsMachine style group names."""
+
+        '''
+        Helper function to find kerning between two given glyphs.
+        This assumes MetricsMachine style group names.
+        '''
 
         markers = ["@MMK_L_", "@MMK_R_"]
         keys = [c for c in chars]
@@ -287,6 +296,7 @@ class MM2SpaceCenter:
 
 
     def MMPairChangedObserver(self, sender):
+
         #add code here for when myObserver is triggered
         currentPair = sender["pair"]
         if currentPair == self.pair:
@@ -300,6 +310,7 @@ class MM2SpaceCenter:
 
     ## same as MM Pair Changed Observer above, but making a separate function just to be safe
     def FPPairChangedObserver(self, sender):
+
         #add code here for when myObserver is triggered
         currentPair = sender["pair"]
         if currentPair == self.pair:
@@ -312,6 +323,7 @@ class MM2SpaceCenter:
 
 
     def setSpaceCenter(self, font, text):    
+
         currentSC = CurrentSpaceCenter()
         if currentSC is None:
             print ('opening space center, click back into kerning window')
@@ -321,12 +333,14 @@ class MM2SpaceCenter:
 
     
     def randomly(self, seq):
+
         shuffled = list(seq)
         random.shuffle(shuffled)
         return iter(shuffled)
 
 
     def gname2char(self, f, gname):
+
         uni = f[gname].unicodes[0]
         char = chr(uni)
         return char
@@ -334,11 +348,11 @@ class MM2SpaceCenter:
     def spaceCenterStringForUnencoded(self, gname):
         
         scString = '/'+gname+' '
-        
         return scString 
 
 
     def checkForUnencodedGname(self, font, gname):
+
         glyphIsEncoded = False
         
         escapeList = ['slash', 'backslash']
@@ -354,6 +368,7 @@ class MM2SpaceCenter:
 
 
     def getPairstring(self, pair):
+
         left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
         right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
             
@@ -363,7 +378,10 @@ class MM2SpaceCenter:
 
 
     def pair2char(self, pair):
-        """Convert char gnames to chars to find words in dict."""
+
+        '''
+        Convert char gnames to chars to find words in dict.
+        '''
         
         self.debug = False
         
@@ -392,12 +410,14 @@ class MM2SpaceCenter:
         
 
     def lcString(self, pairstring):
+
         string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
 
         return string
             
 
     def getSpacingString(self, pairstring):
+
         string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
         
         if self.context == 'Auto':
@@ -426,26 +446,13 @@ class MM2SpaceCenter:
                 string = '11'+pairstring+'/eight.dnom 10'+pairstring+'/eight.dnom 00'
                 #print('ends')
 
-        # if self.context == 'Dnom':
-        #     string = '/one.dnom /one.dnom '+pairstring+'/one.dnom /zero.dnom '+pairstring+'/zero.dnom /zero.dnom ' #use for dnom2dnom
-  
- 
-         #### not sure about including these
-        # if self.context == 'Numr Frac':
-        #     string = '11'+pairstring+'/fraction /eight.dnom 10'+pairstring+'/fraction /eight.dnom 00' #use for numr in fraction
-             
-        # if self.context == 'Dnom Frac':
-        #     string = '11/eight.numr /fraction '+pairstring+' 10/one.numr /fraction '+pairstring+'00' #use for dnom after /fraction
-             
-
-        return string
-
         return string
 
 
     def ucString(self, pairstring):
         string = 'HH'+pairstring+'HOHO'+pairstring+'OO'
         return string
+
 
     openClosePairs = {
 
@@ -492,8 +499,6 @@ class MM2SpaceCenter:
    
     }
 
-
-
     openCloseUnencodedPairs = {
         "parenleft.uc": "parenright.uc", 
         "bracketleft.uc": "bracketright.uc", 
@@ -510,17 +515,8 @@ class MM2SpaceCenter:
         "backslash": "slash", #should be encoded but adding here because those aren't working for some reason
     }
 
-
-    # openCloseUnencodedPairs = {
-    
-    # "/parenleft.uc ": "/parenright.uc ", 
-
-    
-    # }
-
-    
-
     def openCloseContextReturn(self, pair):
+
         if self.w.openCloseContext.get() == True:
 
             # get unicodes to make sure we don’t show pairs that don’t exist in the font
@@ -591,6 +587,7 @@ class MM2SpaceCenter:
 
     # make mirrored pair to judge symmetry of kerns
     def pairMirrored(self, pair):
+
         if self.w.mirroredPair.get() == True:
             left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
             right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
@@ -599,13 +596,11 @@ class MM2SpaceCenter:
             return ""
 
 
-
     def wordsForMMPair(self, ):
         
         self.mixedCase = False
 
         wordsAll = []
-
 
         ### temp comment out to check speed
         self.source = self.w.source.get()
@@ -619,7 +614,7 @@ class MM2SpaceCenter:
             wordsAll = self.dictWords[self.textfiles[self.source]]
         
         #default values are hard coded for now
-       #self.wordCount = self.getIntegerValue(self.w.wordCount)
+        #self.wordCount = self.getIntegerValue(self.w.wordCount)
 
         #v = self.getIntegerValue(self.w.wordCount)
         
@@ -639,7 +634,6 @@ class MM2SpaceCenter:
 
         #convert MM tuple into search pair to check uc, lc, mixed case. Maybe need a different var name here? 
         pair2charString = ''.join(self.pair2char(self.pair))
-
 
         # search for non-suffixed
         searchString = ""
@@ -734,7 +728,6 @@ class MM2SpaceCenter:
                 
                     break
         
-
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
         if self.w.allUppercase.get() == True:
             makeUpper = True
@@ -742,13 +735,11 @@ class MM2SpaceCenter:
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
         if self.w.allUppercase.get() == True:
             makeUpper = True
-
 
         if makeUpper == True:    
             #make text upper again
             ### should we force the pair to stay as is? for example with .uc punctuation if words are found, currently lc punct is shown. Should we find the pair in each work and re-insert the .uc version? 
             textList = list(  text.upper() for text in textList ) 
-
 
         if not len(textList) == 0:            
             #see if box is checked
@@ -780,15 +771,12 @@ class MM2SpaceCenter:
 
         # if no words are found, show spacing string and previous text
         if len(text) == 0:
-
             #do i need to get pairstring again or can I used the previous one? 
             #pairstring = self.getPairstring(self.pair)
             previousText = '\\n no words for pair ' + pairstring
                             
             #print(len(pairstring)) ## debugging
 
-            
-        
             if makeUpper == True:
                 
                 text = self.ucString(pairstring)+ previousText
@@ -830,7 +818,6 @@ class MM2SpaceCenter:
                 if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
  
-
             ## for non uc pair, if not auto, use context dropdown 
             else:
                 ## auto will choose lc string
@@ -845,11 +832,9 @@ class MM2SpaceCenter:
                 else:
                     text = spacingString + previousText
                 
-
                 if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
                 if self.w.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
-
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
@@ -900,9 +885,11 @@ class MM2SpaceCenter:
             self.setSpaceCenter(self.font, text)
 
 
+
 def run():
+
     if not len(AllFonts()) > 0:
-        print ('you must have a font open')
+        print ('You must have a font open.')
         return
 
     try:
@@ -910,41 +897,10 @@ def run():
         font = metricsMachine.CurrentFont()
         
     except:
-        #p = futureProof.GetCurrentPair()
         p = ('A', 'V') # set initial value
         font = CurrentFont()
 
-        #print('you must have Metrics Machine open first')
-        #return
-
-    #p = metricsMachine.GetCurrentPair()
-
-    
-    #font = metricsMachine.CurrentFont()
-
-    ## old support for custom word path, add back later via UI? 
-    # wordlistPath_rel = 'resources/ukacd.txt'
-
-    # #wordlistPath_abs = None
-    
-    # if wordlistPath_rel:
-    #     pathname = os.path.dirname(sys.argv[0])        
-    #     cwd = os.path.abspath(pathname)
-    #     wordlistPath_abs = os.path.join(cwd ,wordlistPath_rel)
-        
-    #     p = MM2SpaceCenter(wordlistPath=wordlistPath_abs) 
-
-    # else:    
-    #     p = MM2SpaceCenter()    
     p = MM2SpaceCenter()    
             
 
-
 run()
-        
-# to do:       
-# make sure space center "show kerning" is set to on
-# add ability to change word lenght 
-
-
-
