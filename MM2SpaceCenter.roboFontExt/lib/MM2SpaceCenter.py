@@ -44,15 +44,15 @@ class MM2SpaceCenter:
         except:
              self.pair = ('A', 'V')
         
-        leftMargin = 11
+        leftMargin = 10
         topMargin = 0
         lineHeight = 18
-        columnWidth = 90  
+        columnWidth = 85  
         second_col_x = columnWidth + leftMargin + 10
 
-        w_w = 200
+        w_w = 220 ## windowWidth ## was 200
         
-        self.messageText = '😎 Activated'
+        self.messageText = '  😎 Activated' ##intentionally added 2 spaces at beginning, these get removed when paistring is too long
 
         self.wordCount = 20
         self.minLength = 3
@@ -67,11 +67,14 @@ class MM2SpaceCenter:
         yPos = topMargin
 
 
-        self.w.statusBar = Box((3, 0, -3, 30))
-        self.w.statusBar.text = TextBox((0, 0, -20, 50), self.messageText, sizeStyle="regular")
+        #self.w.statusBar = Box((3, 0, -3, 30))
+        #self.w.statusBar.text = TextBox((0, 0, -20, 50), self.messageText, sizeStyle="regular") ## revert to just a text box to save space
 
-        yPos = 36
-        wordCountInputWidth = 45
+        self.w.statusBar = TextBox((0, yPos, -10, 17), self.messageText, sizeStyle="regular") ## revert to just a text box to save space
+
+
+        yPos += 22
+        wordCountInputWidth = 34 ## was 45, I don't think over 999 is a good idea or needed
                 
         topLineLabels = {
             "wcText": [leftMargin+wordCountInputWidth+3, 78, 'words', 'left'],
@@ -113,11 +116,14 @@ class MM2SpaceCenter:
         self.context = self.contextOptions[self.w.context.get()] #get the list item string, not just list index
         
 
-        yPos += lineHeight * 1.5
+        #yPos += lineHeight * 1.5
+        yPos += lineHeight * 1.3
+
+
         
-        self.w.line = HorizontalLine((leftMargin, yPos, -leftMargin, 1))
+        #self.w.line = HorizontalLine((leftMargin, yPos, -leftMargin, 1))
         
-        yPos += 6
+        #yPos += 6
 
         
         checkBoxSize = 18
@@ -347,8 +353,6 @@ class MM2SpaceCenter:
         escapeList = ['slash', 'backslash']
         
         if (not font[gname].unicodes) or (gname in escapeList):
-            #scString = '/'+gname+' '
-            
             scString = self.spaceCenterStringForUnencoded(gname)
             
         else: 
@@ -367,8 +371,8 @@ class MM2SpaceCenter:
         return pairstring
 
 
-    #convert char gnames to chars to find words in dict
     def pair2char(self, pair):
+        """Convert char gnames to chars to find words in dict."""
         
         self.debug = False
         
@@ -780,10 +784,21 @@ class MM2SpaceCenter:
             #do i need to get pairstring again or can I used the previous one? 
             #pairstring = self.getPairstring(self.pair)
             previousText = '\\n no words for pair ' + pairstring
-        
-            self.messageText = '😞 no words found: '+ pairstring
+                            
+            self.messageText = '  😞 not found: '+ pairstring
+            #print(len(pairstring)) ## debugging
 
-            self.w.statusBar.text.set(self.messageText) 
+
+            ## truncate message for longer pairstring
+            if len(pairstring) > 19:
+                self.messageText = '😞… '+ pairstring
+
+            if len(pairstring) > 29:
+                truncatedPairstring = pairstring[0:29]
+                self.messageText = '😞'+ truncatedPairstring+'…'
+
+            self.w.statusBar.set(self.messageText) 
+            
         
             if makeUpper == True:
                 
@@ -820,11 +835,8 @@ class MM2SpaceCenter:
 
                     spacingString = spacingString.replace("  ", " ") ## extra space gets added, later maybe it's best to change self.ucString function??
                     spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
-                                
-                    if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
-                        text = self.pairMirrored(self.pair) + spacingString + previousText
-                    else:
-                        text = spacingString + previousText                
+
+                    text = spacingString + previousText
             
                 if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
@@ -898,19 +910,24 @@ class MM2SpaceCenter:
 
             self.setSpaceCenter(self.font, text)
 
-            self.messageText = '😎 words found: '+ pairstring
+            self.messageText = '  😎 found: '+ pairstring
+            #print(len(pairstring)) ## debugging
+ 
+            ## truncate message for longer pairstring             
+            if len(pairstring) > 19:
+                self.messageText = '😎… '+ pairstring
 
-            self.w.statusBar.text.set(self.messageText)
+            if len(pairstring) > 29:
+                truncatedPairstring = pairstring[0:29]
+                self.messageText = '😎'+ truncatedPairstring+'…'
 
+            self.w.statusBar.set(self.messageText)
 
 
 def run():
     if not len(AllFonts()) > 0:
         print ('you must have a font open')
         return
-
-
-    
 
     try:
         p = metricsMachine.GetCurrentPair()
