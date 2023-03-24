@@ -1,21 +1,87 @@
-import sys, os
+import sys
+import os
 import random
+import AppKit
 from mojo.UI import CurrentSpaceCenter, OpenSpaceCenter
+from mojo.subscriber import Subscriber, registerSpaceCenterSubscriber
 
 import metricsMachine
 
 from vanilla import FloatingWindow, Button, TextBox, List, Window
 from defconAppKit.windows.baseWindow import BaseWindowController
 from mojo.events import addObserver, removeObserver
-from vanilla import *
-from mojo.extensions import *
-from mojo.extensions import getExtensionDefault, setExtensionDefault
+from vanilla import Button
+from mojo.extensions import getExtensionDefault, setExtensionDefault, ExtensionBundle
 import codecs
 import ezui
 
+
 EXTENSION_KEY = 'com.cjtype.mms2sc.settings'
 
-class MM2SpaceCenter(ezui.WindowController):
+
+class MM2SCButton(Subscriber):
+    
+    '''
+    Puts the MM2SC pref button in Space Center.
+    
+    Ryan Bugden
+    2023.03.24
+    '''
+    
+    def build(self):
+        self.icon_path = os.path.abspath('../resources/_icon_MM2SC.pdf')
+        # print(self.icon_path)
+        
+    def spaceCenterDidOpen(self, info):
+        self.sc = info['spaceCenter']
+        
+        gutter = 10
+        b_w = 30
+        inset_b = 1
+        x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
+        b_h = h - inset_b*2
+        # print("line is at", x, y, w, h)
+        self.sc.top.glyphLineInput.setPosSize((x, y, w - b_w - gutter, h))
+        x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
+        # print("now resized to", x, y, w, h)
+        button_placement = (w + gutter, y + inset_b, b_w, b_h)
+        # print('making button', button_placement)
+        self.sc.MM2SC_button = Button(
+            button_placement, 
+            title = 'MM',
+            # imageNamed=AppKit.NSImageNameMultipleDocuments,
+            # imagePath = self.icon_path,  # For image buttons only
+            callback = self.buttonCallback, 
+            sizeStyle = 'small'
+            )
+        self.sc.MM2SC_button.getNSButton().setBordered_(0)
+        self.sc.MM2SC_button.getNSButton().setBezelStyle_(2)
+        
+    def buttonCallback(self, sender):
+        # run the prefs window
+        if not len(AllFonts()) > 0:
+            print ('You must have a font open.')
+            return
+
+        try:
+            p = metricsMachine.GetCurrentPair()
+            font = metricsMachine.CurrentFont()
+        
+        except:
+            p = ('A', 'V') # set initial value
+            font = CurrentFont()
+        
+        if font.path:
+            p = MM2SpaceCenterPopover(self.sc.MM2SC_button, self.sc)    
+        else:
+            print("Save your font (give it a path) before trying to open MM2SC.")
+
+
+
+
+
+
+class MM2SpaceCenterPopover(ezui.WindowController):
     
     '''
     MM2SpaceCenter by CJ Dunn
@@ -33,13 +99,22 @@ class MM2SpaceCenter(ezui.WindowController):
     - Add ability to change word length
     - Make this window into a temporary preferences UI, where you can set-it-and-forget it.
         - Activate and deactivate from a button in Space Center itself?
+    - Handle multiple SCs at once. Need subscriber?
+    - Figure out how to stop it...
     '''
     
-    def build(self):
+    def build(self, parent, space_center):
+
+        self.sc = space_center
+
         content = """
+        [ ] Activate MM2SC                 @activateToggle
+        
+        ---------------
+        
         * TwoColumnForm @form
 
-        > : Words:
+        > : Word count:
         > [_30               _]            @wordCount
         
         > : Language:
@@ -51,13 +126,13 @@ class MM2SpaceCenter(ezui.WindowController):
         ---------------
 
         [ ] Output as list sorted by width @listOutput
-        [X] Show open+close context {n}    @openCloseContext
+        [X] Show open & close context {n}  @openCloseContext
         [X] Show mirrored pair (LRLR)      @mirroredPair
-        [ ] All uppercase context          @allUppercase
+        [ ] Make context all-caps          @allUppercase
         
         """
         
-        self.wordCount = 30
+        initialWordCount = 30
         self.contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
         self.languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
         descriptionData = dict(
@@ -84,11 +159,12 @@ class MM2SpaceCenter(ezui.WindowController):
                     sizeStyle='small'
             ),
         )
-        self.w = ezui.EZWindow(
+        self.w = ezui.EZPopover(
             content=content,
             descriptionData=descriptionData,
             controller=self,
-            title='MM2SC',
+            parent=parent,
+            parentAlignment='bottom',
             size="auto"
         )
         
@@ -101,12 +177,10 @@ class MM2SpaceCenter(ezui.WindowController):
             
         self.loadDictionaries()
         
+        self.activateToggle   = self.w.getItem("activateToggle")
         self.wordCountField   = self.w.getItem("wordCount")
-        self.wordCountField.set(self.wordCount)
-        
+        self.wordCountField.set(initialWordCount)
         self.languageField    = self.w.getItem("language")
-        self.languageField.set(4)      #default to English for now
-        
         self.context          = self.w.getItem("context")
         self.listOutput       = self.w.getItem("listOutput")
         self.openCloseContext = self.w.getItem("openCloseContext")
@@ -114,15 +188,36 @@ class MM2SpaceCenter(ezui.WindowController):
         self.allUppercase     = self.w.getItem("allUppercase")
 
         # register extension defaults
-        value = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
-        self.w.setItemValues(value)
+        # print("1", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+
+        # if this sc is int he prefs, set to extension defaults. If not, it should just start as default...
+    
+
+    def flush_and_register_defaults(self):
+        setExtensionDefault(EXTENSION_KEY, {})
+        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
+        print(getExtensionDefault(EXTENSION_KEY))
 
 
     def started(self):
         self.w.open()
+
+        values = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
+        self.w.setItemValues(values)
+
+        self.wordCount = self.wordCountField.get()
+
+        # # if we don't do this, the observer will keep adding?
+        # try:
+        #     self.initialized
+        # except AttributeError:
+        #     if self.activateToggle.get() == True:
+        #         self.activateModule()
         
+    
+    def activateModule(self):
         # Make sure Show Kerning is on in the Space Center
-        lv = CurrentSpaceCenter().glyphLineView
+        lv = self.sc.glyphLineView
         v = lv.getApplyKerning()
         print(v)
         if v == False:
@@ -130,19 +225,33 @@ class MM2SpaceCenter(ezui.WindowController):
 
         addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
 
-        print('MM2SpaceCenter is now activated.')
+        print(f'MM2SpaceCenter is now activated.')  #  for Space Center instance {self.sc} ? (future)
         print()
         
         
-    def destroy(self):
-        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
+    def deactivateModule(self):
+
         removeObserver(self, "MetricsMachine.currentPairChanged")
 
-        print('MM2SpaceCenter is now deactivated.')
+        print(f'MM2SpaceCenter is now deactivated.')  #  for Space Center instance {self.sc} ? (future)
         print()
 
 
+    def activateToggleCallback(self, sender):
+        activation = sender.get()
+        
+        print(activation)
+        
+        if activation == True:
+            self.activateModule()
+        else:
+            self.deactivateModule()
 
+        # print("2", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+
+        self.flush_and_register_defaults()
+        
+        
     def sortedCallback(self, sender):
 
         self.sorted = self.listOutput.get()
@@ -152,9 +261,59 @@ class MM2SpaceCenter(ezui.WindowController):
     def wordCountCallback(self,sender):
 
         #print ('old', self.wordCount)
-        self.wordCount = self.wordCountField.get() or 1
+        self.wordCount = self.wordCountField.get()
         #update space center
-        self.wordsForMMPair()        
+        self.wordsForMMPair()
+
+        self.flush_and_register_defaults()      
+
+    
+    def languageCallback(self,sender):
+        self.flush_and_register_defaults()  
+        """On changing source/wordlist, check if a custom word list should be loaded."""
+        customIndex = len(self.textfiles) + 2
+        if sender.get() == customIndex: # Custom word list
+            try:
+                filePath = getFile(title="Load custom word list", messageText="Select a text file with words on separate lines", fileTypes=["txt"])[0]
+            except TypeError:
+                filePath = None
+                self.customWords = []
+                print("Input of custom word list canceled, using default")
+            if filePath is not None:
+                with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
+                    lines = fo.read()
+
+                self.customWords = []
+                for line in lines.splitlines():
+                    w = line.strip() # strip whitespace from beginning/end
+                    self.customWords.append(w)
+        
+        # update space center
+        self.wordsForMMPair()
+
+
+    def contextCallback(self,sender):
+        # print("3", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+        """On changing source/wordlist, check if a custom word list should be loaded."""
+        
+        self.context = self.context = self.contextOptions[self.context.get()]
+        
+        self.wordsForMMPair()
+        if self.debug == True:
+            print('Context =', self.context)
+
+
+    def listOutputCallback(self,sender):
+        # print("4", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+    def openCloseContextCallback(self,sender):
+        # print("5", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+    def mirroredPairCallback(self,sender):
+        self.flush_and_register_defaults()  
+    def allUppercaseCallback(self,sender):
+        self.flush_and_register_defaults()  
         
 
     def loadDictionaries(self):
@@ -191,40 +350,6 @@ class MM2SpaceCenter(ezui.WindowController):
             lines = userFile.read()
         self.dictWords["user"] = lines.splitlines()
 
-
-    def changeSourceCallback(self, sender):
-
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        customIndex = len(self.textfiles) + 2
-        if sender.get() == customIndex: # Custom word list
-            try:
-                filePath = getFile(title="Load custom word list", messageText="Select a text file with words on separate lines", fileTypes=["txt"])[0]
-            except TypeError:
-                filePath = None
-                self.customWords = []
-                print("Input of custom word list canceled, using default")
-            if filePath is not None:
-                with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
-                    lines = fo.read()
-
-                self.customWords = []
-                for line in lines.splitlines():
-                    w = line.strip() # strip whitespace from beginning/end
-                    self.customWords.append(w)
-        
-        # update space center
-        self.wordsForMMPair()
-
-        
-    def changeContextCallback(self, sender):
-
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        
-        self.context = self.context = self.contextOptions[self.context.get()]
-        
-        self.wordsForMMPair()
-        if self.debug == True:
-            print('Context =', self.context)
             
 
     def sortWordsByWidth(self, wordlist):
@@ -285,6 +410,9 @@ class MM2SpaceCenter(ezui.WindowController):
 
     def MMPairChangedObserver(self, sender):
 
+        if self.activateToggle.get() == False:
+            removeObserver(self, "MetricsMachine.currentPairChanged")
+
         #add code here for when myObserver is triggered
         currentPair = sender["pair"]
         if currentPair == self.pair:
@@ -312,11 +440,11 @@ class MM2SpaceCenter(ezui.WindowController):
 
     def setSpaceCenter(self, font, text):    
 
-        currentSC = CurrentSpaceCenter()
+        currentSC = self.sc
         if currentSC is None:
             print ('opening space center, click back into kerning window')
             OpenSpaceCenter(font, newWindow=False)
-            currentSC = CurrentSpaceCenter()
+            currentSC = self.sc
         currentSC.setRaw(text)
 
     
@@ -656,7 +784,7 @@ class MM2SpaceCenter(ezui.WindowController):
                     self.mixedCase = True
     
         try:
-            currentSC = CurrentSpaceCenter()
+            currentSC = self.sc
             previousText = currentSC.getRaw()
         except:
             previousText = ''
@@ -871,22 +999,4 @@ class MM2SpaceCenter(ezui.WindowController):
             self.setSpaceCenter(self.font, text)
 
 
-
-def run():
-
-    if not len(AllFonts()) > 0:
-        print ('You must have a font open.')
-        return
-
-    try:
-        p = metricsMachine.GetCurrentPair()
-        font = metricsMachine.CurrentFont()
-        
-    except:
-        p = ('A', 'V') # set initial value
-        font = CurrentFont()
-
-    p = MM2SpaceCenter()    
-            
-
-run()
+registerSpaceCenterSubscriber(MM2SCButton)
