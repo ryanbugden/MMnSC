@@ -9,29 +9,41 @@ The wonderful [word-o-mat] extension by Nina Stössinger was a major influence, 
 
 Pull requests are greatly appreciated 🙏
 
-++++++++++++++++++
 
-Update: 2022-03-17
+##Update: 2023-03-24 — Ryan Bugden  
 
-– added options for if no pair if found: Auto, UC, LC, Figs, Frac  
-– made word count field wider  
-– added support for suffixed glyphs and "any language" option (thanks @weiweihuanghuang and @arrowtype )  
-– updated structure of UI (thanks @ryanbugden )  
-– added truncation for longer (unencoded) glyph names  
-– bugfix for mirrored pairs (thanks @arrowtype )    
+![](_images/new_popover.png)
+
+* removed status bar
+* cleaned up the code a bit
+* rebuilt the UI with EZUI
+* remember your last setting
+* apply Show Kerning upon use
+* implement UI as a button in SC with a popover pref window 
+
+####Known Issues:
+
+* Unchecking the on-off checkbox doesn't seem to remove the observer. hunch: the UI is instantiated anew each time the popover is opened, and it forgets about the observer to be removed?
 
 
 
 
-++++++++++++++++++
+##Update: 2022-03-17
 
-Update: 2020-06-30
+* added options for if no pair if found: Auto, UC, LC, Figs, Frac  
+* made word count field wider  
+* added support for suffixed glyphs and "any language" option (thanks @weiweihuanghuang and @arrowtype )  
+* updated structure of UI (thanks @ryanbugden )  
+* added truncation for longer (unencoded) glyph names  
+* bugfix for mirrored pairs (thanks @arrowtype )    
+
+
+##Update: 2020-06-30
 
 Thanks to @arrowtype there are now options to:
 
-– Show open+closed context
-
-– Show mirrored pair 
+* Show open+closed context
+* Show mirrored pair 
 
 
 [Metrics Machine]: https://extensionstore.robofont.com/extensions/metricsMachine/
