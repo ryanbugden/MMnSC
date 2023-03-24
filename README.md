@@ -10,7 +10,7 @@ The wonderful [word-o-mat] extension by Nina Stössinger was a major influence, 
 Pull requests are greatly appreciated 🙏
 
 
-##Update: 2023-03-24 — Ryan Bugden  
+## Update: 2023-03-24 — Ryan Bugden  
 
 ![](_images/new_popover.png)
 
@@ -21,14 +21,14 @@ Pull requests are greatly appreciated 🙏
 * apply Show Kerning upon use
 * implement UI as a button in SC with a popover pref window 
 
-####Known Issues:
+#### Known Issues:
 
 * Unchecking the on-off checkbox doesn't seem to remove the observer. hunch: the UI is instantiated anew each time the popover is opened, and it forgets about the observer to be removed?
 
 
 
 
-##Update: 2022-03-17
+## Update: 2022-03-17
 
 * added options for if no pair if found: Auto, UC, LC, Figs, Frac  
 * made word count field wider  
@@ -38,7 +38,7 @@ Pull requests are greatly appreciated 🙏
 * bugfix for mirrored pairs (thanks @arrowtype )    
 
 
-##Update: 2020-06-30
+## Update: 2020-06-30
 
 Thanks to @arrowtype there are now options to:
 
