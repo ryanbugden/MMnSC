@@ -11,10 +11,11 @@ from vanilla import *
 from lib.UI.integerEditText import NumberEditText
 from mojo.extensions import *
 import codecs
+import ezui
 
 
 
-class MM2SpaceCenter:
+class MM2SpaceCenter(ezui.WindowController):
     
     '''
     MM2SpaceCenter by CJ Dunn
@@ -33,136 +34,113 @@ class MM2SpaceCenter:
         - Save preferences in RF lib.
     '''
     
-    def activateModule(self):
+    def build(self):
+        content = """
+        * TwoColumnForm @form
 
+        > : Words:
+        > [_30               _]            @wordCount
+        
+        > : Language:
+        > (English ...)                    @language
+
+        > : Fallback context:
+        > (Auto ...)                       @context
+        
+        ---------------
+
+        [ ] Output as list sorted by width @listOutput
+        [X] Show open+close context {n}    @openCloseContext
+        [X] Show mirrored pair (LRLR)      @mirroredPair
+        [ ] All uppercase context          @allUppercase
+        
+        """
+        
+        self.wordCount = 30
+        self.contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
+        self.languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
+        descriptionData = dict(
+            form=dict(
+                titleColumnWidth=104,
+                itemColumnWidth=78
+            ),
+            language=dict(
+                    items=self.languageNames
+            ),
+            context=dict(
+                    items=self.contextOptions
+            ),
+            listOutput=dict(
+                    sizeStyle='small'
+            ),
+            openCloseContext=dict(
+                    sizeStyle='small'
+            ),
+            mirroredPair=dict(
+                    sizeStyle='small'
+            ),
+            allUppercase=dict(
+                    sizeStyle='small'
+            ),
+        )
+        self.w = ezui.EZWindow(
+            content=content,
+            descriptionData=descriptionData,
+            controller=self,
+            title='MM2SC',
+            size="auto"
+        )
+        
+        self.font = CurrentFont()
+
+        try:
+            self.pair = metricsMachine.GetCurrentPair() 
+        except:
+            self.pair = ('A', 'V')
+            
+        self.loadDictionaries()
+        
+        self.wordCountField   = self.w.getItem("wordCount")
+        self.wordCountField.set(self.wordCount)
+        
+        self.languageField    = self.w.getItem("language")
+        self.languageField.set(4)      #default to English for now
+        
+        self.context          = self.w.getItem("context")
+        self.listOutput       = self.w.getItem("listOutput")
+        self.openCloseContext = self.w.getItem("openCloseContext")
+        self.mirroredPair     = self.w.getItem("mirroredPair")
+        self.allUppercase     = self.w.getItem("allUppercase")
+        
+        # print(self.w.getItemValues())
+
+
+    def started(self):
+        self.w.open()
         addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
 
         print('MM2SpaceCenter is now activated.')
         print()
-
-
-    def deactivateModule(self, sender):
-
+        
+        
+    def destroy(self):
         removeObserver(self, "MetricsMachine.currentPairChanged")
 
         print('MM2SpaceCenter is now deactivated.')
         print()
 
 
-    def __init__(self, ):
-
-        self.font = CurrentFont()
-
-        try:
-            self.pair = metricsMachine.GetCurrentPair() 
-        except:
-             self.pair = ('A', 'V')
-        
-        leftMargin = 10
-        topMargin = 0
-        lineHeight = 18
-        columnWidth = 85  
-        second_col_x = columnWidth + leftMargin + 10
-
-        w_w = 220 ## windowWidth ## was 200
-        
-        self.wordCount = 20
-        self.minLength = 3
-        self.maxLength = 15
-        
-        self.activateModule()
-
-        self.w = Window((w_w, 0), "MM2SpaceCenter")
-        self.w.getNSWindow().setTitlebarHeight_(26)
-        self.w.getNSWindow().setTitlebarAppearsTransparent_(True)
-        
-        yPos = topMargin
-
-        wordCountInputWidth = 34 ## was 45, I don't think over 999 is a good idea or needed
-                
-        topLineLabels = {
-            "wcText": [leftMargin+wordCountInputWidth+3, 78, 'words', 'left'],
-            "contextLabel": [second_col_x, 78, 'If no words:', 'left'],
-        }   
-
-        self.w.wordCount = NumberEditText((leftMargin, 0+yPos, wordCountInputWidth, 22), text=self.wordCount, callback=self.wordCountCallback, allowFloat=False, allowNegative=False)
-        self.w.wordCount.getNSTextField().setFocusRingType_(1)
-        
-        for label, values in topLineLabels.items():
-            setattr( self.w, label, TextBox( ( values[0], 3+yPos, values[1], 22), text=values[2], alignment=values[3] ) )
-
-        yPos += lineHeight * 1.3
-        
-        self.loadDictionaries()
-        
-        # language selection
-        languageOptions = list(self.languageNames)
-        languageOptions.extend(["Any language"])
-       
-        self.w.source = PopUpButton((leftMargin, yPos, columnWidth, 20), [], sizeStyle="small", callback=self.changeSourceCallback)
-        self.w.source.setItems(languageOptions)
-        
-        self.w.source.set(4) #default to English for now
-        self.source = None 
-        self.source = self.w.source.get() #get value, to use for other functions
-        
-        ##### add drop down to choose context: auto, UC, lc, figs, ??, not functional yet, but made as a placeholder
-        
-        self.contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
-        self.w.context = PopUpButton((second_col_x, yPos, -leftMargin, 20), [], sizeStyle="small", callback=self.changeContextCallback)
-
-        self.w.context.setItems(self.contextOptions)
-        self.w.context.set(0) #default to 'Auto'
-        
-        self.context = None
-        self.context = self.contextOptions[self.w.context.get()] #get the list item string, not just list index
-        
-        yPos += lineHeight * 1.3
-
-        self.w.line = HorizontalLine((leftMargin, yPos, -leftMargin, 1))
-        
-        yPos += 6
-        
-        checkBoxSize = 18
-
-        self.w.listOutput = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
-        self.w.listLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Output as list sorted by width", sizeStyle="small")
-
-        yPos += lineHeight * 1
-
-        self.w.openCloseContext = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
-        self.w.openCloseContextLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Show open+close context {n}", sizeStyle="small")
-
-        yPos += lineHeight * 1
-        
-        self.w.mirroredPair = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
-        self.w.mirroredPairLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "Show mirrored pair (LRLR)", sizeStyle="small")
-        
-        yPos += lineHeight * 1
-
-        self.w.allUppercase = CheckBox((leftMargin+3, yPos, checkBoxSize, checkBoxSize), "", sizeStyle="small", callback=self.sortedCallback)
-        self.w.allUppercaseLabel = TextBox((checkBoxSize+12, yPos+2, -leftMargin, checkBoxSize), "All uppercase context", sizeStyle="small")
-
-        self.sorted = self.w.listOutput.get()
-
-        # resize window dynamically, as this UI continues to get built out
-        w_x,w_y,w_w,w_h = self.w.getPosSize()
-        self.w.resize(w_w, yPos+lineHeight+leftMargin-3, animate=False)
-
-        self.w.bind("close", self.deactivateModule)
-        self.w.open()
-        
 
     def sortedCallback(self, sender):
 
-        self.sorted = self.w.listOutput.get()
+        self.sorted = self.listOutput.get()
         self.wordsForMMPair()  
         
         
     def wordCountCallback(self,sender):
 
         #print ('old', self.wordCount)
-        self.wordCount = self.w.wordCount.get() or 1
+        self.wordCount = self.wordCountField.get() or 1
         #update space center
         self.wordsForMMPair()        
         
@@ -176,8 +154,6 @@ class MM2SpaceCenter:
 
         self.textfiles = ['catalan', 'czech', 'danish', 'dutch', 'ukacd', 'finnish', 'french', 'german', 'hungarian', 'icelandic', 'italian', 'latin', 'norwegian', 'polish', 'slovak', 'spanish', 'vietnamese']
         self.languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
-
-        #self.source = getExtensionDefault("com.cjtype.MM2SpaceCenter.source", 4)
 
         bundle = ExtensionBundle("MM2SpaceCenter")
         contentLimit  = '*****' # If word list file contains a header, start looking for content after this delimiter
@@ -232,7 +208,7 @@ class MM2SpaceCenter:
 
         """On changing source/wordlist, check if a custom word list should be loaded."""
         
-        self.context = self.context = self.contextOptions[self.w.context.get()]
+        self.context = self.context = self.contextOptions[self.context.get()]
         
         self.wordsForMMPair()
         if self.debug == True:
@@ -517,7 +493,7 @@ class MM2SpaceCenter:
 
     def openCloseContextReturn(self, pair):
 
-        if self.w.openCloseContext.get() == True:
+        if self.openCloseContext.get() == True:
 
             # get unicodes to make sure we don’t show pairs that don’t exist in the font
             # TODO? may be better to move outside this function, if running it each time is slow. BUT it would have to listen for the CurrentFont to change.
@@ -588,7 +564,7 @@ class MM2SpaceCenter:
     # make mirrored pair to judge symmetry of kerns
     def pairMirrored(self, pair):
 
-        if self.w.mirroredPair.get() == True:
+        if self.mirroredPair.get() == True:
             left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
             right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
             return left + right + left + right + " " 
@@ -603,20 +579,20 @@ class MM2SpaceCenter:
         wordsAll = []
 
         ### temp comment out to check speed
-        self.source = self.w.source.get()
+        self.language = self.languageField.get()
 
         languageCount = len(self.textfiles)
-        if self.source == languageCount: # Use all languages
+        if self.language == languageCount: # Use all languages
             for i in range(languageCount):
                 # if any language: concatenate all the wordlists
                 wordsAll.extend(self.dictWords[self.textfiles[i]])
         else:
-            wordsAll = self.dictWords[self.textfiles[self.source]]
+            wordsAll = self.dictWords[self.textfiles[self.language]]
         
         #default values are hard coded for now
-        #self.wordCount = self.getIntegerValue(self.w.wordCount)
+        #self.wordCount = self.getIntegerValue(self.wordCount)
 
-        #v = self.getIntegerValue(self.w.wordCount)
+        #v = self.getIntegerValue(self.wordCount)
         
         wordCountValue = int(self.wordCount) 
         
@@ -727,11 +703,11 @@ class MM2SpaceCenter:
                     break
         
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if self.w.allUppercase.get() == True:
+        if self.allUppercase.get() == True:
             makeUpper = True
 
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if self.w.allUppercase.get() == True:
+        if self.allUppercase.get() == True:
             makeUpper = True
 
         if makeUpper == True:    
@@ -741,7 +717,7 @@ class MM2SpaceCenter:
 
         if not len(textList) == 0:            
             #see if box is checked
-            self.sorted = self.w.listOutput.get()
+            self.sorted = self.listOutput.get()
         
             #self.sorted = False
             if self.sorted == True:
@@ -752,17 +728,17 @@ class MM2SpaceCenter:
                 joinString = "\\n"            
                 text = joinString.join([str(word) for word in textList])
 
-                if self.w.mirroredPair.get() == True:  #if "start with mirrored pair" is checked, add this to text
+                if self.mirroredPair.get() == True:  #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + joinString + text 
-                if self.w.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
+                if self.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
             else:
                 text = ' '.join([str(word) for word in textList])
-                if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
+                if self.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text
-                if self.w.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
+                if self.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
@@ -783,7 +759,7 @@ class MM2SpaceCenter:
                 if self.context != 'Auto':
                     text = self.getSpacingString(pairstring)+ previousText
 
-                if self.w.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
+                if self.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
                     openClosePair = self.openCloseContextReturn( self.pair)  
                 
                     ### debug start 2
@@ -813,7 +789,7 @@ class MM2SpaceCenter:
 
                     text = spacingString + previousText
             
-                if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
+                if self.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
  
             ## for non uc pair, if not auto, use context dropdown 
@@ -825,14 +801,14 @@ class MM2SpaceCenter:
                 if self.context != 'Auto':
                     spacingString = self.getSpacingString(searchString)
                                     
-                if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
+                if self.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + spacingString + previousText
                 else:
                     text = spacingString + previousText
                 
-                if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
+                if self.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
-                if self.w.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
+                if self.openCloseContext.get() == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
@@ -862,7 +838,7 @@ class MM2SpaceCenter:
                     # spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
                 
                 
-                    if self.w.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
+                    if self.mirroredPair.get() == True: #if "start with mirrored pair" is checked, add this to text
                         text = self.pairMirrored(self.pair) + spacingString + previousText
                     else:
                         text = spacingString + previousText   
