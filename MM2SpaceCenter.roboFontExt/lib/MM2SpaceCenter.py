@@ -24,14 +24,15 @@ class MM2SpaceCenter(ezui.WindowController):
     Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
     Nina Stössinger for help and inspiration with this script
 
+
+    Ryan Bugden edit
+    2023.03.24
+    
     To do:       
-    - Make sure space center "Show Kerning" is set to on
-        - Remember pre-MM2 setting, revert when MM2 closes.
+    - Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
     - Add ability to change word length
-    - Rebuild this with EZUI, so more features can be thrown in quickly in the future.
     - Make this window into a temporary preferences UI, where you can set-it-and-forget it.
         - Activate and deactivate from a button in Space Center itself?
-        - Save preferences in RF lib.
     '''
     
     def build(self):
@@ -119,6 +120,14 @@ class MM2SpaceCenter(ezui.WindowController):
 
     def started(self):
         self.w.open()
+        
+        # Make sure Show Kerning is on in the Space Center
+        lv = CurrentSpaceCenter().glyphLineView
+        v = lv.getApplyKerning()
+        print(v)
+        if v == False:
+            lv.setApplyKerning(True)
+
         addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
 
         print('MM2SpaceCenter is now activated.')
