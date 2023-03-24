@@ -201,7 +201,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
     def flush_and_register_defaults(self):
         setExtensionDefault(EXTENSION_KEY, {})
         setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
-        print(getExtensionDefault(EXTENSION_KEY))
+        # print(getExtensionDefault(EXTENSION_KEY))
 
 
     def started(self):
@@ -224,7 +224,6 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         # Make sure Show Kerning is on in the Space Center
         lv = self.sc.glyphLineView
         v = lv.getApplyKerning()
-        print(v)
         if v == False:
             lv.setApplyKerning(True)
 
@@ -415,7 +414,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
     def MMPairChangedObserver(self, sender):
 
-        print("self.get_setting_from_defaults('mirredPair')", self.get_setting_from_defaults('mirredPair'))
+        # print("self.get_setting_from_defaults('mirredPair')", self.get_setting_from_defaults('mirredPair'))
         # not sure this is doing anything
         if self.get_setting_from_defaults('activateToggle') == False:
             removeObserver(self, "MetricsMachine.currentPairChanged")
