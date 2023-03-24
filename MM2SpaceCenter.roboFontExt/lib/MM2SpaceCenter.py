@@ -8,12 +8,12 @@ from vanilla import FloatingWindow, Button, TextBox, List, Window
 from defconAppKit.windows.baseWindow import BaseWindowController
 from mojo.events import addObserver, removeObserver
 from vanilla import *
-from lib.UI.integerEditText import NumberEditText
 from mojo.extensions import *
+from mojo.extensions import getExtensionDefault, setExtensionDefault
 import codecs
 import ezui
 
-
+EXTENSION_KEY = 'com.cjtype.mms2sc.settings'
 
 class MM2SpaceCenter(ezui.WindowController):
     
@@ -111,8 +111,10 @@ class MM2SpaceCenter(ezui.WindowController):
         self.openCloseContext = self.w.getItem("openCloseContext")
         self.mirroredPair     = self.w.getItem("mirroredPair")
         self.allUppercase     = self.w.getItem("allUppercase")
-        
-        # print(self.w.getItemValues())
+
+        # register extension defaults
+        value = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
+        self.w.setItemValues(value)
 
 
     def started(self):
@@ -124,6 +126,7 @@ class MM2SpaceCenter(ezui.WindowController):
         
         
     def destroy(self):
+        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
         removeObserver(self, "MetricsMachine.currentPairChanged")
 
         print('MM2SpaceCenter is now deactivated.')
