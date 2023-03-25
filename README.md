@@ -23,8 +23,7 @@ Pull requests are greatly appreciated 🙏
 
 #### Known Issues:
 
-* Unchecking the on-off checkbox doesn't seem to remove the observer. hunch: the UI is instantiated anew each time the popover is opened, and it forgets about the observer to be removed?
-
+* Observer is added upon space center open. Checking the on-off checkbox doesn't manipulate the observer itself, so it may be expensive...
 
 
 

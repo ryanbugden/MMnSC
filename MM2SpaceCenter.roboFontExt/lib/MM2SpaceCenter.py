@@ -19,6 +19,13 @@ import ezui
 EXTENSION_KEY = 'com.cjtype.mms2sc.settings'
 
 
+def get_setting_from_defaults(setting):
+    all_settings = getExtensionDefault(EXTENSION_KEY, fallback={setting:0})
+    setting = all_settings[setting]
+
+    return setting
+
+
 class MM2SCButton(Subscriber):
     
     '''
@@ -30,6 +37,21 @@ class MM2SCButton(Subscriber):
     
     def build(self):
         self.icon_path = os.path.abspath('../resources/_icon_MM2SC.pdf')
+
+        
+
+        self.font = CurrentFont()
+
+        try:
+            self.pair = metricsMachine.GetCurrentPair() 
+        except:
+            self.pair = ('A', 'V')
+            
+        self.loadDictionaries()
+
+        self.context = get_setting_from_defaults('context')
+        self.wordCount = get_setting_from_defaults('wordCount')
+
         # print(self.icon_path)
         
 
@@ -57,6 +79,12 @@ class MM2SCButton(Subscriber):
             )
         self.sc.MM2SC_button.getNSButton().setBordered_(0)
         self.sc.MM2SC_button.getNSButton().setBezelStyle_(2)
+
+        self.activateModule()
+
+
+    def spaceCenterWillClose(self, info):
+        self.deactivateModule()
         
 
     def buttonCallback(self, sender):
@@ -79,147 +107,6 @@ class MM2SCButton(Subscriber):
             print("Save your font (give it a path) before trying to open MM2SC.")
 
 
-
-class MM2SpaceCenterPopover(ezui.WindowController):
-    
-    '''
-    MM2SpaceCenter by CJ Dunn
-    2019
-
-    Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
-    Nina Stössinger for help and inspiration with this script
-
-
-    Ryan Bugden edit
-    2023.03.24
-    
-    To do:       
-    - Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
-    - Add ability to change word length
-    - Make this window into a temporary preferences UI, where you can set-it-and-forget it.
-        - Activate and deactivate from a button in Space Center itself?
-    - Handle multiple SCs at once. Need subscriber?
-    - Figure out how to stop it...
-    '''
-
-    
-    def build(self, parent, space_center):
-
-        self.sc = space_center
-
-        content = """
-        [ ] Activate MM2SC                 @activateToggle
-        
-        ---------------
-        
-        * TwoColumnForm @form
-
-        > : Word count:
-        > [_30               _]            @wordCount
-        
-        > : Language:
-        > (English ...)                    @language
-
-        > : Fallback context:
-        > (Auto ...)                       @context
-        
-        ---------------
-
-        [ ] Output as list sorted by width @listOutput
-        [X] Show open & close context {n}  @openCloseContext
-        [X] Show mirrored pair (LRLR)      @mirroredPair
-        [ ] Make context all-caps          @allUppercase
-        
-        """
-        
-        initialWordCount = 30
-        self.contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
-        self.languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
-        descriptionData = dict(
-            form=dict(
-                titleColumnWidth=104,
-                itemColumnWidth=78
-            ),
-            language=dict(
-                    items=self.languageNames
-            ),
-            context=dict(
-                    items=self.contextOptions
-            ),
-            listOutput=dict(
-                    sizeStyle='small'
-            ),
-            openCloseContext=dict(
-                    sizeStyle='small'
-            ),
-            mirroredPair=dict(
-                    sizeStyle='small'
-            ),
-            allUppercase=dict(
-                    sizeStyle='small'
-            ),
-        )
-        self.w = ezui.EZPopover(
-            content=content,
-            descriptionData=descriptionData,
-            controller=self,
-            parent=parent,
-            parentAlignment='bottom',
-            size="auto"
-        )
-        
-        self.font = CurrentFont()
-
-        try:
-            self.pair = metricsMachine.GetCurrentPair() 
-        except:
-            self.pair = ('A', 'V')
-            
-        self.loadDictionaries()
-        
-        self.activateToggle   = self.w.getItem("activateToggle")
-        self.wordCountField   = self.w.getItem("wordCount")
-        self.wordCountField.set(initialWordCount)
-        self.languageField    = self.w.getItem("language")
-        self.contextField     = self.w.getItem("context")
-        self.listOutput       = self.w.getItem("listOutput")
-        self.openCloseContext = self.w.getItem("openCloseContext")
-        self.mirroredPair     = self.w.getItem("mirroredPair")
-        self.allUppercase     = self.w.getItem("allUppercase")
-
-        # register extension defaults
-        # print("1", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-
-        # if this sc is int he prefs, set to extension defaults. If not, it should just start as default...
-    
-    def get_setting_from_defaults(self, setting):
-        all_settings = getExtensionDefault(EXTENSION_KEY)
-        setting = all_settings[setting]
-        return setting
-    
-
-    def flush_and_register_defaults(self):
-        setExtensionDefault(EXTENSION_KEY, {})
-        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
-        # print(getExtensionDefault(EXTENSION_KEY))
-
-
-    def started(self):
-        self.w.open()
-
-        values = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
-        self.w.setItemValues(values)
-
-        self.wordCount = self.get_setting_from_defaults('wordCount')
-
-        # # if we don't do this, the observer will keep adding?
-        # try:
-        #     self.initialized
-        # except AttributeError:
-        #     if self.get_setting_from_defaults('activateToggle') == True:
-        #         self.activateModule()
-        
-    
     def activateModule(self):
         # Make sure Show Kerning is on in the Space Center
         lv = self.sc.glyphLineView
@@ -227,98 +114,15 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         if v == False:
             lv.setApplyKerning(True)
 
-        addObserver(self, "MMPairChangedObserver", "MetricsMachine.currentPairChanged")
-
-        print(f'MM2SpaceCenter is now activated.')  #  for Space Center instance {self.sc} ? (future)
-        print()
+        addObserver(self, "MMPairChanged", "MetricsMachine.currentPairChanged")
+        print('MM observer is now activated.')
         
         
     def deactivateModule(self):
 
         removeObserver(self, "MetricsMachine.currentPairChanged")
+        print('MM observer is deactivated.')
 
-        print(f'MM2SpaceCenter is now deactivated.')  #  for Space Center instance {self.sc} ? (future)
-        print()
-
-
-    def activateToggleCallback(self, sender):
-        activation = sender.get()
-        
-        print(activation)
-        
-        if activation == True:
-            self.activateModule()
-        else:
-            self.deactivateModule()
-
-        # print("2", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-
-        self.flush_and_register_defaults()
-        
-        
-    def sortedCallback(self, sender):
-
-        self.sorted = self.get_setting_from_defaults('listOutput')
-        self.wordsForMMPair()  
-        
-        
-    def wordCountCallback(self,sender):
-
-        #print ('old', self.wordCount)
-        self.wordCount = self.get_setting_from_defaults('wordCount')
-        #update space center
-        self.wordsForMMPair()
-
-        self.flush_and_register_defaults()      
-
-    
-    def languageCallback(self,sender):
-        self.flush_and_register_defaults()  
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        customIndex = len(self.textfiles) + 2
-        if sender.get() == customIndex: # Custom word list
-            try:
-                filePath = getFile(title="Load custom word list", messageText="Select a text file with words on separate lines", fileTypes=["txt"])[0]
-            except TypeError:
-                filePath = None
-                self.customWords = []
-                print("Input of custom word list canceled, using default")
-            if filePath is not None:
-                with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
-                    lines = fo.read()
-
-                self.customWords = []
-                for line in lines.splitlines():
-                    w = line.strip() # strip whitespace from beginning/end
-                    self.customWords.append(w)
-        
-        # update space center
-        self.wordsForMMPair()
-
-
-    def contextCallback(self,sender):
-        # print("3", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-        self.flush_and_register_defaults()  
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        
-        self.context = self.contextOptions[self.get_setting_from_defaults('context')]
-        
-        self.wordsForMMPair()
-        if self.debug == True:
-            print('Context =', self.context)
-
-
-    def listOutputCallback(self,sender):
-        # print("4", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-        self.flush_and_register_defaults()  
-    def openCloseContextCallback(self,sender):
-        # print("5", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-        self.flush_and_register_defaults()  
-    def mirroredPairCallback(self,sender):
-        self.flush_and_register_defaults()  
-    def allUppercaseCallback(self,sender):
-        self.flush_and_register_defaults()  
-        
 
     def loadDictionaries(self):
 
@@ -412,22 +216,21 @@ class MM2SpaceCenterPopover(ezui.WindowController):
             return 0
 
 
-    def MMPairChangedObserver(self, sender):
+    def MMPairChanged(self, sender):
 
-        # print("self.get_setting_from_defaults('mirredPair')", self.get_setting_from_defaults('mirredPair'))
+        # print("get_setting_from_defaults('mirroredPair')", get_setting_from_defaults('mirroredPair'))
         # not sure this is doing anything
-        if self.get_setting_from_defaults('activateToggle') == False:
-            removeObserver(self, "MetricsMachine.currentPairChanged")
+        if get_setting_from_defaults('activateToggle') == True:
 
-        #add code here for when myObserver is triggered
-        currentPair = sender["pair"]
-        if currentPair == self.pair:
-            return
+            #add code here for when myObserver is triggered
+            currentPair = sender["pair"]
+            if currentPair == self.pair:
+                return
+            
+            self.pair = currentPair
         
-        self.pair = currentPair
-    
-        #print ('current MM pair changed', self.pair)        
-        self.wordsForMMPair()
+            #print ('current MM pair changed', self.pair)        
+            self.wordsForMMPair()
 
 
     ## same as MM Pair Changed Observer above, but making a separate function just to be safe
@@ -639,7 +442,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
     def openCloseContextReturn(self, pair):
 
-        if self.get_setting_from_defaults('openCloseContext') == True:
+        if get_setting_from_defaults('openCloseContext') == True:
 
             # get unicodes to make sure we don’t show pairs that don’t exist in the font
             # TODO? may be better to move outside this function, if running it each time is slow. BUT it would have to listen for the CurrentFont to change.
@@ -710,7 +513,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
     # make mirrored pair to judge symmetry of kerns
     def pairMirrored(self, pair):
 
-        if self.get_setting_from_defaults('mirredPair') == True:
+        if get_setting_from_defaults('mirroredPair') == True:
             left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
             right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
             return left + right + left + right + " " 
@@ -725,7 +528,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         wordsAll = []
 
         ### temp comment out to check speed
-        self.language = self.get_setting_from_defaults('language')
+        self.language = get_setting_from_defaults('language')
 
         languageCount = len(self.textfiles)
         if self.language == languageCount: # Use all languages
@@ -740,7 +543,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
         #v = self.getIntegerValue(self.wordCount)
         
-        wordCountValue = int(self.wordCount) 
+        wordCountValue = int(get_setting_from_defaults('wordCount')) 
         
         #print(v)
 
@@ -849,11 +652,11 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                     break
         
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if self.get_setting_from_defaults('allUppercase') == True:
+        if get_setting_from_defaults('allUppercase') == True:
             makeUpper = True
 
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if self.get_setting_from_defaults('allUppercase') == True:
+        if get_setting_from_defaults('allUppercase') == True:
             makeUpper = True
 
         if makeUpper == True:    
@@ -863,7 +666,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
         if not len(textList) == 0:            
             #see if box is checked
-            self.sorted = self.get_setting_from_defaults('listOutput')
+            self.sorted = get_setting_from_defaults('listOutput')
         
             #self.sorted = False
             if self.sorted == True:
@@ -874,17 +677,17 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                 joinString = "\\n"            
                 text = joinString.join([str(word) for word in textList])
 
-                if self.get_setting_from_defaults('mirredPair') == True:  #if "start with mirrored pair" is checked, add this to text
+                if get_setting_from_defaults('mirroredPair') == True:  #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + joinString + text 
-                if self.get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
             else:
                 text = ' '.join([str(word) for word in textList])
-                if self.get_setting_from_defaults('mirredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text
-                if self.get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
@@ -905,7 +708,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                 if self.context != 'Auto':
                     text = self.getSpacingString(pairstring)+ previousText
 
-                if self.get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
                     openClosePair = self.openCloseContextReturn( self.pair)  
                 
                     ### debug start 2
@@ -935,7 +738,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
                     text = spacingString + previousText
             
-                if self.get_setting_from_defaults('mirredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
  
             ## for non uc pair, if not auto, use context dropdown 
@@ -947,14 +750,14 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                 if self.context != 'Auto':
                     spacingString = self.getSpacingString(searchString)
                                     
-                if self.get_setting_from_defaults('mirredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + spacingString + previousText
                 else:
                     text = spacingString + previousText
                 
-                if self.get_setting_from_defaults('mirredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
-                if self.get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
                     text = self.openCloseContextReturn(self.pair) + text 
 
@@ -984,7 +787,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                     # spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
                 
                 
-                    if self.get_setting_from_defaults('mirredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                    if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                         text = self.pairMirrored(self.pair) + spacingString + previousText
                     else:
                         text = spacingString + previousText   
@@ -1004,5 +807,206 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
             self.setSpaceCenter(self.font, text)
 
+
+
+
+
+class MM2SpaceCenterPopover(ezui.WindowController):
+    
+    '''
+    MM2SpaceCenter by CJ Dunn
+    2019
+
+    Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
+    Nina Stössinger for help and inspiration with this script
+
+
+    Ryan Bugden edit
+    2023.03.24
+    
+    To do:       
+    - Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
+    - Add ability to change word length
+    - Handle multiple SCs at once. Need subscriber?
+    '''
+
+    
+    def build(self, parent, space_center):
+
+        self.sc = space_center
+
+        content = """
+        [ ] Activate MM2SC                 @activateToggle
+        
+        ---------------
+        
+        * TwoColumnForm @form
+
+        > : Word count:
+        > [_30               _]            @wordCount
+        
+        > : Language:
+        > (English ...)                    @language
+
+        > : Fallback context:
+        > (Auto ...)                       @context
+        
+        ---------------
+
+        [ ] Output as list sorted by width @listOutput
+        [X] Show open & close context {n}  @openCloseContext
+        [X] Show mirrored pair (LRLR)      @mirroredPair
+        [ ] Make context all-caps          @allUppercase
+        
+        """
+        
+        initialWordCount = 30
+        contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
+        self.context = 'Auto'
+        languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
+
+        descriptionData = dict(
+            form=dict(
+                titleColumnWidth=104,
+                itemColumnWidth=78
+            ),
+            language=dict(
+                    items=languageNames
+            ),
+            context=dict(
+                    items=contextOptions
+            ),
+            listOutput=dict(
+                    sizeStyle='small'
+            ),
+            openCloseContext=dict(
+                    sizeStyle='small'
+            ),
+            mirroredPair=dict(
+                    sizeStyle='small'
+            ),
+            allUppercase=dict(
+                    sizeStyle='small'
+            ),
+        )
+        self.w = ezui.EZPopover(
+            content=content,
+            descriptionData=descriptionData,
+            controller=self,
+            parent=parent,
+            parentAlignment='bottom',
+            size="auto"
+        )
+        
+
+        self.activateToggle   = self.w.getItem("activateToggle")
+        self.wordCountField   = self.w.getItem("wordCount")
+        self.wordCountField.set(initialWordCount)
+        self.languageField    = self.w.getItem("language")
+        self.contextField     = self.w.getItem("context")
+        self.listOutput       = self.w.getItem("listOutput")
+        self.openCloseContext = self.w.getItem("openCloseContext")
+        self.mirroredPair     = self.w.getItem("mirroredPair")
+        self.allUppercase     = self.w.getItem("allUppercase")
+
+        # register extension defaults
+        # print("1", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+
+        # if this sc is int he prefs, set to extension defaults. If not, it should just start as default...
+    
+
+    
+    def flush_and_register_defaults(self):
+        setExtensionDefault(EXTENSION_KEY, {})  # This might not be necessary anymore.
+        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
+        print(getExtensionDefault(EXTENSION_KEY))
+
+
+    def started(self):
+        self.w.open()
+
+        values = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
+        self.w.setItemValues(values)
+
+        
+    def activateToggleCallback(self, sender):
+        activation = sender.get()
+        print(activation)
+        
+        # can no longer do observer stuff from the pref menu object
+        if activation == True:
+            print(f'MM2SpaceCenter is now activated.')
+        else:
+            print(f'MM2SpaceCenter is now deactivated.')
+
+        self.flush_and_register_defaults()
+        
+        
+    def sortedCallback(self, sender):
+
+        self.sorted = get_setting_from_defaults('listOutput')
+        self.wordsForMMPair()  
+        
+        
+
+    def wordCountCallback(self,sender):
+
+        #print ('old', self.wordCount)
+        self.wordCount = get_setting_from_defaults('wordCount')
+
+        self.flush_and_register_defaults()      
+
+
+    
+    def languageCallback(self,sender):
+        self.flush_and_register_defaults()  
+        """On changing source/wordlist, check if a custom word list should be loaded."""
+        customIndex = len(self.textfiles) + 2
+        if sender.get() == customIndex: # Custom word list
+            try:
+                filePath = getFile(title="Load custom word list", messageText="Select a text file with words on separate lines", fileTypes=["txt"])[0]
+            except TypeError:
+                filePath = None
+                self.customWords = []
+                print("Input of custom word list canceled, using default")
+            if filePath is not None:
+                with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
+                    lines = fo.read()
+
+                self.customWords = []
+                for line in lines.splitlines():
+                    w = line.strip() # strip whitespace from beginning/end
+                    self.customWords.append(w)
+        
+        # update space center
+        self.wordsForMMPair()
+
+
+
+    def contextCallback(self,sender):
+        # print("3", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+        """On changing source/wordlist, check if a custom word list should be loaded."""
+        
+        self.context = self.contextOptions[get_setting_from_defaults('context')]
+        
+        self.wordsForMMPair()
+        if self.debug == True:
+            print('Context =', self.context)
+
+
+    def listOutputCallback(self,sender):
+        # print("4", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+    def openCloseContextCallback(self,sender):
+        # print("5", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
+        self.flush_and_register_defaults()  
+    def mirroredPairCallback(self,sender):
+        self.flush_and_register_defaults()  
+    def allUppercaseCallback(self,sender):
+        self.flush_and_register_defaults()  
+        
+
+    
 
 registerSpaceCenterSubscriber(MM2SCButton)
