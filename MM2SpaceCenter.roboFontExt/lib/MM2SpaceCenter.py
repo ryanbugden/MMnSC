@@ -15,6 +15,26 @@ from mojo.extensions import getExtensionDefault, setExtensionDefault, ExtensionB
 import codecs
 import ezui
 
+'''
+MM2SpaceCenter by CJ Dunn
+2019
+
+Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
+Nina Stössinger for help and inspiration with this script
+
+
+Ryan Bugden edit
+2023.03.24
+
+To do:       
+- Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
+- Add ability to change word length
+- Handle multiple SCs at once. Need subscriber?
+- If no words, look for next member of the kern group. (Some way of showing/saying this has been done, though?)
+- Underline the pair in Space Center. Add pref
+'''
+
+
 
 EXTENSION_KEY = 'com.cjtype.mms2sc.settings'
 
@@ -49,7 +69,6 @@ class MM2SCButton(Subscriber):
             
         self.loadDictionaries()
 
-        self.context = get_setting_from_defaults('context')
         self.wordCount = get_setting_from_defaults('wordCount')
 
         # print(self.icon_path)
@@ -90,7 +109,7 @@ class MM2SCButton(Subscriber):
     def buttonCallback(self, sender):
         # run the prefs window
         if not len(AllFonts()) > 0:
-            print ('You must have a font open.')
+            print('You must have a font open.')
             return
 
         try:
@@ -140,7 +159,7 @@ class MM2SCButton(Subscriber):
         # read included textfiles
         for textfile in self.textfiles:
             path = bundle.getResourceFilePath(textfile)
-            #print (path)
+            #print(path)
             with codecs.open(path, mode="r", encoding="utf-8") as fo:
                 lines = fo.read()
 
@@ -228,8 +247,7 @@ class MM2SCButton(Subscriber):
                 return
             
             self.pair = currentPair
-        
-            #print ('current MM pair changed', self.pair)        
+            #print('current MM pair changed', self.pair)        
             self.wordsForMMPair()
 
 
@@ -243,7 +261,7 @@ class MM2SCButton(Subscriber):
         
         self.pair = currentPair
     
-        #print ('current FP pair changed', self.pair)        
+        #print('current FP pair changed', self.pair)        
         self.wordsForMMPair()
 
 
@@ -251,7 +269,7 @@ class MM2SCButton(Subscriber):
 
         currentSC = self.sc
         if currentSC is None:
-            print ('opening space center, click back into kerning window')
+            print('opening space center, click back into kerning window')
             OpenSpaceCenter(font, newWindow=False)
             currentSC = self.sc
         currentSC.setRaw(text)
@@ -311,7 +329,7 @@ class MM2SCButton(Subscriber):
         self.debug = False
         
         try:
-            #print ('pair =', pair)
+            #print('pair =', pair)
 
             leftNoSuffix = pair[0]
             rightNoSuffix = pair[1]
@@ -330,7 +348,7 @@ class MM2SCButton(Subscriber):
             return pair_char
         except:
             if self.debug == True:
-                print ("couldn't convert pair to chars")            
+                print("couldn't convert pair to chars")            
             return pair
         
 
@@ -345,19 +363,19 @@ class MM2SCButton(Subscriber):
 
         string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
         
-        if self.context == 'Auto':
+        if get_setting_from_defaults('context') == 0:  # if self.context == 'Auto':
             string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
 
-        if self.context == 'UC':
+        if get_setting_from_defaults('context') == 1:  # if self.context == 'UC':
             string = 'HH'+pairstring+'HOHO'+pairstring+'OO'
 
-        if self.context == 'LC':
+        if get_setting_from_defaults('context') == 2:  # if self.context == 'LC':
             string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
         
-        if self.context == 'Figs':
+        if get_setting_from_defaults('context') == 3:   # if self.context == 'Figs':
             string = '11'+pairstring+'1010'+pairstring+'00' #use for numbers
 
-        if self.context == 'Frac': 
+        if get_setting_from_defaults('context') == 4:   # if self.context == 'Frac': 
             # start with figs context
             string = '11'+pairstring+'⁄1010⁄'+pairstring+'00' #use for numbers
 
@@ -382,7 +400,7 @@ class MM2SCButton(Subscriber):
     openClosePairs = {
 
         # initial/final punctuation (from https://www.compart.com/en/unicode/category/Pi and https://www.compart.com/en/unicode/category/Pf)
-        "‚": "‘",
+        "’": "‘",
         "„": "“",
         "„": "”",
         "‘": "’",
@@ -442,72 +460,59 @@ class MM2SCButton(Subscriber):
 
     def openCloseContextReturn(self, pair):
 
-        if get_setting_from_defaults('openCloseContext') == True:
+        # get unicodes to make sure we don’t show pairs that don’t exist in the font
+        # TODO? may be better to move outside this function, if running it each time is slow. BUT it would have to listen for the CurrentFont to change.
+        unicodesInFont = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
-            # get unicodes to make sure we don’t show pairs that don’t exist in the font
-            # TODO? may be better to move outside this function, if running it each time is slow. BUT it would have to listen for the CurrentFont to change.
-            unicodesInFont = [u for glyph in CurrentFont() for u in glyph.unicodes]
+        left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
+        right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
+        #print('left:', left, self.leftEncoded)
+        #print('right:', right, self.rightEncoded)
+        
 
-            left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
-            right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
+        openCloseString = ""
+
+        for openClose in self.openClosePairs.items():
             
-            
-            #print ('left:', left, self.leftEncoded)
-            #print ('right:', right, self.rightEncoded)
-            
+            # if both sides of pair are in an open+close pair, just add them
+            if openClose[0] == left and openClose[1] == right:
+                openCloseString += left + right + "" #remove trailing space
 
-            openCloseString = ""
+            # if the left is in an openClose pair and its companion is in the font, add them
+            if openClose[0] == left and ord(openClose[1]) in unicodesInFont:
+                openCloseString += left + right + self.openClosePairs[left] + "" #remove trailing space
 
-            for openClose in self.openClosePairs.items():
+            # if the right is in an openClose pair and its companion is in the font, add them
+            if openClose[1] == right  and ord(openClose[0]) in unicodesInFont:
+                openCloseString += openClose[0] + left + right + "" #remove trailing space
                 
-                #print (openClose[0], left, len(openClose[0]), len(left))                    
-                
-                # if left == openClose[0]:
-                # #if left in openClose[0]:
-                #     print ('left found', left)   
-                # if right == openClose[1]:
-                #     print ('right found', left)   
-                
-                # if both sides of pair are in an open+close pair, just add them
-                if openClose[0] == left and openClose[1] == right:
-                    openCloseString += left + right + "" #remove trailing space
-                # if the left is in an openClose pair and its companion is in the font, add them
-                if openClose[0] == left and ord(openClose[1]) in unicodesInFont:
-                    openCloseString += left + right + self.openClosePairs[left] + "" #remove trailing space
-                # if the right is in an openClose pair and its companion is in the font, add them
-                if openClose[1] == right  and ord(openClose[0]) in unicodesInFont:
-                    openCloseString += openClose[0] + left + right + "" #remove trailing space
-                    
-                    print ('right matches', right, openCloseString)
-                
-                else:
-                    continue
+                # print('right matches', right, openCloseString)
             
-  
-            if (self.leftEncoded == False) or (self.rightEncoded == False):
-                for openCloseGnames in self.openCloseUnencodedPairs.items():
+            else:
+                continue
+        
 
-                    #left
-                    
-                    openCloseLeft = openCloseGnames[0]
+        if (self.leftEncoded == False) or (self.rightEncoded == False):
+            for openCloseGnames in self.openCloseUnencodedPairs.items():
 
-                    openCloseRight = openCloseGnames[1]
+                #left
+                
+                openCloseLeft = openCloseGnames[0]
 
-                    #spaceCenterStringForUnencoded
-                    if self.pair[0] == openCloseLeft:
-                        #print ('left unencoded pair found' )
-                        openCloseString += left + right + self.spaceCenterStringForUnencoded(openCloseRight) + " "
-                    
-                    #right 
-                    if self.pair[1] == openCloseRight:
-                        #print ( 'right unencoded pair found' )  
-                                              
-                        openCloseString += self.spaceCenterStringForUnencoded(openCloseLeft) + left + right  + " "
+                openCloseRight = openCloseGnames[1]
 
-            return openCloseString
-            
-        else:
-            return ""
+                #spaceCenterStringForUnencoded
+                if self.pair[0] == openCloseLeft:
+                    #print('left unencoded pair found' )
+                    openCloseString += left + right + self.spaceCenterStringForUnencoded(openCloseRight) + " "
+                
+                #right 
+                if self.pair[1] == openCloseRight:
+                    #print( 'right unencoded pair found' )  
+                    openCloseString += self.spaceCenterStringForUnencoded(openCloseLeft) + left + right  + " "
+
+        return openCloseString
+           
 
 
     # make mirrored pair to judge symmetry of kerns
@@ -523,7 +528,6 @@ class MM2SCButton(Subscriber):
 
     def wordsForMMPair(self, ):
         
-        self.mixedCase = False
 
         wordsAll = []
 
@@ -547,7 +551,7 @@ class MM2SCButton(Subscriber):
         
         #print(v)
 
-        #print ('self.wordCount', self.wordCount)
+        #print('self.wordCount', self.wordCount)
         
         #currently allows any word lenght, this could be customized later
 
@@ -569,13 +573,13 @@ class MM2SCButton(Subscriber):
 
         #check Encoding
         
-        #print (pairstring)
+        #print(pairstring)
 
         #default value
         makeUpper = False
 
         if pair2charString.isupper():
-            #print (pairstring, 'upper')
+            #print(pairstring, 'upper')
             makeUpper = True
             #make lower for searching
             searchString = searchString.lower()
@@ -587,6 +591,7 @@ class MM2SCButton(Subscriber):
             pass
 
         #check for mixed case
+        self.mixedCase = False
         if self.pair2char(self.pair)[0].isupper():
             if self.pair2char(self.pair)[1].islower():
                 if (self.leftEncoded == True) and (self.rightEncoded == True) : 
@@ -612,7 +617,7 @@ class MM2SCButton(Subscriber):
                     #avoid duplicates
                     if not word in textList:
                 
-                        #print (word)
+                        #print(word)
                         textList.append(word)
                         count +=1
                         
@@ -622,13 +627,13 @@ class MM2SCButton(Subscriber):
                     #avoid duplicates
                     if not word in textList:
                 
-                        #print (word)
+                        #print(word)
                         textList.append(word)
                         count +=1
         
                 #stop when you get enough results
                 if count >= wordCountValue:
-                    #print (text)
+                    #print(text)
                 
                     break
                     
@@ -641,20 +646,16 @@ class MM2SCButton(Subscriber):
                     #avoid duplicates
                     if not word in textList:
                 
-                        #print (word)
+                        #print(word)
                         textList.append(word)
                         count +=1
         
                 #stop when you get enough results
                 if count >= wordCountValue:
-                    #print (text)
+                    #print(text)
                 
                     break
         
-        ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if get_setting_from_defaults('allUppercase') == True:
-            makeUpper = True
-
         ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
         if get_setting_from_defaults('allUppercase') == True:
             makeUpper = True
@@ -679,16 +680,18 @@ class MM2SCButton(Subscriber):
 
                 if get_setting_from_defaults('mirroredPair') == True:  #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + joinString + text 
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                    # print("here 5")
                     text = self.openCloseContextReturn(self.pair) + text 
 
             else:
                 text = ' '.join([str(word) for word in textList])
                 if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                    # print("here 4")
                     text = self.openCloseContextReturn(self.pair) + text 
 
 
@@ -705,49 +708,55 @@ class MM2SCButton(Subscriber):
                 text = self.ucString(pairstring)+ previousText
 
 
-                if self.context != 'Auto':
+                if get_setting_from_defaults('context') != 0:  # If context is not Auto
                     text = self.getSpacingString(pairstring)+ previousText
 
                 if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
-                    openClosePair = self.openCloseContextReturn( self.pair)  
+                    # print("here 3")
+                    openClosePair = self.openCloseContextReturn(self.pair)  
                 
                     ### debug start 2
-                    #print ('openClosePair:'+openClosePair+'#')
-                    openClosePair= openClosePair.lstrip()
+                    #print('openClosePair:'+openClosePair+'#')
+                    openClosePair = openClosePair.lstrip()
                 
-                    #print ('openClosePair:'+openClosePair+'#')
+                    #print('openClosePair:'+openClosePair+'#')
                     ### debug end 2
                 
-                    if len(openClosePair) > 0 : ## pair found                 
-                        spacingString = self.ucString( openClosePair )
+                    if len(openClosePair) > 0 : ## pair found      
+                        spacingString = self.ucString(openClosePair)
+                        # print('here 5', spacingString)           
 
                     else: ## pair not found
-                    
+                        
                         if self.debug == True:
-                            print ('open+close pair not found')
-                        spacingString = self.ucString( pairstring )
+                            print('open+close pair not found')
+                        spacingString = self.ucString(pairstring)
+                        # print('here 6')
                 
                 
                     ## for uc pair, if not auto, use context dropdown 
-                    if self.context != 'Auto':
-                        
+                    if get_setting_from_defaults('context') != 0:
                         spacingString = self.getSpacingString(pairstring)
+                        # print('here 7')
 
-                    spacingString = spacingString.replace("  ", " ") ## extra space gets added, later maybe it's best to change self.ucString function??
-                    spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
+                    for i in range(3):
+                        spacingString = spacingString.replace("  ", " ")  ## extra space gets added, later maybe it's best to change self.ucString function??
 
                     text = spacingString + previousText
+                    # print('here 8', text)
             
                 if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
+                    # print('here 9', text)
  
+
             ## for non uc pair, if not auto, use context dropdown 
             else:
                 ## auto will choose lc string
                 spacingString = self.lcString(searchString)
 
                 ## non-auto option will use dropdown context
-                if self.context != 'Auto':
+                if get_setting_from_defaults('context') != 0:
                     spacingString = self.getSpacingString(searchString)
                                     
                 if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
@@ -757,29 +766,29 @@ class MM2SCButton(Subscriber):
                 
                 if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
                     text = self.pairMirrored(self.pair) + text 
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
 
+                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
+                    # print("here 1")
                     text = self.openCloseContextReturn(self.pair) + text 
 
-                    openClosePair = self.openCloseContextReturn( self.pair) 
+                    openClosePair = self.openCloseContextReturn(self.pair) 
                 
                     ### debug start
-                    #print ('openClosePair:'+openClosePair+'#')
-                    #print ('pair:'+str(self.pair)+'#')
+                    #print('openClosePair:'+openClosePair+'#')
+                    #print('pair:'+str(self.pair)+'#')
                     #openClosePair= openClosePair.lstrip()
-                    #print ('openClosePair:'+openClosePair+'#')
+                    #print('openClosePair:'+openClosePair+'#')
                     ### debug end
 
                     openClosePair = openClosePair.replace("  ", " ") ## extra space gets added, later maybe it's best to change self.ucString function??
                     openClosePair = openClosePair.replace("  ", " ") ## do again to catch double spaces 
                 
                     if len(openClosePair) > 0 : ## pair found 
-                                  
                         spacingString = self.lcString( openClosePair )
                     
                     else:
                         if self.debug == True:
-                            print ('open+close pair not found')
+                            print('open+close pair not found')
                     
                         spacingString = self.lcString( pairstring )
                     
@@ -787,10 +796,10 @@ class MM2SCButton(Subscriber):
                     # spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
                 
                 
-                    if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                        text = self.pairMirrored(self.pair) + spacingString + previousText
-                    else:
-                        text = spacingString + previousText   
+                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
+                    text = self.pairMirrored(self.pair) + spacingString + previousText
+                else:
+                    text = spacingString + previousText   
 
             text = text.lstrip() #remove whitespace  
             self.setSpaceCenter(self.font, text)
@@ -799,7 +808,7 @@ class MM2SCButton(Subscriber):
         else:
             #set space center if words are found
             #not sure why there's always a /slash in from of the first word, added ' '+ to avoid losing the first word
-        
+            # print("here 2")
             text = text.lstrip() #remove whitespace    
 
             # replace normalised search pair with original suffixed pair
@@ -813,22 +822,6 @@ class MM2SCButton(Subscriber):
 
 class MM2SpaceCenterPopover(ezui.WindowController):
     
-    '''
-    MM2SpaceCenter by CJ Dunn
-    2019
-
-    Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
-    Nina Stössinger for help and inspiration with this script
-
-
-    Ryan Bugden edit
-    2023.03.24
-    
-    To do:       
-    - Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
-    - Add ability to change word length
-    - Handle multiple SCs at once. Need subscriber?
-    '''
 
     
     def build(self, parent, space_center):
@@ -862,7 +855,6 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         
         initialWordCount = 30
         contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
-        self.context = 'Auto'
         languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
 
         descriptionData = dict(
@@ -870,6 +862,9 @@ class MM2SpaceCenterPopover(ezui.WindowController):
                 titleColumnWidth=104,
                 itemColumnWidth=78
             ),
+            # wordCount=dict(
+            #         continuous=False,
+            # ),
             language=dict(
                     items=languageNames
             ),
@@ -930,6 +925,8 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
         
     def activateToggleCallback(self, sender):
+        self.flush_and_register_defaults()
+
         activation = sender.get()
         print(activation)
         
@@ -939,25 +936,22 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         else:
             print(f'MM2SpaceCenter is now deactivated.')
 
-        self.flush_and_register_defaults()
+        self.wordsForMMPair()
         
         
     def sortedCallback(self, sender):
-
+        self.flush_and_register_defaults()
         self.sorted = get_setting_from_defaults('listOutput')
         self.wordsForMMPair()  
         
         
-
     def wordCountCallback(self,sender):
-
-        #print ('old', self.wordCount)
+        self.flush_and_register_defaults()
+        #print('old', self.wordCount)
         self.wordCount = get_setting_from_defaults('wordCount')
+        self.wordsForMMPair()        
 
-        self.flush_and_register_defaults()      
 
-
-    
     def languageCallback(self,sender):
         self.flush_and_register_defaults()  
         """On changing source/wordlist, check if a custom word list should be loaded."""
@@ -982,17 +976,12 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         self.wordsForMMPair()
 
 
-
     def contextCallback(self,sender):
         # print("3", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
         self.flush_and_register_defaults()  
         """On changing source/wordlist, check if a custom word list should be loaded."""
         
-        self.context = self.contextOptions[get_setting_from_defaults('context')]
-        
         self.wordsForMMPair()
-        if self.debug == True:
-            print('Context =', self.context)
 
 
     def listOutputCallback(self,sender):
