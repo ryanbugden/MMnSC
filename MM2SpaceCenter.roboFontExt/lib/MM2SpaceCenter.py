@@ -32,6 +32,8 @@ To do:
 - Handle multiple SCs at once. Need subscriber?
 - If no words, look for next member of the kern group. (Some way of showing/saying this has been done, though?)
 - Underline the pair in Space Center. Add pref
+- Handle suffixes, for open/close for instance (.cap, etc.)
+- Make spacing string such that you can compare open/close around a control glyph, next to current pair
 '''
 
 
