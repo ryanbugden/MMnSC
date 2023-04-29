@@ -13,6 +13,7 @@ are met:
    derived from this software without specific prior written permission.
 
 THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS'' AND ANY EXPRESS OR
+THIS SOFTWARE IS PROVIDED BY THE AUTHOR ``AS IS’' AND ANY EXPRESS OR
 IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES
 OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.
 IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT,
@@ -1083,6 +1084,7 @@ accorders
 according
 accordingly
 according to one's lights
+according to one’s lights
 accordion
 accordionist
 accordionists
@@ -1321,11 +1323,13 @@ achieves
 achieving
 A Child of Our Time
 A Child's Garden of Verses
+A Child’s Garden of Verses
 achillea
 Achillean
 achilleas
 Achilles
 Achilles' heel
+Achilles’ heel
 Achilles' tendon
 achimenes
 aching
@@ -1800,8 +1804,10 @@ Adamitical
 Adamitism
 Adams
 Adam's ale
+Adam’s ale
 Adam's apple
 Adam's needle
+Adam’s needle
 Adam's wine
 Adana
 A Dance to the Music of Time
@@ -1848,6 +1854,7 @@ adders
 adderstone
 adderstones
 adder's-tongue
+adder’s-tongue
 adderwort
 adderworts
 add fuel to the fire
@@ -2153,6 +2160,7 @@ admiral
 admiral of the fleet
 admirals
 Admiral's Cup
+Admiral’s Cup
 admiralship
 admiralships
 admirals of the fleet
@@ -2217,6 +2225,7 @@ adolescent
 adolescents
 Adolf
 A Doll's House
+A Doll’s House
 Adonai
 Adonais
 Adonia
@@ -2270,6 +2279,7 @@ adornments
 adorns
 ados
 a dose of one's own medicine
+a dose of one’s own medicine
 adown
 adpress
 adpressed
@@ -2716,6 +2726,7 @@ Aesculus
 aesir
 Aesop
 Aesop's Fables
+Aesop’s Fables
 aesthesia
 aesthesiogen
 aesthesiogenic
@@ -2767,6 +2778,7 @@ afeared
 afearing
 afears
 a feather in one's cap
+a feather in one’s cap
 affability
 affable
 affabler
@@ -2775,8 +2787,10 @@ affably
 affair
 affaire
 affaire d'amour
+affaire d’amour
 affaire de coeur
 affaire d'honneur
+affaire d’honneur
 affairs
 affear
 affeard
@@ -2964,12 +2978,14 @@ aflaj
 aflame
 aflatoxin
 a flea in one's ear
+a flea in one’s ear
 afloat
 aflutter
 a fly in the ointment
 a fly on the wall
 a fool and his money are soon parted
 a fool's errand
+a fool’s errand
 afoot
 a foot in the door
 afore
@@ -3020,6 +3036,7 @@ Afro-Asian
 Afro-Caribbean
 Afro-centric
 a frog in one's throat
+a frog in one’s throat
 afront
 afrormosia
 afrormosias
@@ -3065,6 +3082,7 @@ aftermost
 afternoon
 afternoons
 after one's own heart
+after one’s own heart
 afterpains
 afterpiece
 afterpieces
@@ -3514,11 +3532,13 @@ aha
 Ahab
 a hair of the dog that bit him
 A Hard Day's Night
+A Hard Day’s Night
 a hard nut to crack
 A harmless necessary cat
 ahas
 ahead
 ahead of one's time
+ahead of one’s time
 ahead of time
 aheap
 aheight
@@ -3574,6 +3594,7 @@ aides
 aides-de-camp
 aides-mémoire
 Aide-toi, le ciel t'aidera
+Aide-toi, le ciel t’aidera
 aidful
 aiding
 aidless
@@ -3905,6 +3926,7 @@ akinesis
 aking
 A king of shreds and patches
 a king's ransom
+a king’s ransom
 Akkadian
 akkas
 akolouthos
@@ -3924,6 +3946,7 @@ alabamine
 alabandine
 alabandite
 à l'abandon
+à l’abandon
 alabaster
 alabasters
 alabastrine
@@ -3937,6 +3960,7 @@ alacks
 alacrity
 Aladdin
 Aladdin's cave
+Aladdin’s cave
 Aladdin's lamp
 a lady of a certain age
 alae
@@ -3946,6 +3970,7 @@ alalagmoi
 alalagmos
 alalia
 à la maître d'hôtel
+à la maître d’hôtel
 alameda
 alamedas
 Alamein
@@ -4281,6 +4306,7 @@ Alex
 Alexander
 alexanders
 Alexander's Ragtime Band
+Alexander’s Ragtime Band
 Alexandra
 Alexandra Rose Day
 Alexandria
@@ -4395,6 +4421,7 @@ alicants
 Alice
 Alice-in-Wonderland
 Alice's Adventures in Wonderland
+Alice’s Adventures in Wonderland
 Alicia
 alicyclic
 alidad
@@ -4447,6 +4474,7 @@ aliments
 alimonies
 alimony
 à l'improviste
+à l’improviste
 aline
 alineation
 alineations
@@ -4666,6 +4694,7 @@ all-fired
 all-firedly
 all-fives
 All Fools' Day
+All Fools’ Day
 All for one, one for all
 all-fours
 All Gas and Gaiters
@@ -4674,6 +4703,7 @@ all-good
 all good things must come to an end
 All-hallows
 All Hallows' Day
+All Hallows’ Day
 All-hallowtide
 all hands on deck
 allheal
@@ -4700,6 +4730,7 @@ alligators
 all-important
 all-in
 all in a day's work
+all in a day’s work
 all in all
 all-inclusive
 allineation
@@ -4840,19 +4871,23 @@ all-rounder
 all-rounders
 all-ruling
 All Saints' Day
+All Saints’ Day
 all-seater
 allseed
 allseeds
 all-seeing
 all-seer
 all's fair in love and war
+all’s fair in love and war
 all's for the best in the best of all possible worlds
 all-singing-all-dancing
 all-sorts
 All Souls' Day
+All Souls’ Day
 allspice
 all-star
 All's Well that Ends Well
+All’s Well that Ends Well
 all systems go
 all-telling
 all that glitters is not gold
@@ -4861,12 +4896,14 @@ all the best
 all the fun of the fair
 all the go
 All the President's Men
+All the President’s Men
 all the rage
 all the same
 all the time
 all the way
 all the world and his wife
 all the world's a stage
+all the world’s a stage
 all the world's a stage, and all the men and women merely players
 all-thing
 All Things Bright and Beautiful
@@ -4972,6 +5009,7 @@ alnagers
 alnages
 Alnus
 a load off one's mind
+a load off one’s mind
 alod
 alodial
 alodium
@@ -4993,6 +5031,7 @@ alone
 aloneness
 along
 A Long Day's Journey Into Night
+A Long Day’s Journey Into Night
 a long figure
 alongshore
 alongshoreman
@@ -5008,6 +5047,7 @@ alopecoid
 A Lost Chord
 aloud
 à l'outrance
+à l’outrance
 alow
 alowe
 Aloysius
@@ -5246,6 +5286,7 @@ alycompaines
 alyssum
 alyssums
 Alzheimer's disease
+Alzheimer’s disease
 am
 Amabel
 amabile
@@ -5276,6 +5317,7 @@ A Man for All Seasons
 amanita
 amanitas
 A man's a man for a' that
+A man’s a man for a’ that
 amanuenses
 amanuensis
 amaracus
@@ -5580,6 +5622,7 @@ American Sign Language
 American Standard Code for Information Interchange
 Americas
 America's Cup
+America’s Cup
 America the Beautiful
 americium
 Amerind
@@ -5624,6 +5667,7 @@ Amidol
 amidships
 amidst
 A Midsummer Night's Dream
+A Midsummer Night’s Dream
 ami du peuple
 amie
 Amiens
@@ -5633,6 +5677,7 @@ amildar
 amildars
 a mile a minute
 Am I my brother's keeper?
+Am I my brother’s keeper?
 Amin
 Amina
 amine
@@ -5910,6 +5955,7 @@ amtracks
 Amtrak
 amuck
 a mug's game
+a mug’s game
 amulet
 amuletic
 amulets
@@ -5997,6 +6043,7 @@ anacathartic
 anacathartics
 an ace in the hole
 an ace up one's sleeve
+an ace up one’s sleeve
 anacharis
 anacharises
 anachronic
@@ -6483,6 +6530,7 @@ anencephalic
 anencephaly
 an-end
 an Englishman's home is his castle
+an Englishman’s home is his castle
 An English unofficial rose
 anent
 anerly
@@ -6555,6 +6603,7 @@ angels
 Angels and ministers of grace defend us!
 angels-on-horseback
 angels' share
+angels’ share
 angelus
 angeluses
 angel-water
@@ -6904,6 +6953,7 @@ anneals
 annectent
 Annecy
 Anne Hathaway's Cottage
+Anne Hathaway’s Cottage
 Anneka
 annelid
 Annelida
@@ -7110,6 +7160,7 @@ another
 anotherguess
 Another lean unwashed artificer
 Another nice mess you've gotten me into
+Another nice mess you’ve gotten me into
 Anouilh
 Anoura
 anourous
@@ -7830,6 +7881,7 @@ antrum
 antrums
 ants
 ants'-eggs
+ants’-eggs
 antsy
 ant-thrush
 Antwerp
@@ -7854,6 +7906,7 @@ anxiousness
 any
 anybody
 anybody's guess
+anybody’s guess
 anyhow
 any old how
 Any Old Iron
@@ -8058,6 +8111,7 @@ apiculturists
 apiece
 a piece of cake
 a piece of one's mind
+a piece of one’s mind
 a piece of the action
 a pig in a poke
 aping
@@ -8072,6 +8126,7 @@ A place for everything and everything in its place
 a place in the sun
 aplacental
 A plague o' both your houses!
+A plague o’ both your houses!
 aplanat
 aplanatic
 aplanatism
@@ -8150,6 +8205,7 @@ apographs
 à point
 apolaustic
 A policeman's lot is not a happy one
+A policeman’s lot is not a happy one
 apolitical
 apoliticality
 apolitically
@@ -8258,6 +8314,7 @@ apostils
 apostle
 apostles
 Apostles' Creed
+Apostles’ Creed
 apostleship
 apostolate
 apostolates
@@ -8288,6 +8345,7 @@ apostrophizing
 apostrophus
 apothecaries
 apothecaries' measure
+apothecaries’ measure
 apothecaries' weight
 apothecary
 apothecia
@@ -8406,6 +8464,7 @@ appellation
 appellational
 appellation contrôlée
 appellation d'origine contrôlée
+appellation d’origine contrôlée
 appellations
 appellative
 appellatively
@@ -8724,6 +8783,7 @@ apricots
 April
 April-fish
 April Fools' Day
+April Fools’ Day
 Aprilian
 Aprilish
 April is the cruellest month
@@ -9186,6 +9246,7 @@ archimandrites
 Archimedean
 Archimedes
 Archimedes' principle
+Archimedes’ principle
 Archimedes' screw
 arching
 archipelagic
@@ -9375,6 +9436,7 @@ Are You Being Served?
 are You decent?
 Are you good men and true?
 Are you sitting comfortably? Then I'll begin
+Are you sitting comfortably? Then I’ll begin
 Arezzo
 arfvedsonite
 argal
@@ -9562,6 +9624,7 @@ Aristotelianism
 Aristotelism
 Aristotle
 Aristotle's lantern
+Aristotle’s lantern
 Arita
 arithmetic
 arithmetical
@@ -9693,6 +9756,7 @@ armrests
 arms
 Arms and the Man
 arm's-length
+arm’s-length
 arms-runner
 arms-runners
 Armstrong
@@ -9743,6 +9807,7 @@ aromatized
 aromatizes
 aromatizing
 A Room of One's Own
+A Room of One’s Own
 A Room with a View
 arose
 A rose-red city, half as old as Time!
@@ -9980,6 +10045,7 @@ artery
 Artesian
 Artex
 art for art's sake
+art for art’s sake
 artful
 artfully
 artfulness
@@ -10004,6 +10070,7 @@ Arthur
 Arthurian
 Arthuriana
 Arthur's Seat
+Arthur’s Seat
 artic
 artichoke
 artichokes
@@ -10272,6 +10339,7 @@ Ashcroft
 Ashdown
 Ashe
 A sheep in sheep's clothing
+A sheep in sheep’s clothing
 ashen
 Asher
 asheries
@@ -10355,6 +10423,7 @@ askant
 askari
 askaris
 ask a silly question and you'll get a silly answer
+ask a silly question and you’ll get a silly answer
 asked
 asker
 askers
@@ -10616,6 +10685,7 @@ assertory
 asserts
 asses
 asses' bridge
+asses’ bridge
 assess
 assessable
 assessed
@@ -11056,6 +11126,7 @@ ataraxia
 ataraxic
 ataraxy
 at arm's length
+at arm’s length
 at a stretch
 à tâtons
 Atatürk
@@ -11067,8 +11138,10 @@ ataxy
 at close quarters
 at daggers drawn
 at death's door
+at death’s door
 ate
 at each other's throats
+at each other’s throats
 atebrin
 atelectasis
 atelectatic
@@ -11150,6 +11223,7 @@ athirst
 athlete
 athletes
 athlete's foot
+athlete’s foot
 athletic
 athletically
 athleticism
@@ -11265,11 +11339,15 @@ atoner
 atoners
 atones
 at one's command
+at one’s command
 at one's disposal
 at one's earliest convenience
+at one’s earliest convenience
 at one's elbow
 at one's leisure
+at one’s leisure
 at one's wit's end
+at one’s wit’s end
 at one time
 atonic
 atonicity
@@ -11430,6 +11508,7 @@ at the double
 at the drop of a hat
 at the eleventh hour
 at the end of one's tether
+at the end of one’s tether
 at the end of the day
 at the first blush
 at the ready
@@ -11437,6 +11516,7 @@ at the same time
 at the sharp end
 at the time
 at the top of one's voice
+at the top of one’s voice
 at the top of the tree
 at the wheel
 attic
@@ -11760,6 +11840,7 @@ aunts
 aunty
 au pied de la lettre
 au poids de l'or
+au poids de l’or
 aura
 aurae
 aural
@@ -12406,8 +12487,10 @@ avocet
 avocets
 Avogadro
 Avogadro's constant
+Avogadro’s constant
 Avogadro's hypothesis
 Avogadro's law
+Avogadro’s law
 Avogadro's number
 avoid
 avoidable
@@ -12538,6 +12621,7 @@ A whiff of grapeshot
 awhile
 A Whiter Shade of Pale
 a will of one's own
+a will of one’s own
 awing
 awkward
 awkwarder
@@ -12740,6 +12824,7 @@ azymous
 azyms
 b
 ba'
+ba’
 baa
 baaed
 baaing
@@ -12928,9 +13013,11 @@ Bachelor of Arts
 Bachelor of Science
 bachelors
 bachelor's-buttons
+bachelor’s-buttons
 bachelorship
 bachelorships
 bachelor's wife
+bachelor’s wife
 Bach flower healing
 baching
 bachs
@@ -13446,6 +13533,7 @@ bails
 bailsman
 bailsmen
 Baily's beads
+Baily’s beads
 bainin
 bainite
 bain-marie
@@ -13503,6 +13591,7 @@ bakeries
 Bakerloo
 bakers
 baker's dozen
+baker’s dozen
 Baker Street Irregulars
 bakery
 bakes
@@ -13528,6 +13617,7 @@ Balaam
 Balaamite
 Balaamitical
 Balaam's Ass
+Balaam’s Ass
 Balaclava
 Balaclavas
 baladin
@@ -13745,9 +13835,11 @@ ballocksing
 ball of fire
 ballon
 ballon d'essai
+ballon d’essai
 ballonet
 ballonets
 ballons d'essai
+ballons d’essai
 balloon
 balloon-back
 ballooned
@@ -14049,6 +14141,7 @@ bangle
 bangled
 bangles
 bang one's head against a brick wall
+bang one’s head against a brick wall
 Bangor
 bangs
 bangsring
@@ -14098,10 +14191,13 @@ bankerly
 banker-mark
 bankers
 banker's card
+banker’s card
 banker's cards
 banker's draft
+banker’s draft
 banker's drafts
 banker's order
+banker’s order
 banket
 Bankhead
 bank-high
@@ -14294,8 +14390,10 @@ barberry
 barbers
 barber-shop
 barber's itch
+barber’s itch
 barber's pole
 barber's rash
+barber’s rash
 barber-surgeon
 barber-surgeons
 barbes
@@ -14468,7 +14566,8 @@ barkier
 barkiest
 barking
 Barkis
-Barkis is willin'
+Barkis is willin
+Barkis is willin’
 barkless
 barks
 bark up the wrong tree
@@ -14517,6 +14616,7 @@ barnacles
 Barnard
 Barnardo
 Barnard's star
+Barnard’s star
 barnbrack
 barnbracks
 barndoor
@@ -14728,6 +14828,7 @@ barters
 Barthes
 Bartholdi
 Bartholin's glands
+Bartholin’s glands
 Bartholomew
 Bartholomew-tide
 Bartimaeus
@@ -15145,6 +15246,7 @@ battering
 batters
 Battersea
 Battersea Dogs' Home
+Battersea Dogs’ Home
 battery
 battier
 battiest
@@ -15443,14 +15545,17 @@ béarnaises
 béarnaise sauce
 bears
 bear's-breech
+bear’s-breech
 bear's-ear
 bear's-foot
+bear’s-foot
 bearskin
 bearskins
 bearward
 bearwards
 bear with me
 be as good as one's word
+be as good as one’s word
 beast
 beasthood
 beasthoods
@@ -15499,6 +15604,7 @@ beatnik
 beatniks
 Beaton
 beat one's breast
+beat one’s breast
 Beatrice
 Beatrix
 beats
@@ -15602,8 +15708,10 @@ became
 bécasse
 bécasses
 be caught with one's pants down
+be caught with one’s pants down
 because
 Because it's there
+Because it’s there
 beccaccia
 beccafico
 beccaficos
@@ -15619,6 +15727,7 @@ becharming
 becharms
 bêche-de-mer
 Becher's Brook
+Becher’s Brook
 bêches-de-mer
 Bechstein
 Bechuana
@@ -15865,6 +15974,7 @@ bee-bread
 beech
 Beecham
 Beecham's pills
+Beecham’s pills
 beech-drops
 beechen
 Beecher
@@ -15948,6 +16058,7 @@ beer-up
 beery
 bees
 bee's knees
+bee’s knees
 beestings
 bee-stung
 beeswax
@@ -16011,6 +16122,7 @@ before
 beforehand
 before-mentioned
 before one's time
+before one’s time
 before the fact
 before the mast
 beforetime
@@ -16060,8 +16172,10 @@ beggarmen
 beggar-my-neighbour
 beggars
 beggars can't be choosers
+beggars can’t be choosers
 beggar's-lice
 Beggar's Opera
+Beggar’s Opera
 beggar's ticks
 beggarwoman
 beggarwomen
@@ -16228,6 +16342,7 @@ beings
 beinked
 Beirut
 Be it ever so humble, there's no place like home
+Be it ever so humble, there’s no place like home
 bejabers
 bejade
 bejant
@@ -16502,6 +16617,7 @@ bels
 belshazzar
 belshazzars
 Belshazzar's Feast
+Belshazzar’s Feast
 belt
 belt and braces
 Beltane
@@ -16597,6 +16713,7 @@ bendy
 bene
 beneath
 beneath one's dignity
+beneath one’s dignity
 benedicite
 benedicites
 Benedick
@@ -17265,6 +17382,7 @@ betokening
 betokens
 béton
 bet one's bottom dollar on
+bet one’s bottom dollar on
 betonies
 bétons
 betony
@@ -17394,6 +17512,7 @@ bewhiskered
 bewhore
 Bewick
 Bewick's swan
+Bewick’s swan
 Bewick's swans
 bewig
 bewigged
@@ -17424,6 +17543,7 @@ beyond
 beyond a shadow of doubt
 Beyond Good and Evil
 beyond one's ken
+beyond one’s ken
 Beyond Our Ken
 Beyond the Fringe
 beyond the pale
@@ -17738,6 +17858,7 @@ biggin
 bigging
 biggins
 big girl's blouse
+big girl’s blouse
 big girl's blouses
 biggish
 Biggles
@@ -18290,14 +18411,18 @@ bird-scarers
 birdseed
 birdseeds
 bird's-eye
+bird’s-eye
 bird's-eye view
 bird's-foot
+bird’s-foot
 bird's-foot trefoil
 birdshot
 birdshots
 bird's-nest
+bird’s-nest
 bird's-nesting
 bird's-nests
+bird’s-nests
 bird's-nest soup
 birds of a feather
 birds of a feather flock together
@@ -18420,8 +18545,10 @@ bishopric
 bishoprics
 bishops
 bishop's-cap
+bishop’s-cap
 Bishop's Stortford
 bishop's weed
+bishop’s weed
 bishopweed
 bisk
 bisks
@@ -19125,6 +19252,7 @@ blindings
 blindless
 blindly
 blindman's-buff
+blindman’s-buff
 blindness
 blindnesses
 blinds
@@ -19409,6 +19537,7 @@ blotching
 blotchings
 blotchy
 blot one's copybook
+blot one’s copybook
 blot on the landscape
 blots
 blotted
@@ -19466,14 +19595,17 @@ blowing
 blowing-up
 blowing-ups
 Blowin' in the Wind
+Blowin’ in the Wind
 blowlamp
 blowlamps
 blown
 blowoff
 blowoffs
 blow one's brains out
+blow one’s brains out
 blow one's mind
 blow one's own trumpet
+blow one’s own trumpet
 blow-out
 blow-outs
 blowpipe
@@ -19485,6 +19617,7 @@ blowses
 blowsier
 blowsiest
 blow someone's cover
+blow someone’s cover
 blow someone's mind
 blowsy
 blow the lid off
@@ -19789,6 +19922,7 @@ boats
 boatswain
 boatswains
 boatswain's chair
+boatswain’s chair
 boattail
 boattails
 boat-train
@@ -19842,6 +19976,7 @@ bobsleighs
 bobstay
 bobstays
 Bob's your uncle
+Bob’s your uncle
 bobtail
 bobtailed
 bobtailing
@@ -19881,6 +20016,7 @@ bodement
 bodements
 bodes
 Bode's law
+Bode’s law
 bodge
 bodged
 bodger
@@ -20752,6 +20888,7 @@ born in the purple
 bornite
 born out of wedlock
 born with a silver spoon in one's mouth
+born with a silver spoon in one’s mouth
 Borodin
 Borodino
 boron
@@ -20816,6 +20953,7 @@ Bosnia-Herzegovina
 Bosnian
 Bosnians
 bos'ns
+bos’ns
 bosom
 bosomed
 bosoming
@@ -21047,6 +21185,7 @@ boulted
 boulter
 boulters
 Boulter's Lock
+Boulter’s Lock
 boulting
 Boulton
 boults
@@ -21337,11 +21476,13 @@ boyishly
 boyishness
 Boyle
 Boyle's law
+Boyle’s law
 boy-meets-girl
 boyo
 boyos
 boys
 Boys' Brigade
+Boys’ Brigade
 boysenberries
 boysenberry
 boys will be boys
@@ -21630,6 +21771,7 @@ brandreth
 brandreths
 brands
 Brand's Hatch
+Brand’s Hatch
 Brandt
 brandy
 brandy-ball
@@ -21910,8 +22052,10 @@ breakneck
 break new ground
 break of day
 break one's duck
+break one’s duck
 break one's heart
 break one's word
+break one’s word
 break-out
 break-outs
 breakpoint
@@ -21978,6 +22122,7 @@ breathalyzing
 breathe
 breathed
 breathe down someone's neck
+breathe down someone’s neck
 breathe one's last
 breather
 breathers
@@ -22073,6 +22218,7 @@ brent
 Brentford
 Brentwood
 br'er
+br’er
 brere
 Brescia
 bressummer
@@ -22119,6 +22265,7 @@ brewer
 breweries
 brewers
 brewer's droop
+brewer’s droop
 brewer's yeast
 brewery
 brew-house
@@ -22330,6 +22477,7 @@ brightnesses
 Brighton
 brights
 Bright's disease
+Bright’s disease
 brightsome
 brightwork
 bright young thing
@@ -22535,6 +22683,7 @@ broadcasted
 broadcaster
 broadcasters
 Broadcasters' Audience Research Board
+Broadcasters’ Audience Research Board
 broadcasting
 broadcastings
 broadcasts
@@ -22769,6 +22918,7 @@ Brookner
 brooks
 Brookside
 Brooks's Club
+Brooks’s Club
 brookweed
 brookweeds
 brool
@@ -22862,6 +23012,7 @@ browns
 Brownshirt
 Brownshirts
 Brown's Hotel
+Brown’s Hotel
 Brownstone
 browny
 brows
@@ -23150,6 +23301,7 @@ bucklers
 buckles
 Buckley's
 Buckley's chance
+Buckley’s chance
 buckling
 bucklings
 buckminsterfullerene
@@ -23166,15 +23318,18 @@ bucks
 buck-saw
 buck-saws
 Buck's fizz
+Buck’s fizz
 buckshee
 buckshish
 buckshishes
 buck's-horn
+buck’s-horn
 buckshot
 buckshots
 buckskin
 buckskins
 buck's parties
+buck’s parties
 buck's party
 buckteeth
 buckthorn
@@ -23296,6 +23451,7 @@ buggies
 bugging
 buggings
 Buggins's turn
+Buggins’s turn
 Buggins' turn
 buggy
 bughouse
@@ -23333,6 +23489,7 @@ builded
 builder
 builders
 builders' merchant
+builders’ merchant
 building
 building-block
 buildings
@@ -23477,6 +23634,7 @@ bull-nosed
 bullock
 bullocks
 bullock's heart
+bullock’s heart
 bullocky
 bull-of-the-bog
 bull-pen
@@ -23489,6 +23647,7 @@ bullroarer
 bullroarers
 bulls
 bull's-eye
+bull’s-eye
 bull's-eyes
 bullswool
 bull-terrier
@@ -23605,6 +23764,7 @@ bumpy
 bums
 bums on seats
 bum's rush
+bum’s rush
 bun
 buna
 Bunbury
@@ -23868,6 +24028,7 @@ burhels
 burial
 burials
 Buridan's ass
+Buridan’s ass
 buried
 buries
 burin
@@ -23884,6 +24045,7 @@ Burke and Hare
 burked
 burkes
 Burke's Landed Gentry
+Burke’s Landed Gentry
 Burke's Peerage
 burking
 burks
@@ -23947,8 +24109,10 @@ burnishings
 burnishment
 Burnley
 burn one's boats
+burn one’s boats
 burn one's bridges
 burn one's fingers
+burn one’s fingers
 burnous
 burnouse
 burnouses
@@ -24055,6 +24219,7 @@ burying-ground
 burying-place
 Bury my heart at Wounded Knee
 bury one's head in the sand
+bury one’s head in the sand
 Bury St Edmunds
 bury the hatchet
 bus
@@ -24155,6 +24320,7 @@ busks
 busky
 busman
 busman's holiday
+busman’s holiday
 busmen
 Busoni
 buss
@@ -24208,8 +24374,10 @@ butcherings
 butcherly
 butchers
 butcher's-broom
+butcher’s-broom
 butcher's hook
 butcher's meat
+butcher’s meat
 butchery
 butches
 butching
@@ -24227,6 +24395,7 @@ butlers
 butlership
 butlerships
 butler's pantry
+butler’s pantry
 butlery
 Butlin
 Butlin's
@@ -24364,6 +24533,7 @@ buy-back
 buyer
 buyers
 buyer's market
+buyer’s market
 buy-in
 buying
 buy-ins
@@ -24499,6 +24669,7 @@ by the bye
 by the pricking of my thumbs, something wicked this way comes
 by the same token
 by the skin of one's teeth
+by the skin of one’s teeth
 By the waters of Babylon we sat down and wept
 by the way
 by-thing
@@ -24521,7 +24692,8 @@ Byzantinists
 Byzantium
 byzants
 c
-ca'
+ca
+ca’
 Caaba
 caaing-whale
 caatinga
@@ -24605,6 +24777,7 @@ cable-railway
 cable-railways
 cables
 cable's-length
+cable’s-length
 cablet
 cablets
 cablevision
@@ -24647,6 +24820,7 @@ cab-stands
 cacafuego
 cacafuegos
 ca' canny
+ca’ canny
 cacao
 cacao-beans
 cacaos
@@ -24843,6 +25017,7 @@ caesaropapism
 caesars
 Caesarship
 caesar's wife must be above suspicion
+caesar’s wife must be above suspicion
 caese
 caesious
 caesium
@@ -24926,6 +25101,7 @@ cain
 Cain and Abel
 Caine
 ca'ing-whale
+ca’ing-whale
 Cainite
 Cainozoic
 cains
@@ -25176,6 +25352,7 @@ calf-licks
 calf-love
 calfs
 calf's-foot
+calf’s-foot
 calf's-foot jelly
 calfskin
 calfskins
@@ -25323,6 +25500,7 @@ callowness
 callows
 calls
 call someone's bluff
+call someone’s bluff
 call the shots
 call the tune
 call to account
@@ -25424,6 +25602,7 @@ calvers
 Calvert
 calves
 calves'-foot
+calves’-foot
 calves'-foot jelly
 Calvin
 calving
@@ -25549,6 +25728,7 @@ camelot
 camelry
 camels
 camel's hair
+camel’s hair
 camel's thorn
 Camembert
 Camemberts
@@ -26137,6 +26317,7 @@ cantatrice
 cantatrices
 cant-board
 Can't Buy Me Love
+Can’t Buy Me Love
 cantdog
 cantdogs
 canted
@@ -26552,6 +26733,7 @@ capsulizing
 captain
 captaincies
 Captain Corelli's Mandolin
+Captain Corelli’s Mandolin
 captaincy
 captained
 captain-general
@@ -26560,12 +26742,15 @@ captain of industry
 captainry
 captains
 captain's biscuit
+captain’s biscuit
 captain's biscuits
 captain's chair
+captain’s chair
 captainship
 captainships
 captains of industry
 captain's table
+captain’s table
 captan
 caption
 captioned
@@ -27382,6 +27567,7 @@ carrying-on
 carryings-on
 carry-on
 carry one's bat
+carry one’s bat
 carry-ons
 carry-out
 carrytale
@@ -27713,6 +27899,7 @@ cassingle
 cassingles
 Cassini
 Cassini's Division
+Cassini’s Division
 cassino
 cassinos
 Cassio
@@ -27780,6 +27967,7 @@ castings
 casting-vote
 casting-weight
 cast in one's lot with
+cast in one’s lot with
 cast-iron
 castle
 Castlebar
@@ -27797,6 +27985,7 @@ castocks
 cast-off
 cast-offs
 cast one's mind back
+cast one’s mind back
 castor
 Castor and Pollux
 castoreum
@@ -28034,6 +28223,7 @@ catchment-basin
 catchment-basins
 catchments
 catch one's breath
+catch one’s breath
 catch one's death of cold
 catchpennies
 catchpenny
@@ -28190,6 +28380,7 @@ cathedratic
 Catherina
 Catherine
 Catherine de' Medici
+Catherine de’ Medici
 Catherine of Aragon
 catheter
 catheterisation
@@ -28270,9 +28461,11 @@ catnip
 catnips
 Cato
 cat-o'-mountain
+cat-o’-mountain
 Cat on a Hot Tin Roof
 Catonian
 cat-o'-nine-tails
+cat-o’-nine-tails
 catoptric
 catoptrics
 cat-rigged
@@ -28280,25 +28473,32 @@ Catriona
 cats
 cats and dogs
 cat's-cradle
+cat’s-cradle
 cat's-ear
 cat's-eye
+cat’s-eye
 cat's-eyes
 cat's-feet
+cat’s-feet
 cat's-foot
 cat-silver
 catskin
 catskins
 cat's-meat
+cat’s-meat
 cat's-paw
 cat's-paws
+cat’s-paws
 cat's pyjamas
 cat's-tail
+cat’s-tail
 cat-stick
 catsuit
 catsuits
 catsup
 catsups
 cat's-whisker
+cat’s-whisker
 cat's-whiskers
 cattabu
 cattabus
@@ -28370,6 +28570,7 @@ caudles
 caudling
 caught
 caught with one's trousers down
+caught with one’s trousers down
 cauk
 caul
 cauld
@@ -29686,6 +29887,7 @@ chancels
 chance-medley
 chance of a lifetime
 chance one's arm
+chance one’s arm
 chancer
 chanceries
 chancers
@@ -29716,6 +29918,7 @@ chandlering
 chandlerly
 chandlers
 Chandler's wobble
+Chandler’s wobble
 chandlery
 Chandra
 Chandragupta
@@ -29740,6 +29943,7 @@ change of heart
 change of life
 change of venue
 change one's mind
+change one’s mind
 change one's tune
 change-over
 change-overs
@@ -29996,6 +30200,7 @@ charge-coupled device
 charge-coupled devices
 charged
 chargé-d'affaires
+chargé-d’affaires
 chargeful
 charge-hand
 charge-house
@@ -30006,6 +30211,7 @@ charger
 chargers
 charges
 chargés-d'affaires
+chargés-d’affaires
 charge-sheet
 charge-sheets
 charging
@@ -30064,14 +30270,17 @@ Charlemagne
 Charlene
 Charles
 Charles's law
+Charles’s law
 Charles's Wain
 Charleston
 Charley
 Charley-pitcher
 Charley's Aunt
+Charley’s Aunt
 Charlie
 Charlie and the Chocolate Factory
 Charlie he's my darling
+Charlie he’s my darling
 charlock
 charlocks
 charlotte
@@ -30504,8 +30713,10 @@ cheewinks
 chef
 chef de cuisine
 chef-d'oeuvre
+chef-d’oeuvre
 chefs
 chefs-d'oeuvre
+chefs-d’oeuvre
 cheilitis
 cheirognomy
 cheirography
@@ -30748,6 +30959,7 @@ cheval-glass
 cheval-glasses
 chevalier
 chevalier d'industrie
+chevalier d’industrie
 chevaliers
 chevaux-de-frise
 chevelure
@@ -30986,6 +31198,7 @@ childcrowing
 childe
 childed
 Childe Harold's Pilgrimage
+Childe Harold’s Pilgrimage
 Childermas
 Childe Roland to the Dark Tower Came
 Childers
@@ -31005,8 +31218,10 @@ childness
 child-proof
 children
 Children's Crusade
+Children’s Crusade
 children should be seen and not heard
 Children's Panel
+Children’s Panel
 child's-play
 Child Support Agency
 child-wife
@@ -31201,6 +31416,7 @@ chip of the old block
 chipolata
 chipolatas
 chip on one's shoulder
+chip on one’s shoulder
 chipped
 Chippendale
 Chippendales
@@ -31927,6 +32143,7 @@ christophanies
 christophany
 Christopher
 Christ's Hospital
+Christ’s Hospital
 Christ's-thorn
 Christy
 chroma
@@ -32111,6 +32328,7 @@ chuck-wagon
 chuckwalla
 chuckwallas
 chuck-will's-widow
+chuck-will’s-widow
 chuck-will's-widows
 chuddah
 chuddahs
@@ -32875,8 +33093,10 @@ citizenries
 citizenry
 citizens
 citizen's arrest
+citizen’s arrest
 Citizens' Band
 Citizens' Band radio
+Citizens’ Band radio
 citizenship
 citizenships
 Citlaltépetl
@@ -33450,6 +33670,7 @@ cleanskins
 clean-timbered
 clean-up
 clean up one's act
+clean up one’s act
 clean-ups
 clear
 clearage
@@ -33475,6 +33696,7 @@ clearly
 clearness
 clear-obscure
 clear one's throat
+clear one’s throat
 clears
 clear-sighted
 clear-sightedness
@@ -33551,6 +33773,7 @@ clenching
 Cleo
 Cleopatra
 Cleopatra's Needle
+Cleopatra’s Needle
 clepe
 clepes
 cleping
@@ -33810,6 +34033,7 @@ clipping
 clippings
 clips
 clip someone's wings
+clip someone’s wings
 clipt
 clique
 cliques
@@ -34001,6 +34225,7 @@ closely
 close-mouthed
 closeness
 close one's eyes
+close one’s eyes
 closer
 close-range
 close-reefed
@@ -34312,7 +34537,8 @@ cnidarian
 cnidoblast
 cnidoblasts
 Cnut
-co'
+co
+co’
 coacervate
 coacervated
 coacervates
@@ -34588,6 +34814,7 @@ cobbler
 cobbleries
 cobblers
 cobbler's pegs
+cobbler’s pegs
 cobbler's punch
 cobblery
 cobbles
@@ -34824,6 +35051,7 @@ cocky
 cockyleekies
 cockyleeky
 cocky's joy
+cocky’s joy
 coco
 cocoa
 cocoa-beans
@@ -35508,8 +35736,10 @@ collectors
 collectorship
 collectorships
 collector's item
+collector’s item
 collector's items
 collector's piece
+collector’s piece
 collector's pieces
 collects
 colleen
@@ -35539,6 +35769,7 @@ collembolans
 collenchyma
 collenchymatous
 Colles' fracture
+Colles’ fracture
 collet
 collets
 colliculi
@@ -35988,6 +36219,7 @@ come home to roost
 come in from the cold
 come into effect
 come into one's own
+come into one’s own
 come into play
 Come into the garden, Maud
 come into the world
@@ -36006,6 +36238,7 @@ come on stream
 come on strong
 come out in the wash
 come out of one's shell
+come out of one’s shell
 come out of the closet
 come out smelling of roses
 come out with
@@ -36035,6 +36268,7 @@ cometology
 come to naught
 come to nothing
 come to one's senses
+come to one’s senses
 come to pass
 come to terms
 come to the boil
@@ -36127,6 +36361,7 @@ commeasures
 commeasuring
 comme ci, comme ça
 commedia dell'arte
+commedia dell’arte
 comme il faut
 Commelina
 Commelinaceae
@@ -37274,6 +37509,7 @@ concording
 concords
 concours
 concours d'élégance
+concours d’élégance
 concourse
 concourses
 concremation
@@ -37744,6 +37980,7 @@ congealments
 congeals
 congéd
 congé d'élire
+congé d’élire
 congee
 congeed
 congeeing
@@ -39336,8 +39573,10 @@ cooks
 cookshop
 cookshops
 cook someone's goose
+cook someone’s goose
 Cookson
 Cook's tour
+Cook’s tour
 Cook's tours
 cook the books
 cookware
@@ -39355,6 +39594,7 @@ cooler
 coolers
 coolest
 Cooley's anaemia
+Cooley’s anaemia
 cool-headed
 cool-house
 coolhunter
@@ -39377,6 +39617,7 @@ coolish
 coolly
 coolness
 cool one's heels
+cool one’s heels
 cools
 cool-tankard
 coolth
@@ -39426,6 +39667,7 @@ coopering
 cooperings
 coopers
 Cooper's hawk
+Cooper’s hawk
 coopery
 cooping
 coops
@@ -40175,6 +40417,7 @@ corposants
 corps
 corps de ballet
 corps d'élite
+corps d’élite
 corpse
 corpse-candle
 corpse-gate
@@ -40658,8 +40901,10 @@ cote
 coteau
 coteaux
 Côte d'Azur
+Côte d’Azur
 Côte d'Ivoire
 Côte-d'Or
+Côte-d’Or
 cote-hardie
 côtelette
 côtelette de filet
@@ -40828,6 +41073,7 @@ coulombmeter
 coulombmeters
 coulombs
 Coulomb's Law
+Coulomb’s Law
 coulometer
 coulometers
 coulometric
@@ -41111,6 +41357,7 @@ counting-room
 countless
 countline
 count one's chickens before they are hatched
+count one’s chickens before they are hatched
 countries
 countrified
 country
@@ -41140,9 +41387,11 @@ coup de main
 coup de maître
 coup de poing
 coup d'essai
+coup d’essai
 coup d'état
 coup de théâtre
 coup d'oeil
+coup d’oeil
 coupe
 couped
 coupee
@@ -41172,8 +41421,10 @@ coups de foudre
 coups de grâce
 coups de main
 coups d'état
+coups d’état
 coups de théâtre
 coups d'oeil
+coups d’oeil
 coupure
 coupures
 courage
@@ -41481,6 +41732,7 @@ cowpats
 cow-pea
 Cowper
 Cowper's glands
+Cowper’s glands
 cow-pilot
 cow-plant
 cowpoke
@@ -41499,6 +41751,7 @@ cows
 cowshed
 cowsheds
 cow's lick
+cow’s lick
 cowslip
 cowslip'd
 cowslips
@@ -41524,6 +41777,7 @@ coxes
 coxing
 coxless
 Cox's orange pippin
+Cox’s orange pippin
 Cox's orange pippins
 coxswain
 coxswained
@@ -41723,6 +41977,7 @@ crampons
 cramp-ring
 cramps
 cramp someone's style
+cramp someone’s style
 crampy
 crams
 cran
@@ -42633,6 +42888,7 @@ crockets
 Crockett
 Crockford
 Crockford's Clerical Directory
+Crockford’s Clerical Directory
 crocking
 crocks
 crocodile
@@ -42657,6 +42913,7 @@ crofting
 croftings
 crofts
 Crohn's disease
+Crohn’s disease
 croissant
 croissants
 Croix de Guerre
@@ -42885,8 +43142,10 @@ crossmatching
 crossness
 cross of Lorraine
 cross one's fingers
+cross one’s fingers
 cross one's heart
 cross one's heart and hope to die
+cross one’s heart and hope to die
 crossopterygian
 Crossopterygii
 crossover
@@ -43060,9 +43319,11 @@ crownworks
 crow-quill
 crows
 crow's-feet
+crow’s-feet
 crow's-foot
 crow-shrike
 crow's-nest
+crow’s-nest
 crow-steps
 crow-toe
 Croydon
@@ -43279,7 +43540,9 @@ cry-babies
 cry-baby
 cry blue murder
 Cry 'God for Harry! England and Saint George!'
+Cry ‘God for Harry! England and Saint George!’
 cry, 'Havoc!' and let slip the dogs of war
+cry, ‘Havoc!’ and let slip the dogs of war
 crying
 cryings
 crymotherapy
@@ -43299,6 +43562,7 @@ cryometer
 cryometers
 cryometric
 cry one's eyes out
+cry one’s eyes out
 cryonic
 cryonics
 cryophilic
@@ -43701,6 +43965,7 @@ culverins
 culver-key
 culvers
 Culver's physic
+Culver’s physic
 Culver's root
 culvert
 culvertage
@@ -43823,6 +44088,7 @@ cupidinous
 cupidity
 cupids
 Cupid's bow
+Cupid’s bow
 cupid's dart
 cup-lichen
 cupman
@@ -43890,6 +44156,7 @@ curat
 curate
 curates
 curate's egg
+curate’s egg
 curateship
 curateships
 curative
@@ -44285,8 +44552,10 @@ cutey
 cuteys
 Cuthbert
 Cuthbert's beads
+Cuthbert’s beads
 Cuthbert's duck
 Cuthbert's ducks
+Cuthbert’s ducks
 cuticle
 cuticles
 cuticular
@@ -44327,10 +44596,13 @@ cutlings
 cut no ice
 cut-off
 cut off one's nose to spite one's face
+cut off one’s nose to spite one’s face
 cut-offs
 cut off with a shilling
 cut one's coat according to one's cloth
+cut one’s coat according to one’s cloth
 cut one's losses
+cut one’s losses
 cut-out
 cut-outs
 cut-over
@@ -44862,6 +45134,7 @@ dadoes
 dados
 dads
 Dad's Army
+Dad’s Army
 dae
 daedal
 Daedalian
@@ -44993,6 +45266,7 @@ dak
 Dakar
 dak-bungalow
 Dakin's solution
+Dakin’s solution
 dakoit
 dakoiti
 dakoits
@@ -45081,11 +45355,13 @@ dambrod
 dambrods
 dame
 dame d'honneur
+dame d’honneur
 Dame Edna Everage
 dames
 dame-school
 dames de la halle
 dame's-violet
+dame’s-violet
 damfool
 Damian
 Damien
@@ -45179,6 +45455,7 @@ dancers
 dances
 Dances with Wolves
 dance to someone's tune
+dance to someone’s tune
 dancette
 dancettee
 dancettes
@@ -45583,6 +45860,7 @@ davits
 Davos
 Davy
 Davy Jones's locker
+Davy Jones’s locker
 Davy-lamp
 daw
 dawdle
@@ -45782,11 +46060,14 @@ deadlocking
 deadlocks
 deadly
 dead man's fingers
+dead man’s fingers
 dead man's handle
 dead-meat
 dead men don't bite
+dead men don’t bite
 dead-men's bells
 dead men's shoes
+dead men’s shoes
 dead men tell no tales
 deadness
 dead-nettle
@@ -45926,6 +46207,7 @@ death-rattle
 death-roll
 deaths
 death's-head
+death’s-head
 death's-head moth
 deathsman
 death-song
@@ -46062,6 +46344,7 @@ debouchures
 Debra
 Debrett
 Debrett's Peerage
+Debrett’s Peerage
 débride
 débrided
 débridement
@@ -46075,6 +46358,7 @@ debris
 debruised
 debs
 debs' delight
+debs’ delight
 debt
 debted
 debtee
@@ -47632,6 +47916,7 @@ déjeuner
 déjeuner à la fourchette
 déjeuners
 Déjeuner sur l'herbe
+Déjeuner sur l’herbe
 dejeunes
 Dekabrist
 dekalogies
@@ -47662,6 +47947,7 @@ delation
 delator
 delators
 de l'audace, encore de l'audace, et toujours de l'audace
+de l’audace, encore de l’audace, et toujours de l’audace
 Delaunay
 delay
 delayed
@@ -50138,21 +50424,29 @@ devilries
 devilry
 devils
 devil's advocate
+devil’s advocate
 devil's bit
 devil's bones
+devil’s bones
 devil's books
 devil's coach-horse
+devil’s coach-horse
 devil's darning needle
 devil's dozen
+devil’s dozen
 devil's dung
 devil's dust
+devil’s dust
 devil's food cake
 devilship
 Devil's Island
+Devil’s Island
 devils-on-horseback
 devil's own
+devil’s own
 devil's snuff-box
 devil's tattoo
+devil’s tattoo
 devil take the hindmost
 deviltry
 devil-worship
@@ -50574,6 +50868,7 @@ diamondiferous
 diamond-powder
 diamonds
 Diamonds are a girl's best friend
+Diamonds are a girl’s best friend
 Diamonds Are Forever
 diamond-wheel
 diamorphine
@@ -51037,6 +51332,7 @@ Dieu
 Dieu défend le droit
 Dieu et mon droit
 Dieu me pardonnera, c'est son métier
+Dieu me pardonnera, c’est son métier
 Dieu vous garde
 Die Walküre
 diffarreation
@@ -51148,6 +51444,7 @@ dighted
 dighting
 dights
 dig in one's heels
+dig in one’s heels
 digit
 digital
 digital audio tape
@@ -51215,6 +51512,7 @@ dignities
 dignity
 digonal
 dig one's heels in
+dig one’s heels in
 digoneutic
 digraph
 digraphs
@@ -51810,6 +52108,7 @@ directories
 Director of Public Prosecutions
 directors
 director's chair
+director’s chair
 directors-general
 directorship
 directorships
@@ -54708,9 +55007,11 @@ Doctorow
 doctors
 doctors and nurses
 Doctors' Commons
+Doctors’ Commons
 doctorship
 doctorships
 doctor's stuff
+doctor’s stuff
 doctress
 doctresses
 doctrinaire
@@ -54959,12 +55260,16 @@ dog-rose
 dogs
 dog-salmon
 dog'sbane
+dog’sbane
 dog's-bodies
 dog's-body
+dog’s-body
 dog's breakfast
 dog's chance
+dog’s chance
 dog's dinner
 dog's disease
+dog’s disease
 dog's-ear
 dogship
 dogshore
@@ -54976,16 +55281,21 @@ dogsled
 dogsleds
 dog-sleep
 dog's life
+dog’s life
 dog's-meat
 dog's-mercury
+dog’s-mercury
 dog's-nose
 dogs of war
 Dogstar
 dog's-tongue
+dog’s-tongue
 dog's-tooth
 dog's-tooth check
+dog’s-tooth check
 dog's-tooth violet
 dog's-tooth violets
+dog’s-tooth violets
 dogteeth
 dog-tick
 dog-tired
@@ -55098,6 +55408,7 @@ dollop
 dollops
 dolls
 doll's-house
+doll’s-house
 dolly
 dollying
 dolly-mop
@@ -55311,6 +55622,7 @@ donkey-man
 donkey-pump
 donkeys
 donkey's years
+donkey’s years
 donkey-work
 Donna
 donnard
@@ -55346,28 +55658,42 @@ donship
 donsie
 don't
 don't ask
+don’t ask
 don't ask me
 don't call us, we'll call you
+don’t call us, we’ll call you
 don't change horses in midstream
+don’t change horses in midstream
 don't count your chickens before they are hatched
 don't cut off your nose to spite your face
+don’t cut off your nose to spite your face
 Don't dilly-dally on the way!
 don't get me wrong
+don’t get me wrong
 don't give up the day job
 don't halloo till you're out of the wood
+don’t halloo till you’re out of the wood
 don't hold your breath
+don’t hold your breath
 don't-know
 don't-knows
+don’t-knows
 Don't let's be beastly to the Germans
+Don’t let’s be beastly to the Germans
 Don't Look Now
+Don’t Look Now
 don't make me laugh
 Don't Panic
+Don’t Panic
 don't put all your eggs in one basket
 Don't put your daughter on the stage, Mrs Worthington
+Don’t put your daughter on the stage, Mrs Worthington
 don't spoil the ship for a ha'p'orth of tar
 don't teach your grandmother to suck eggs
+don’t teach your grandmother to suck eggs
 don't throw the baby out with the bathwater
 don't wash your dirty linen in public
+don’t wash your dirty linen in public
 donut
 donuts
 donzel
@@ -55427,11 +55753,14 @@ doomy
 doona
 doonas
 do one's bit
+do one’s bit
 do one's damnedest
 do oneself justice
 do one's homework
+do one’s homework
 do one's nut
 do one's own thing
+do one’s own thing
 do one's worst
 door
 doorbell
@@ -55521,6 +55850,7 @@ doppings
 Doppler
 dopplerite
 Doppler's principle
+Doppler’s principle
 dops
 dopy
 dor
@@ -55636,6 +55966,7 @@ dos-à-dos
 dosage
 dosages
 do's and don'ts
+do’s and don’ts
 dose
 dosed
 doseh
@@ -55698,6 +56029,7 @@ do the honours
 Do the Right Thing
 do the trick
 Do they know it's Christmas?
+Do they know it’s Christmas?
 dotier
 dotiest
 doting
@@ -55970,6 +56302,7 @@ dovered
 dovering
 dovers
 Dover's powder
+Dover’s powder
 doves
 dovetail
 dovetailed
@@ -55982,6 +56315,7 @@ dowable
 dowager
 dowagers
 dowager's hump
+dowager’s hump
 dowar
 dowars
 dowd
@@ -56085,6 +56419,7 @@ down-lying
 down-market
 downmost
 down on one's luck
+down on one’s luck
 Downpatrick
 downpipe
 downpipes
@@ -56287,6 +56622,7 @@ dragomans
 dragomen
 dragon
 drag one's feet
+drag one’s feet
 dragoness
 dragonesses
 dragonet
@@ -56313,8 +56649,10 @@ dragonné
 dragon-root
 dragons
 dragon's blood
+dragon’s blood
 dragon's-head
 dragon's teeth
+dragon’s teeth
 dragon-tree
 dragoon
 dragoon-bird
@@ -56496,6 +56834,7 @@ drawing-rooms
 drawings
 drawing-table
 draw in one's horns
+draw in one’s horns
 draw it mild
 drawl
 draw-leaf table
@@ -56512,6 +56851,7 @@ draw-net
 drawn-out
 drawn-work
 draw on one's imagination
+draw on one’s imagination
 draw on one's memory
 draw-plate
 draws
@@ -56919,6 +57259,7 @@ drop-kicks
 droplet
 drop-letter
 drop one's aitches
+drop one’s aitches
 drop-out
 drop-outs
 dropped
@@ -57256,6 +57597,7 @@ duck-pond
 ducks
 ducks and drakes
 duck's arse
+duck’s arse
 duck-shot
 duckshove
 duckshoved
@@ -57352,6 +57694,7 @@ duked
 dukedom
 dukedoms
 Duke Humphrey's Library
+Duke Humphrey’s Library
 dukeling
 dukelings
 Duke of Edinburgh
@@ -57513,6 +57856,7 @@ duncedom
 duncery
 dunces
 dunce's cap
+dunce’s cap
 dunce's caps
 dunch
 dunched
@@ -57815,6 +58159,7 @@ Dutch elm disease
 dutches
 Dutchman
 Dutchman's breeches
+Dutchman’s breeches
 Dutchman's pipe
 Dutchmen
 Dutch New Guinea
@@ -57931,8 +58276,10 @@ dyelines
 dyer
 dyers
 dyer's-broom
+dyer’s-broom
 dyer's-greenweed
 dyer's-rocket
+dyer’s-rocket
 dyer's-weed
 dyes
 dyester
@@ -58208,6 +58555,7 @@ earlock
 earlocks
 earls
 Earl's Court
+Earl’s Court
 early
 early closing day
 early day motion
@@ -58388,6 +58736,7 @@ eastward
 eastwardly
 eastwards
 east, west, home's best
+east, west, home’s best
 Eastwood
 easy
 easy-care
@@ -58420,8 +58769,10 @@ eating-houses
 Eating people is wrong!
 eatings
 eat one's hat
+eat one’s hat
 eat one's heart out
 eat one's words
+eat one’s words
 eats
 eat someone out of house and home
 eau
@@ -59570,6 +59921,7 @@ elders
 eldership
 elderships
 elders' hours
+elders’ hours
 eldest
 eldin
 elding
@@ -59858,8 +60210,10 @@ elephantine
 elephantoid
 elephants
 Elephant's Child
+Elephant’s Child
 elephant's-ear
 elephant's-ears
+elephant’s-ears
 elephant's-foot
 Eleusinian
 eleutherarch
@@ -61150,6 +61504,7 @@ enchanted
 enchanter
 enchanters
 enchanter's nightshade
+enchanter’s nightshade
 enchanting
 enchantingly
 enchantment
@@ -62010,6 +62365,7 @@ enlacements
 enlaces
 enlacing
 en l'air
+en l’air
 enlard
 enlarge
 enlargeable
@@ -62542,6 +62898,7 @@ entozoal
 entozoic
 entozoon
 entr'acte
+entr’acte
 entr'actes
 entrail
 entrails
@@ -64093,6 +64450,7 @@ espressos
 esprit
 esprit de corps
 esprit de l'escalier
+esprit de l’escalier
 espumoso
 espumosos
 espy
@@ -65161,6 +65519,7 @@ every man has his price
 Every Man in His Humour
 every man Jack
 every mother's son
+every mother’s son
 every nook and cranny
 every now and again
 every now and then
@@ -65173,6 +65532,7 @@ everything
 everything but the kitchen sink
 everything in the garden is lovely
 Everything's coming up roses
+Everything’s coming up roses
 everyway
 everywhen
 everywhence
@@ -67091,6 +67451,7 @@ Ezra
 f
 fa
 fa'ard
+fa’ard
 fab
 fabaceous
 Fabergé
@@ -67562,6 +67923,7 @@ fallers
 fallfish
 fallfishes
 fall flat on one's face
+fall flat on one’s face
 fall foul of
 fall from grace
 fall-guy
@@ -67585,6 +67947,7 @@ fall in with
 fall on deaf ears
 fall on hard times
 fall on one's feet
+fall on one’s feet
 Fallopian
 fall-out
 fall over backwards
@@ -67920,6 +68283,7 @@ far-forth
 far from it
 Far from the Madding Crowd
 Far from the madding crowd's ignoble strife
+Far from the madding crowd’s ignoble strife
 Fargo
 far-gone
 Farid
@@ -67943,6 +68307,7 @@ farmer-general
 farmeries
 farmers
 farmer's lung
+farmer’s lung
 farmery
 farm-hand
 farm-hands
@@ -68167,6 +68532,7 @@ father of the chapel
 Father of the House
 fathers
 Father's Day
+Father’s Day
 fathership
 fathers-in-law
 fathomable
@@ -68436,6 +68802,7 @@ feathering
 featherings
 featherless
 feather one's nest
+feather one’s nest
 feather-palm
 feather-pate
 feathers
@@ -68565,6 +68932,7 @@ feedings
 feedlot
 feedlots
 feed one's face
+feed one’s face
 feed-pipe
 feed-pump
 feeds
@@ -68590,9 +68958,11 @@ feelingly
 feelings
 feelings are running high
 feel one's feet
+feel one’s feet
 feel one's way
 feels
 feel someone's pulse
+feel someone’s pulse
 feel the draught
 feel the pinch
 feer
@@ -68917,6 +69287,7 @@ fermata
 fermatas
 fermate
 Fermat's last theorem
+Fermat’s last theorem
 ferment
 fermentability
 fermentable
@@ -69231,6 +69602,7 @@ feudalizing
 feudally
 feudaries
 feu d'artifice
+feu d’artifice
 feudary
 feudatories
 feudatory
@@ -69251,6 +69623,7 @@ feuilletonists
 feuilletons
 feus
 feux d'artifice
+feux d’artifice
 feux de joie
 fever
 fevered
@@ -69437,6 +69810,7 @@ fiddler
 Fiddler on the Roof
 fiddlers
 fiddler's green
+fiddler’s green
 fiddler's money
 fiddles
 fiddlestick
@@ -69552,6 +69926,7 @@ fifteen
 fifteener
 fifteeners
 Fifteen men on the dead man's chest
+Fifteen men on the dead man’s chest
 fifteens
 fifteenth
 fifteenthly
@@ -69571,6 +69946,7 @@ fifty
 fifty-fifty
 fiftyish
 Fifty million Frenchmen can't be wrong
+Fifty million Frenchmen can’t be wrong
 fig
 Figaro
 fig-bird
@@ -69591,6 +69967,7 @@ fighting
 fightings
 fight it out
 fight one's own corner
+fight one’s own corner
 fight-or-flight
 fights
 fig-leaf
@@ -69737,12 +70114,14 @@ filled
 fille de chambre
 fille de joie
 fille d'honneur
+fille d’honneur
 filler
 fillers
 filles
 filles de chambre
 filles de joie
 filles d'honneur
+filles d’honneur
 fillet
 filleted
 filleting
@@ -69763,6 +70142,7 @@ Fillmore
 fills
 fill someone in
 fill someone's shoes
+fill someone’s shoes
 filly
 film
 filmable
@@ -69890,6 +70270,7 @@ find-fault
 finding
 findings
 find one's bearings
+find one’s bearings
 find one's feet
 finds
 find the lady
@@ -69927,6 +70308,7 @@ fine words butter no parsnips
 fin-footed
 Fingal
 Fingal's Cave
+Fingal’s Cave
 fingan
 fingans
 finger
@@ -69952,7 +70334,8 @@ fingerholes
 fingering
 fingerings
 fingerless
-fingerlickin'
+fingerlickin
+fingerlickin’
 fingerling
 fingerlings
 fingermark
@@ -69975,6 +70358,7 @@ fingerprinting
 fingerprints
 fingers
 finger's breadth
+finger’s breadth
 fingerstall
 fingerstalls
 fingers were made before forks
@@ -70160,6 +70544,7 @@ fire-hoses
 firehouse
 firehouses
 fire in one's belly
+fire in one’s belly
 fire-insurance
 fire into the brown
 fire-irons
@@ -70171,6 +70556,7 @@ firelights
 fire-lock
 fireman
 fireman's lift
+fireman’s lift
 fire-mark
 fire-marshal
 fire-master
@@ -70356,8 +70742,10 @@ fisher
 fisheries
 fisherman
 fisherman's bend
+fisherman’s bend
 fisherman's knot
 fisherman's luck
+fisherman’s luck
 fisherman's ring
 fishermen
 fishers
@@ -70533,6 +70921,7 @@ five-finger
 fivefingers
 fivefold
 five-o'clock shadow
+five-o’clock shadow
 five-parted
 fivepence
 fivepences
@@ -70944,6 +71333,7 @@ flatwise
 flat-worm
 Flaubert
 Flaubert's Parrot
+Flaubert’s Parrot
 flaught
 flaughted
 flaughter
@@ -71201,6 +71591,7 @@ flexions
 flexitime
 flexography
 flex one's muscles
+flex one’s muscles
 flexor
 flexors
 Flextime
@@ -71309,6 +71700,7 @@ flip-flap
 flip-flop
 flip-flops
 flip one's lid
+flip one’s lid
 flippancy
 flippant
 flippantly
@@ -71890,6 +72282,7 @@ flybooks
 fly-by
 fly-by-night
 fly by the seat of one's pants
+fly by the seat of one’s pants
 fly-by-wire
 flycatcher
 flycatchers
@@ -72216,6 +72609,7 @@ followings
 follow-my-leader
 follow-on
 follow one's nose
+follow one’s nose
 follow-ons
 follows
 Follow the Fleet
@@ -72312,10 +72706,13 @@ foolproof
 fools
 foolscap
 fool's errand
+fool’s errand
 fool's gold
 fool's mate
+fool’s mate
 fool's paradise
 fool's parsley
+fool’s parsley
 fools rush in where angels fear to tread
 foot
 footage
@@ -72475,6 +72872,7 @@ forages
 foraging
 for all I care
 for all it's worth
+for all it’s worth
 for all you care
 foramen
 foramina
@@ -73022,6 +73420,7 @@ forgivingly
 forgivingness
 forgo
 for God's sake
+for God’s sake
 forgoer
 forgoers
 forgoes
@@ -73034,6 +73433,7 @@ forgot
 forgotten
 forgottenness
 for heaven's sake
+for heaven’s sake
 forhent
 forhented
 forhenting
@@ -73216,6 +73616,7 @@ fornix
 fornixes
 forpet
 for Pete's sake
+for Pete’s sake
 forpets
 forpine
 forpit
@@ -73288,6 +73689,7 @@ forthgoing
 forthgoings
 For this relief much thanks
 For this relief much thanks; 'tis bitter cold
+For this relief much thanks; ’tis bitter cold
 forth-putting
 forthright
 forthrightly
@@ -73468,6 +73870,7 @@ fothers
 fou
 Foucault
 Foucault's pendulum
+Foucault’s pendulum
 foud
 foudrie
 foudries
@@ -73519,6 +73922,7 @@ foundering
 founderous
 founders
 founders' shares
+founders’ shares
 founding
 foundings
 foundling
@@ -73882,6 +74286,7 @@ Frankeniaceae
 Frankenstein
 Frankensteins
 Frankenstein's monster
+Frankenstein’s monster
 franker
 frankest
 frank-fee
@@ -73900,6 +74305,7 @@ franklinite
 franklins
 frankly
 Frankly, my dear, I don't give a damn!
+Frankly, my dear, I don’t give a damn!
 frankness
 frank-pledge
 franks
@@ -73984,6 +74390,7 @@ fräulein
 fräuleins
 Fraunhofer
 Fraunhofer's lines
+Fraunhofer’s lines
 fraus
 Fraxinella
 Fraxinus
@@ -74222,6 +74629,7 @@ Frenchify
 Frenchiness
 Frenchman
 Frenchman's Creek
+Frenchman’s Creek
 Frenchmen
 French-polish
 French-polished
@@ -74342,6 +74750,7 @@ friaries
 friarly
 friars
 friar's balsam
+friar’s balsam
 friar's lantern
 friary
 fribble
@@ -74606,8 +75015,10 @@ frogmouth
 frogmouths
 frogs
 frog's lettuce
+frog’s lettuce
 frog's-march
 frog's-mouth
+frog’s-mouth
 frog-spawn
 frog-spit
 froise
@@ -74633,8 +75044,10 @@ from pillar to post
 From Russia with Love
 from stem to stern
 from the bottom of one's heart
+from the bottom of one’s heart
 from the cradle to the grave
 from the horse's mouth
+from the horse’s mouth
 from the word go
 from time to time
 frond
@@ -75044,6 +75457,7 @@ fullerene
 fullerenes
 fullers
 fuller's earth
+fuller’s earth
 fullest
 full-eyed
 full-face
@@ -75644,6 +76058,7 @@ Gabriel
 Gabrieli
 Gabrielle
 Gabriel's hounds
+Gabriel’s hounds
 gabs
 gaby
 gad
@@ -75783,6 +76198,7 @@ gainlier
 gainliest
 gainly
 gain one's spurs
+gain one’s spurs
 gains
 gainsaid
 gainsay
@@ -76486,6 +76902,7 @@ gardened
 gardener
 gardeners
 gardener's garters
+gardener’s garters
 garden-glass
 garden-house
 gardenia
@@ -77086,6 +77503,7 @@ gayest
 gayety
 Gay-Lussac
 Gay-Lussac's law
+Gay-Lussac’s law
 gayness
 Gaynor
 gays
@@ -77564,6 +77982,7 @@ gensdarmes
 gens de bien
 gens de condition
 gens d'église
+gens d’église
 gens de guerre
 gens de lettres
 gens de loi
@@ -77628,13 +78047,16 @@ gentlemanhood
 gentlemanliness
 gentlemanly
 gentleman's agreement
+gentleman’s agreement
 gentleman's gentleman
 gentlemanship
 Gentleman's Relish
+Gentleman’s Relish
 gentlemen
 gentlemen-at-arms
 Gentlemen Prefer Blondes
 gentlemen's agreement
+gentlemen’s agreement
 gentleness
 gentler
 gentles
@@ -78060,6 +78482,7 @@ get back at
 get down to
 get down to business
 get egg on one's face
+get egg on one’s face
 get even with
 get hold of
 get hold of the wrong end of the stick
@@ -78067,30 +78490,40 @@ Gethsemane
 get in on
 get in on the act
 get in someone's hair
+get in someone’s hair
 get into one's stride
 get it?
 get it across
 get it all together
 get it in the neck
 get it into one's head
+get it into one’s head
 get knotted!
 get lost!
 get off on the wrong foot
 get off someone's back
+get off someone’s back
 get one's act together
 get one's bearings
+get one’s bearings
 get one's eye in
 get one's fingers burnt
+get one’s fingers burnt
 get one's hand in
 get one's knickers in a twist
+get one’s knickers in a twist
 get one's own back
 get one's own way
+get one’s own way
 get one's priorities right
 get one's skates on
+get one’s skates on
 get one's teeth into
 get one's way
+get one’s way
 get on one's nerves
 get on someone's wick
+get on someone’s wick
 get-out
 get out of bed on the wrong side
 get real!
@@ -78100,8 +78533,10 @@ get round to
 gets
 get shot of
 get someone's back up
+get someone’s back up
 get someone's dander up
 get someone's goat
+get someone’s goat
 get something over with
 get stuck in
 get stuck into
@@ -78116,6 +78551,7 @@ get the ball rolling
 get the better of
 get the bird
 get the bit between one's teeth
+get the bit between one’s teeth
 get the boot
 get the chop
 Get thee to a nunnery
@@ -78136,10 +78572,12 @@ get to the bottom of
 Getty
 Gettysburg
 get under someone's skin
+get under someone’s skin
 get-up
 get-up-and-go
 get-ups
 get up someone's nose
+get up someone’s nose
 get up steam
 get up with the lark
 get wind of
@@ -78269,8 +78707,10 @@ giantly
 giantry
 giants
 Giant's Causeway
+Giant’s Causeway
 giantship
 giant's-kettle
+giant’s-kettle
 giaour
 giaours
 Giardia
@@ -78628,6 +79068,7 @@ girdlesteads
 girdling
 girds
 gird up one's loins
+gird up one’s loins
 girkin
 girkins
 girl
@@ -78682,6 +79123,7 @@ gisarme
 gisarmes
 Gisborne
 Giscard d'Estaing
+Giscard d’Estaing
 Giselle
 Gish
 gismo
@@ -78973,6 +79415,7 @@ Glaswegian
 Glaswegians
 glauberite
 Glauber's salt
+Glauber’s salt
 glaucescence
 glaucescent
 glaucoma
@@ -79629,6 +80072,7 @@ go
 Goa
 go a-begging
 go about one's business
+go about one’s business
 go a bundle on
 go a complete blank
 goad
@@ -79694,9 +80138,11 @@ goatlings
 goat-moth
 goats
 goat's-beard
+goat’s-beard
 goatskin
 goatskins
 goat's-rue
+goat’s-rue
 goatsucker
 goatsuckers
 goatweed
@@ -79767,6 +80213,7 @@ goddesses
 goddess-ship
 Gödel
 Gödel's theorem
+Gödel’s theorem
 godet
 godetia
 godetias
@@ -79816,22 +80263,28 @@ godrooning
 godroons
 gods
 God's acre
+God’s acre
 God Save the King
 God Save the Queen
 God's country
+God’s country
 godsend
 godsends
 God's gift
+God’s gift
 godship
 godships
 God's in his heaven, all's right with the world
+God’s in his heaven, all’s right with the world
 godslot
 godson
 godsons
 God's own country
+God’s own country
 godspeed
 godspeeds
 God's truth
+God’s truth
 Godunov
 godward
 godwards
@@ -79925,9 +80378,11 @@ gold
 Golda
 goldarn
 Goldbach's conjecture
+Goldbach’s conjecture
 gold-beater
 gold-beaters
 goldbeater's skin
+goldbeater’s skin
 gold-beating
 gold-beetle
 Goldbergian
@@ -80216,6 +80671,7 @@ good-looking
 goodly
 goodman
 goodman's croft
+goodman’s croft
 goodmen
 good-morning
 good-mother
@@ -80297,6 +80753,7 @@ goonda
 goondas
 go one better
 go one's own way
+go one’s own way
 go one's way
 gooney
 gooneys
@@ -80359,8 +80816,10 @@ goosing
 Goossens
 goosy
 go out of one's way
+go out of one’s way
 go out of the way
 go over someone's head
+go over someone’s head
 go over the top
 gopak
 gopaks
@@ -81339,6 +81798,7 @@ graver
 gravers
 graves
 Graves' disease
+Graves’ disease
 Gravesend
 gravest
 gravestone
@@ -81394,8 +81854,10 @@ graylings
 grayness
 grays
 Gray's Anatomy
+Gray’s Anatomy
 Gray's Elegy
 Gray's Inn
+Gray’s Inn
 graywacke
 Graz
 graze
@@ -81421,6 +81883,7 @@ greaser
 greasers
 greases
 grease someone's palm
+grease someone’s palm
 greasewood
 greasewoods
 greasier
@@ -81660,6 +82123,7 @@ Gregorian
 gregories
 gregory
 Gregory's mixture
+Gregory’s mixture
 Gregory's powder
 gregos
 Greig
@@ -81699,6 +82163,7 @@ grese
 greses
 Gresham
 Gresham's law
+Gresham’s law
 gressing
 gressorial
 gressorious
@@ -81855,6 +82320,7 @@ Grimm
 grimmer
 grimmest
 Grimm's law
+Grimm’s law
 grimness
 grimoire
 grimoires
@@ -82486,6 +82952,7 @@ guardsman
 guardsmen
 guards of honour
 guard's van
+guard’s van
 guarish
 Guarneri
 Guarneris
@@ -82760,6 +83227,7 @@ gullish
 Gullit
 Gulliver
 Gulliver's Travels
+Gulliver’s Travels
 gulls
 gull-wing
 gully
@@ -82897,6 +83365,7 @@ gunstone
 gunter
 gunters
 Gunter's chain
+Gunter’s chain
 Gunther
 Guntur
 gunwale
@@ -83054,6 +83523,7 @@ gutzer
 gutzers
 guv
 guv'nor
+guv’nor
 guv'nors
 guy
 Guyana
@@ -83418,6 +83888,7 @@ Hadlee
 hadn't
 Hadrian
 Hadrian's Wall
+Hadrian’s Wall
 hadrome
 hadron
 hadronic
@@ -83678,6 +84149,7 @@ hair-raising
 hair-restorer
 hairs
 hair's-breadth
+hair’s-breadth
 hair's-breadths
 hair-seal
 hair-shirt
@@ -83707,6 +84179,7 @@ hair-work
 hair-worm
 hairy
 ha'it
+ha’it
 haith
 haiths
 Haiti
@@ -83959,6 +84432,7 @@ hallelujahs
 Hallé Orchestra
 Halley
 Halley's Comet
+Halley’s Comet
 hallian
 hallians
 halliard
@@ -83994,6 +84468,7 @@ halloumis
 hallow
 hallowed
 Hallowe'en
+Hallowe’en
 hallowing
 Hallowmas
 hallows
@@ -84216,6 +84691,7 @@ hance
 hances
 Hancock
 Hancock's Half-Hour
+Hancock’s Half-Hour
 hand
 hand and foot
 hand and glove
@@ -84363,6 +84839,7 @@ hands
 handsaw
 handsaws
 hand's-breadth
+hand’s-breadth
 hand-screw
 handsel
 handselled
@@ -84457,6 +84934,7 @@ hangs
 Hang Seng index
 hang-up
 hang up one's hat
+hang up one’s hat
 hang-ups
 Hangzhou
 Hani
@@ -84511,8 +84989,10 @@ haoma
 haomas
 hap
 ha'pennies
+ha’pennies
 ha'penny
 ha'pennyworth
+ha’pennyworth
 haphazard
 haphazardly
 haphazardness
@@ -84693,6 +85173,7 @@ hard-luck stories
 hard-luck story
 hardly
 hardly able to believe one's ears
+hardly able to believe one’s ears
 hardly able to believe one's eyes
 hard-mouthed
 hardness
@@ -84747,8 +85228,10 @@ harem
 harems
 hares
 hare's-ear
+hare’s-ear
 hare's-foot
 hare's-foot trefoil
+hare’s-foot trefoil
 harewood
 Harfleur
 Hargreaves
@@ -84893,6 +85376,7 @@ harped
 harper
 harpers
 Harper's Bazaar
+Harper’s Bazaar
 Harper's Ferry
 harpies
 harping
@@ -84973,6 +85457,7 @@ harts
 hartshorn
 hartshorns
 hart's-tongue
+hart’s-tongue
 harum-scarum
 harum-scarums
 Harun
@@ -85124,6 +85609,7 @@ hater
 haters
 hates
 hate someone's guts
+hate someone’s guts
 hateworthy
 Hatfield
 hatful
@@ -85259,20 +85745,24 @@ have a friend at court
 have a go
 have a go at
 have a good head on one's shoulders
+have a good head on one’s shoulders
 have a good mind to
 have a good thing going
 have a good time
 have a head like a sieve
 have a heart
 have all one's eggs in one basket
+have all one’s eggs in one basket
 have all one's marbles
 have a load on
 have a memory like a sieve
 have a mind of one's own
+have a mind of one’s own
 have an eye to the main chance
 have a nice day
 have another think coming
 have ants in one's pants
+have ants in one’s pants
 have a roof over one's head
 have a screw loose
 have a short fuse
@@ -85280,14 +85770,17 @@ have a stab at
 have a temperature
 have at heart
 have at one's fingertips
+have at one’s fingertips
 have a way with
 have a word with
 have by the throat
 have done with
 have egg on one's face
+have egg on one’s face
 have had its day
 have had it up to here
 have had one's chips
+have had one’s chips
 have had one's day
 Have I Got News For You
 have in tow
@@ -85295,6 +85788,7 @@ have it both ways
 have it coming
 have it made
 have it one's own way
+have it one’s own way
 have it out
 have known better days
 Havel
@@ -85314,19 +85808,27 @@ havens
 haven't
 have one foot in the grave
 have one's cake and eat it
+have one’s cake and eat it
 have one's ear to the ground
 have one's eye on
+have one’s eye on
 have one's face lifted
 have one's feet on the ground
+have one’s feet on the ground
 have one's finger on the button
 have one's hands full
+have one’s hands full
 have one's head screwed on the right way
 have one's heart in one's mouth
+have one’s heart in one’s mouth
 have one's heart in the right place
+have one’s heart in the right place
 have one's heart set on
 have one's way
+have one’s way
 have one's wits about one
 have one's work cut out
+have one’s work cut out
 have other fish to fry
 haveour
 haveours
@@ -85349,6 +85851,7 @@ have the hump
 have the jitters
 have the last laugh
 have the sun in one's eyes
+have the sun in one’s eyes
 have two left feet
 have what it takes
 have you done?
@@ -85401,6 +85904,7 @@ hawk-moth
 hawk-nosed
 hawks
 hawk's-beard
+hawk’s-beard
 hawksbill
 hawksbills
 Hawksmoor
@@ -85817,8 +86321,10 @@ heart-rendingly
 heart-rot
 hearts
 heart's-blood
+heart’s-blood
 heart-searching
 heart's-ease
+heart’s-ease
 heartseed
 heartseeds
 heart-shaped
@@ -86428,8 +86934,10 @@ hellraiser
 hellraisers
 hells
 Hell's Angel
+Hell’s Angel
 hell's bells
 hell's teeth
+hell’s teeth
 hell to pay
 helluva
 hellward
@@ -86871,6 +87379,7 @@ Herculaneum
 Herculean
 Hercules
 Hercules' choice
+Hercules’ choice
 Hercules'-club
 Hercynian
 hercynite
@@ -86945,8 +87454,10 @@ heresiologist
 heresiologists
 heresiology
 here's looking at you
+here’s looking at you
 here's looking at you, kid
 here's one I made earlier
+here’s one I made earlier
 heresy
 heretic
 heretical
@@ -87556,6 +88067,7 @@ hide-bound
 hided
 Hi-de-Hi!
 hide one's light under a bushel
+hide one’s light under a bushel
 hideosity
 hideous
 hideously
@@ -88151,6 +88663,7 @@ his
 his bark is worse than his bite
 His Last Bow
 His Master's Voice
+His Master’s Voice
 hisn
 Hispania
 Hispanic
@@ -88314,6 +88827,7 @@ hitherwards
 hithes
 hit it off
 hit one's stride
+hit one’s stride
 hit or miss
 hits
 hitter
@@ -88464,6 +88978,7 @@ hobs
 Hobson
 Hobson-Jobson
 Hobson's choice
+Hobson’s choice
 hoc
 Hochheim
 Hochheimer
@@ -88507,6 +89022,7 @@ hodge-pudding
 Hodges
 Hodgkin
 Hodgkin's disease
+Hodgkin’s disease
 hodiernal
 hodja
 hodjas
@@ -88581,6 +89097,7 @@ hog-plum
 hog-reeve
 hogs
 hog's back
+hog’s back
 hog-score
 hogshead
 hogsheads
@@ -88671,8 +89188,10 @@ holding
 holdings
 hold it!
 hold one's ground
+hold one’s ground
 hold one's own
 hold one's tongue
+hold one’s tongue
 hold out on
 holds
 hold sway over
@@ -88682,6 +89201,7 @@ hold to account
 hold to ransom
 hold-up
 hold up one's head
+hold up one’s head
 hold-ups
 hold your horses
 hole
@@ -88901,6 +89421,7 @@ home-grown
 home is where the heart is
 Home, James!
 Home, James, and don't spare the horses
+Home, James, and don’t spare the horses
 home-keeping
 homeland
 homelands
@@ -89006,11 +89527,14 @@ hominoids
 hominy
 homme
 homme d'affaires
+homme d’affaires
 homme de bien
 homme de lettres
 homme d'épée
+homme d’épée
 homme d'esprit
 homme d'état
+homme d’état
 homme du monde
 homme moyen sensuel
 hommes
@@ -89507,6 +90031,7 @@ hoplologists
 hoplology
 hop-off
 hop-o'-my-thumb
+hop-o’-my-thumb
 hopped
 hopper
 hoppers
@@ -89701,6 +90226,7 @@ Horsa
 hors de combat
 hors de saison
 hors d'oeuvre
+hors d’oeuvre
 hors d'oeuvres
 horse
 horse-and-buggy
@@ -90004,6 +90530,7 @@ hounds
 hounds-berry
 hounds-foot
 hound's-tongue
+hound’s-tongue
 houndstooth
 Hounslow
 hour
@@ -90075,6 +90602,7 @@ housels
 housemaid
 housemaids
 housemaid's knee
+housemaid’s knee
 houseman
 housemaster
 housemasters
@@ -90187,9 +90715,11 @@ howdy
 howdy-do
 howdy-dos
 how-d'ye-do
+how-d’ye-do
 how-d'ye-dos
 howe
 howe'er
+howe’er
 Howel
 Howell
 howes
@@ -90224,13 +90754,16 @@ How many roads must a man walk down
 How much is that doggie in the window?
 hows
 How sharper than a serpent's tooth it is To have a thankless child!
+How sharper than a serpent’s tooth it is To have a thankless child!
 howso
 howsoever
 howsomever
 how's that
+how’s that
 how's tricks?
 How sweet to be a Cloud
 how's your father?
+how’s your father?
 how the other half lives
 How They Brought the Good News from Ghent to Aix
 how-to
@@ -90264,6 +90797,7 @@ Hubble
 hubble-bubble
 hubble-bubbles
 Hubble's constant
+Hubble’s constant
 Hubble's law
 Hubble space telescope
 hub-brake
@@ -90315,6 +90849,7 @@ Hudibrastic
 Hudibrastics
 Hudson
 Hudson's Bay Company
+Hudson’s Bay Company
 hue
 hue and cry
 hued
@@ -90655,6 +91190,7 @@ hundredths
 hundredweight
 hundredweights
 Hundred Years' War
+Hundred Years’ War
 hung
 Hungarian
 Hungarians
@@ -90700,6 +91236,7 @@ Hunterian
 hunter-killer
 hunters
 hunter's moon
+hunter’s moon
 hunting
 hunting-box
 hunting-boxes
@@ -90721,6 +91258,7 @@ hunting-song
 hunting-songs
 Huntington
 Huntington's chorea
+Huntington’s chorea
 hunting-whip
 hunting-whips
 huntress
@@ -91940,6 +92478,7 @@ iambus
 iambuses
 I am determinèd to prove a villain
 I am Fortune's fool
+I am Fortune’s fool
 I am monarch of all I survey
 I am never merry when I hear sweet music
 I am not in the giving vein today
@@ -91998,6 +92537,7 @@ I cannot tell what the dickens his name is
 I can resist everything except temptation
 I can suck melancholy out of a song, as a weasel sucks eggs
 I can't get no satisfaction
+I can’t get no satisfaction
 Icarian
 Icarus
 ice
@@ -92213,6 +92753,7 @@ icositetrahedra
 icositetrahedron
 I could not endure a husband with a beard on his face
 I couldn't care less
+I couldn’t care less
 ictal
 icteric
 icterical
@@ -92442,8 +92983,10 @@ Idolum
 Idomeneo
 Idomeneus
 I don't believe it
+I don’t believe it
 I don't know
 I don't think
+I don’t think
 I dote on his very absence
 idoxuridine
 I dream of Jeanie with the light brown hair
@@ -92465,15 +93008,20 @@ Iesus Hominum Salvator
 Ieuan
 if
 if a job's worth doing, it's worth doing well
+if a job’s worth doing, it’s worth doing well
 if anything can go wrong, it will
 if at first you don't succeed, try, try, try again
+if at first you don’t succeed, try, try, try again
 Ife
 iff
 iffiness
 iffy
 if ifs and ans were pots and pans, there'd be no trade for tinkers
+if ifs and ans were pots and pans, there’d be no trade for tinkers
 If it ain't broke, don't fix it
+If it ain’t broke, don’t fix it
 If it were done when 'tis done, then 'twere well it were done quickly
+If it were done when ’tis done, then ’twere well it were done quickly
 if music be the food of love, play on
 If music be the food of love, play on; Give me excess of it
 Ifni
@@ -92482,8 +93030,10 @@ if the worst comes to the worst
 If Winter comes, can Spring be far behind?
 if you ask me
 If you believe that, you'll believe anything
+If you believe that, you’ll believe anything
 if you don't like the heat, get out of the kitchen
 if you don't mind
+if you don’t mind
 If you have tears, prepare to shed them now
 if you like
 if you please
@@ -94117,6 +94667,7 @@ in all but name
 in all conscience
 in all fairness
 in all one's born days
+in all one’s born days
 in all probability
 inalterability
 inalterable
@@ -96486,6 +97037,7 @@ innocent
 innocently
 innocents
 Innocents' Day
+Innocents’ Day
 in no circumstances
 innocuity
 innocuous
@@ -96572,15 +97124,21 @@ inofficiously
 inofficiousness
 in one fell swoop
 in one's cups
+in one’s cups
 in one's element
 in one's mind's eye
+in one’s mind’s eye
 in one's own good time
+in one’s own good time
 in one's own right
 in one's own time
+in one’s own time
 in one's right mind
 in one's sleep
+in one’s sleep
 in one's stocking-feet
 in one's true colours
+in one’s true colours
 in one's turn
 in on the secret
 inoperability
@@ -96948,10 +97506,13 @@ insolvency
 insolvent
 insolvents
 in someone's bad books
+in someone’s bad books
 in someone's confidence
 in someone's debt
+in someone’s debt
 in someone's good books
 in someone's power
+in someone’s power
 insomnia
 insomniac
 insomniacs
@@ -98324,6 +98885,7 @@ in the neighbourhood of
 in the nick of time
 in the offing
 in the palm of one's hand
+in the palm of one’s hand
 in the picture
 in the pink
 in the pipeline
@@ -99945,6 +100507,7 @@ ita
 itacism
 itacolumite
 It Ain't Half Hot Mum
+It Ain’t Half Hot Mum
 Itala
 Italia
 Italian
@@ -99996,7 +100559,9 @@ itchweed
 itchweeds
 itchy
 It did me yeoman's service
+It did me yeoman’s service
 It don't mean a thing If it ain't got that swing
+It don’t mean a thing If it ain’t got that swing
 item
 itemed
 iteming
@@ -100054,31 +100619,42 @@ It is meat and drink to me to see a clown
 it is never too late to learn
 It is the bright day that brings forth the adder
 it'll
+it’ll
 It'll Be Alright On The Night
 it never rains but it pours
 Ito
 It out-herods Herod
 its
 It's a bird! It's a plane! It's Superman!
+It’s a bird! It’s a plane! It’s Superman!
 it's a fair cop
+it’s a fair cop
 it's a free country
 it's a long lane that has no turning
+it’s a long lane that has no turning
 It's a Long Way to Tipperary
 it's an ill wind that blows nobody any good
+it’s an ill wind that blows nobody any good
 it's a small world
 It's A Wonderful Life
+It’s A Wonderful Life
 It's clever, but is it Art?
 its days are numbered
 it's easy to be wise after the event
+it’s easy to be wise after the event
 itself
 it's no use crying over spilt milk
+it’s no use crying over spilt milk
 It's off to work we go
 It's Only a Paper Moon
+It’s Only a Paper Moon
 It's Only Rock and Roll
 it stands to reason
 It's That Man Again
+It’s That Man Again
 itsy-bitsy
 it's your funeral
+it’s your funeral
 it takes all sorts to make a world
 it takes two to tango
 itty-bitty
@@ -100126,6 +100702,7 @@ I was not born under a rhyming planet
 I will arise and go now, and go to Innisfree
 iwis
 I wouldn't know
+I wouldn’t know
 ixia
 Ixion
 ixodiasis
@@ -100243,6 +100820,7 @@ jackmen
 jack of all trades
 jack of all trades, master of none
 jack-o'-lantern
+jack-o’-lantern
 jack-o'-lanterns
 jack-pine
 jackpot
@@ -100298,6 +100876,7 @@ Jacobitical
 Jacobitism
 Jacobs
 Jacob's ladder
+Jacob’s ladder
 Jacob's staff
 jacobus
 jacobuses
@@ -100800,6 +101379,7 @@ jeanettes
 Jeanie
 Jeanie with the Light Brown Hair
 Jeanne d'Arc
+Jeanne d’Arc
 Jeannette
 Jeannie
 jeans
@@ -100844,6 +101424,7 @@ jehads
 Jehoshaphat
 Jehovah
 Jehovah's Witness
+Jehovah’s Witness
 Jehovah's Witnesses
 Jehovist
 Jehovistic
@@ -101043,12 +101624,14 @@ Jesuitism
 Jesuitry
 Jesuits
 Jesuits' bark
+Jesuits’ bark
 Jesus
 Jesus Christ Superstar
 Jesus of Nazareth
 jet
 jet-black
 jet d'eau
+jet d’eau
 jeté
 jetés
 jetfoil
@@ -101092,12 +101675,15 @@ jeu
 jeu de mots
 jeu de paume
 jeu d'esprit
+jeu d’esprit
 jeune
 jeunesse dorée
 jeux
 Jeux D'Eau
+Jeux D’Eau
 jeux de mots
 jeux d'esprit
+jeux d’esprit
 Jew
 Jew-baiting
 jewel
@@ -101114,6 +101700,7 @@ jeweller
 jewelleries
 jewellers
 jeweller's rouge
+jeweller’s rouge
 jewellery
 jewelling
 jewelry
@@ -101129,6 +101716,7 @@ Jewishness
 Jewry
 Jews
 jew's-ear
+jew’s-ear
 jew's-harp
 jezail
 jezails
@@ -101236,6 +101824,7 @@ Jimmie
 jimmies
 jimmy
 jimmy-o'goblin
+jimmy-o’goblin
 jimmy-o'goblins
 jimp
 jimper
@@ -101358,9 +101947,11 @@ job-master
 job of work
 jobs
 Job's comforter
+Job’s comforter
 Job Seekers Allowance
 jobs for the boys
 Job's tears
+Job’s tears
 jobsworth
 jobsworths
 Jocasta
@@ -101420,6 +102011,7 @@ jogged
 jogger
 joggers
 jogger's nipple
+jogger’s nipple
 jogging
 joggle
 joggled
@@ -101444,8 +102036,10 @@ John-a-Stiles
 John-a-Styles
 John Birch Society
 John Brown's Body
+John Brown’s Body
 John-Bullism
 John Bull's Other Island
+John Bull’s Other Island
 John-go-to-bed-at-noon
 Johnian
 Johnners
@@ -101713,6 +102307,7 @@ journeymen
 Journey of the Magi
 journeys
 Journey's End
+Journey’s End
 Journey to the Centre of the Earth
 Journey to the Western Isles
 journey-weight
@@ -101851,6 +102446,7 @@ judges
 judgeship
 judgeships
 Judges' Rules
+Judges’ Rules
 judging
 judgment
 judgmental
@@ -102029,6 +102625,7 @@ jumping-off-place
 jump-off
 jump-offs
 jump one's bail
+jump one’s bail
 jump on the bandwagon
 jumps
 jump-seat
@@ -102125,6 +102722,7 @@ jupati
 jupatis
 Jupiter
 Jupiter's beard
+Jupiter’s beard
 jupon
 jupons
 jura
@@ -102174,8 +102772,10 @@ jurywomen
 jus
 jus primae noctis
 jusqu'au bout
+jusqu’au bout
 jusqu'auboutisme
 jusqu'auboutist
+jusqu’auboutist
 jusqu'auboutiste
 jussive
 jussives
@@ -102190,6 +102790,7 @@ justices
 justiceship
 justiceships
 justices' justice
+justices’ justice
 justiciable
 justicialism
 justiciar
@@ -102571,6 +103172,7 @@ kapellmeister
 kapellmeisters
 kapok
 Kaposi's sarcoma
+Kaposi’s sarcoma
 kappa
 kaput
 kaputt
@@ -102890,28 +103492,40 @@ keepnets
 keep off the grass
 keep on about
 keep one's chin up
+keep one’s chin up
 keep one's cool
 keep one's distance
+keep one’s distance
 keep one's ear to the ground
 keep one's eye in
+keep one’s eye in
 keep one's eye on
 keep one's eyes skinned
+keep one’s eyes skinned
 keep one's finger on the pulse
 keep one's fingers crossed
+keep one’s fingers crossed
 keep one's hair on
 keep one's hand in
+keep one’s hand in
 keep one's head
 keep one's head above water
+keep one’s head above water
 keep one's head down
 keep one's mouth shut
+keep one’s mouth shut
 keep one's nose clean
 keep one's nose to the grindstone
+keep one’s nose to the grindstone
 keep one's options open
 keep one's powder dry
+keep one’s powder dry
 keep one's shirt on
 keep one's temper
+keep one’s temper
 keep one's weather eye open
 keep one's word
+keep one’s word
 keep open house
 Keep right on to the end of the road
 keeps
@@ -102966,6 +103580,7 @@ Kellogg
 kells
 Kelly
 Kelly's eye
+Kelly’s eye
 Kelmscott
 keloid
 keloidal
@@ -103068,6 +103683,7 @@ kepis
 Kepler
 Keplerian
 Kepler's laws
+Kepler’s laws
 keps
 kept
 Kerala
@@ -103389,6 +104005,7 @@ kick in the teeth
 kick-off
 kick-offs
 kick one's heels
+kick one’s heels
 kick over the traces
 kicks
 kickshaw
@@ -103464,6 +104081,7 @@ kids
 Kidsgrove
 kid-skin
 kids' stuff
+kids’ stuff
 kidstakes
 kidult
 kidults
@@ -103598,6 +104216,7 @@ kilts
 kilty
 Kilvert
 Kilvert's Diary
+Kilvert’s Diary
 Kim
 Kimball
 Kimberley
@@ -103710,6 +104329,7 @@ king
 king-bird
 king-bolt
 King Charles's head
+King Charles’s head
 King Charles spaniel
 king-crab
 king-craft
@@ -103764,16 +104384,22 @@ king-rod
 kings
 king-salmon
 King's Bench
+King’s Bench
 king's bounty
 king's-chair
+king’s-chair
 King's College
 King's Counsel
+King’s Counsel
 King's Cross
 King's Cross Station
+King’s Cross Station
 king's-cushion
 King's English
+King’s English
 king's evidence
 king's evil
+king’s evil
 king's highway
 kingship
 kingships
@@ -103781,14 +104407,19 @@ king-size
 king-sized
 Kingsley
 King's Lynn
+King’s Lynn
 kings-man
 king's messenger
+king’s messenger
 King Solomon's Mines
 king's peace
+king’s peace
 king's proctor
 King's Regulations
+King’s Regulations
 King's Scout
 king's shilling
+king’s shilling
 King's Speech
 Kingston
 Kingston upon Hull
@@ -103855,6 +104486,7 @@ kippers
 kipping
 kipps
 Kipp's apparatus
+Kipp’s apparatus
 kips
 kip-skin
 kir
@@ -103952,6 +104584,7 @@ kissogram
 kissograms
 kiss the book
 kiss the gunner's daughter
+kiss the gunner’s daughter
 kiss the rod
 kist
 kisted
@@ -104119,6 +104752,7 @@ knackeries
 knackering
 knackers
 knacker's yard
+knacker’s yard
 knackery
 knackiness
 knackish
@@ -104281,11 +104915,13 @@ Knightsbridge
 knights-errant
 knight-service
 knight's fee
+knight’s fee
 knight's move
 Knights of Malta
 knights of the road
 Knights of the Round Table
 knight's progress
+knight’s progress
 Kniphofia
 knish
 knishes
@@ -104353,6 +104989,7 @@ knock-on
 knock-on effect
 knock-on effects
 knock one's head against a brick wall
+knock one’s head against a brick wall
 knock on the head
 knock on wood
 knockout
@@ -104421,14 +105058,17 @@ known
 know-nothing
 know-nothingism
 know one's onions
+know one’s onions
 know one's place
 knows
 know something backwards
 know something inside out
 know the ropes
 know what o'clock it is
+know what o’clock it is
 know what's what
 know which side one's bread is buttered on
+know which side one’s bread is buttered on
 know who's who
 Knox
 Knox-Johnston
@@ -104513,6 +105153,7 @@ kohlrabis
 koi
 Koine
 KO'ing
+KO’ing
 Kojak
 kokanee
 koker
@@ -104676,6 +105317,7 @@ krantzes
 kranz
 kranzes
 Krapp's Last Tape
+Krapp’s Last Tape
 Krasnoyarsk
 krater
 kraters
@@ -104863,6 +105505,7 @@ KwaZulu/Natal
 Kweichow
 kwela
 Kwok's disease
+Kwok’s disease
 ky
 kyang
 kyangs
@@ -105225,13 +105868,17 @@ ladettes
 la-di-da
 ladies
 ladies' fingers
+ladies’ fingers
 ladies' gallery
 ladies-in-waiting
 ladies' man
+ladies’ man
 ladies' men
 ladies' night
+ladies’ night
 ladies' room
 ladies' rooms
+ladies’ rooms
 ladies' tresses
 ladieswear
 ladified
@@ -105255,6 +105902,7 @@ ladrone
 ladrones
 lads
 lad's love
+lad’s love
 lady
 Lady Be Good
 ladybird
@@ -105264,6 +105912,7 @@ ladybugs
 Lady-chapel
 Lady-chapels
 Lady Chatterley's Lover
+Lady Chatterley’s Lover
 ladycow
 ladycows
 lady-fern
@@ -105291,19 +105940,25 @@ Lady of Spain
 Lady of the Lake
 Lady of the Lamp
 Lady's bedstraw
+Lady’s bedstraw
 lady's finger
 lady's fingers
+lady’s fingers
 ladyship
 ladyships
 lady's-maid
+lady’s-maid
 lady's-maids
 lady's man
+lady’s man
 lady's-mantle
 Ladysmith
 lady-smock
 lady's-slipper
+lady’s-slipper
 lady's-smock
 lady's tresses
+lady’s tresses
 Lady Windermere's Fan
 laeotropic
 laer
@@ -105319,6 +105974,7 @@ lag
 lagan
 lagans
 Lag b'Omer
+Lag b’Omer
 lagena
 lag-end
 lageniform
@@ -105536,11 +106192,14 @@ Lambrusco
 Lambruscos
 lambs
 lamb's ears
+lamb’s ears
 lambskin
 lambskins
 lamb's-lettuce
+lamb’s-lettuce
 lamb's-tails
 lamb's tongue
+lamb’s tongue
 lamb's-wool
 lame
 lamed
@@ -105828,6 +106487,7 @@ Land of Nod
 Land of the Midnight Sun
 Landor
 Land o' the Leal
+Land o’ the Leal
 landowner
 landowners
 landownership
@@ -105855,6 +106515,7 @@ land-scrip
 Landseer
 Landseers
 Land's End
+Land’s End
 land set-aside
 land-shark
 land-ship
@@ -105924,9 +106585,11 @@ langue
 langued
 langue de chat
 Langue d'oc
+Langue d’oc
 Languedocian
 Languedoc-Roussillon
 Langue d'oil
+Langue d’oil
 Langue d'oui
 langues
 languescent
@@ -106259,6 +106922,7 @@ lascar
 lascars
 Lascaux
 Lasciate ogni speranza, voi ch'entrate
+Lasciate ogni speranza, voi ch’entrate
 lascivious
 lasciviously
 lasciviousness
@@ -106524,6 +107188,7 @@ laughings
 laughing-stock
 laughing-stocks
 laugh on the other side of one's face
+laugh on the other side of one’s face
 laugh out of court
 laughs
 laughsome
@@ -106533,6 +107198,7 @@ laughter is the best medicine
 laughters
 Laughton
 laugh up one's sleeve
+laugh up one’s sleeve
 laughworthy
 laughy
 launce
@@ -106764,6 +107430,7 @@ lay-bys
 lay by the heels
 lay-day
 lay down one's arms
+lay down one’s arms
 lay down the law
 layer
 layer-cake
@@ -106789,6 +107456,7 @@ laymen
 lay-off
 lay-offs
 lay one's finger on
+lay one’s finger on
 lay-out
 lay-outs
 layover
@@ -107096,6 +107764,7 @@ leavenous
 leavens
 leave of absence
 leave one's options open
+leave one’s options open
 leave out in the cold
 leaver
 leavers
@@ -107127,6 +107796,7 @@ lecanora
 lecanoras
 lech
 Le Chatelier's principle
+Le Chatelier’s principle
 leched
 lecher
 lechered
@@ -107347,11 +108017,13 @@ legion
 legionaries
 legionary
 Légion d'Honneur
+Légion d’Honneur
 legioned
 legionella
 legionnaire
 legionnaires
 Legionnaires' Disease
+Legionnaires’ Disease
 Legion of Honour
 legions
 leg-iron
@@ -107416,6 +108088,7 @@ Lego
 leg-of-mutton
 Legoland
 leg-o'-mutton
+leg-o’-mutton
 leg-pull
 leg-puller
 leg-pulling
@@ -107485,6 +108158,7 @@ leishmaniosis
 leisler
 leislers
 Leisler's bat
+Leisler’s bat
 Leisler's bats
 leister
 leistered
@@ -107572,7 +108246,8 @@ lemuroid
 Lemuroidea
 lemuroids
 lemurs
-len'
+len
+len’
 Lena
 lend
 lend a hand
@@ -107696,6 +108371,7 @@ leopardess
 leopardesses
 leopards
 leopard's-bane
+leopard’s-bane
 leopard-wood
 Leopold
 leotard
@@ -107864,14 +108540,18 @@ Leto
 let off steam
 let oneself go
 let one's hair down
+let one’s hair down
 let-out
 Letraset
 lets
 Let's call the whole thing off!
+Let’s call the whole thing off!
 Let's carve him as a dish fit for the gods
 Let's Do It
+Let’s Do It
 Let's face the music and dance
 Let's have one other gaudy night
+Let’s have one other gaudy night
 let sleeping dogs lie
 Let slip the dogs of war
 Lett
@@ -107920,6 +108600,7 @@ letter-writers
 let the cat out of the bag
 Let the cobbler stick to his last
 let the grass grow under one's feet
+let the grass grow under one’s feet
 let them eat cake
 Let them hate, so long as they fear
 let there be light
@@ -108365,8 +109046,10 @@ licking
 lickings
 lick into shape
 lick one's chops
+lick one’s chops
 lick one's lips
 lick one's wounds
+lick one’s wounds
 lickpennies
 lickpenny
 lick-platter
@@ -108429,6 +109112,7 @@ liernes
 liers
 lies
 lie through one's teeth
+lie through one’s teeth
 lieu
 lieus
 lieutenancies
@@ -108470,6 +109154,7 @@ life in the fast lane
 Life is as tedious as a twice-told tale
 life is just a bowl of cherries
 life isn't all beer and skittles
+life isn’t all beer and skittles
 life-jacket
 life-jackets
 lifeless
@@ -108624,6 +109309,7 @@ lightning
 lightning-arrester
 lightning-tube
 light-o'-love
+light-o’-love
 light-o'-loves
 light-organ
 light-organs
@@ -108688,6 +109374,7 @@ like a cat on a hot tin roof
 like a cat on hot bricks
 like a charm
 like a dog's dinner
+like a dog’s dinner
 like a dose of salts
 like a dying duck
 like a house on fire
@@ -108695,6 +109382,7 @@ like a lamb to the slaughter
 like a shot
 like a ton of bricks
 like banging one's head against a brick wall
+like banging one’s head against a brick wall
 like billy-oh
 liked
 like death warmed up
@@ -108704,6 +109392,7 @@ like grim death
 like hell I will!
 like it or lump it
 like knocking one's head against a brick wall
+like knocking one’s head against a brick wall
 likelier
 likeliest
 likelihood
@@ -108718,6 +109407,7 @@ likeness
 likenesses
 likening
 like nobody's business
+like nobody’s business
 like nothing on earth
 likens
 like patience on a monument
@@ -108730,12 +109420,14 @@ like the wind
 likewalk
 likewalks
 like water off a duck's back
+like water off a duck’s back
 likewise
 likin
 liking
 likings
 likins
 Li'l Abner
+Li’l Abner
 lilac
 lilacs
 lilangeni
@@ -108942,6 +109634,7 @@ linchpins
 Lincoln
 Lincolnshire
 Lincoln's Inn
+Lincoln’s Inn
 Lincoln's Inn Fields
 lincomycin
 lincrusta
@@ -109015,6 +109708,7 @@ line of sight
 line of vision
 lineolate
 line one's pockets
+line one’s pockets
 line-out
 line-outs
 liner
@@ -109182,8 +109876,10 @@ lion-like
 lionly
 lions
 lion's mouth
+lion’s mouth
 lion's provider
 lion's share
+lion’s share
 lion-tamer
 lion-tamers
 lip
@@ -109661,6 +110357,7 @@ live-born
 live-box
 live-boxes
 live by one's wits
+live by one’s wits
 lived
 lived-in
 live-in
@@ -109763,8 +110460,10 @@ Lloyd
 Lloyd George knew my father
 Lloyd's
 Lloyd's List
+Lloyd’s List
 Lloyd's Register
 Lloyd's Register of Shipping
+Lloyd’s Register of Shipping
 lo
 loach
 loaches
@@ -109902,6 +110601,7 @@ lobscourse
 lobscouse
 lobscouses
 Lob's pound
+Lob’s pound
 lobster
 lobster-pot
 lobster-pots
@@ -110375,6 +111075,7 @@ long-cloth
 long-coats
 long-dated
 Long Day's Journey into Night
+Long Day’s Journey into Night
 long-distance
 long-drawn
 long-drawn-out
@@ -110496,6 +111197,7 @@ Look Back in Anger
 look before you leap
 look down on
 look down one's nose at
+look down one’s nose at
 looked
 looked forward to
 looker
@@ -110527,6 +111229,7 @@ look the other way
 look the part
 look through rose-tinted spectacles
 look to one's laurels
+look to one’s laurels
 look who's talking
 loom
 loomed
@@ -110672,12 +111375,15 @@ Lord Privy Seal
 lords
 lords-and-ladies
 Lord's Cricket Ground
+Lord’s Cricket Ground
 Lord's Day
 lordship
 lordships
 Lord's Prayer
+Lord’s Prayer
 Lord's Supper
 Lord's table
+Lord’s table
 Lord Warden of the Cinque Ports
 Lord, what fools these mortals be!
 lordy
@@ -110735,16 +111441,22 @@ lose
 losel
 losels
 lose one's bearings
+lose one’s bearings
 lose one's cool
 lose one's hair
+lose one’s hair
 lose one's head
 lose one's nerve
+lose one’s nerve
 lose one's place
 lose one's rag
+lose one’s rag
 lose one's seat
 lose one's shirt
+lose one’s shirt
 lose one's temper
 lose one's tongue
+lose one’s tongue
 lose one's way
 loser
 losers
@@ -110769,6 +111481,7 @@ lossy
 lost
 lost and found
 los'te
+los’te
 lot
 lota
 lotah
@@ -110830,6 +111543,7 @@ Louie
 louis
 Louisa
 louis d'or
+louis d’or
 Louise
 Louisville
 lounge
@@ -110967,11 +111681,14 @@ loverless
 loverly
 lovers
 lovers' knot
+lovers’ knot
 lovers' lane
 lovers' leap
+lovers’ leap
 loves
 lovesick
 Love's Labour's Lost
+Love’s Labour’s Lost
 lovesome
 love-song
 love-songs
@@ -111127,8 +111844,10 @@ lubber
 lubberly
 lubbers
 lubber's hole
+lubber’s hole
 lubber's holes
 lubber's line
+lubber’s line
 lubber's lines
 Lubbock
 lube
@@ -111923,6 +112642,7 @@ maa
 maaed
 maaing
 ma'am
+ma’am
 maar
 maars
 maas
@@ -112015,8 +112735,10 @@ macerators
 macers
 maces
 MacFarlane's buat
+MacFarlane’s buat
 MacFlecknoe
 Macgillicuddy's Reeks
+Macgillicuddy’s Reeks
 MacGuffin
 Mach
 machair
@@ -112258,6 +112980,7 @@ made-up
 madge
 madges
 Mad Hatter's Tea Party
+Mad Hatter’s Tea Party
 madhouse
 madhouses
 Madhur
@@ -112419,6 +113142,7 @@ magistrands
 magistrate
 magistrates
 Magistrates' court
+Magistrates’ court
 magistratic
 magistratical
 magistrature
@@ -112792,10 +113516,13 @@ maistering
 maisters
 maistring
 maitre d'
+maitre d’
 maître de ballet
 maître d'hôtel
+maître d’hôtel
 maitre d's
 maîtres d'hôtel
+maîtres d’hôtel
 maîtresse de ballet
 maize
 maizes
@@ -112870,6 +113597,7 @@ make a noise
 make a pass at
 make a pig of oneself
 make a pig's ear of something
+make a pig’s ear of something
 make a rod for one's own back
 make a song and dance about
 make a stand
@@ -112896,6 +113624,7 @@ make hay while the sun shines
 make head or tail of
 make heavy weather of
 make it one's business
+make it one’s business
 make it snappy
 makeless
 make light of
@@ -112906,6 +113635,7 @@ make no bones about
 make no odds
 make oneself at home
 make one's mark
+make one’s mark
 make-or-break
 make-peace
 maker
@@ -112919,6 +113649,7 @@ make the mouth water
 make the running
 make-up
 make up one's mind
+make up one’s mind
 makeweight
 makeweights
 makimono
@@ -113802,6 +114533,7 @@ manorial
 manors
 manos
 man-o'-war
+man-o’-war
 manpack
 manpower
 Manpower Services Commission
@@ -113825,6 +114557,7 @@ manservant
 manservants
 manses
 man's estate
+man’s estate
 Mansfield
 manshift
 manshifts
@@ -114144,6 +114877,7 @@ mardy
 mardying
 mare
 Marek's disease
+Marek’s disease
 maremma
 maremmas
 Marengo
@@ -114151,8 +114885,10 @@ mares
 mareschal
 mareschals
 mare's-nest
+mare’s-nest
 mare's-nests
 mare's-tail
+mare’s-tail
 mare's-tails
 marg
 Margaret
@@ -114216,6 +114952,7 @@ maria
 mariachi
 mariachis
 Maria de' Medici
+Maria de’ Medici
 mariage de convenance
 mariages de convenance
 marialite
@@ -114271,6 +115008,7 @@ marionberry
 marionette
 marionettes
 Mariotte's law
+Mariotte’s law
 mariposa
 mariposas
 marish
@@ -114580,6 +115318,7 @@ martensitic
 mar-text
 Martha
 Martha's Vineyard
+Martha’s Vineyard
 martial
 martialism
 martialist
@@ -114767,6 +115506,7 @@ masonries
 masonry
 masons
 mason's mark
+mason’s mark
 masoolah
 masoolahs
 Masora
@@ -114796,6 +115536,7 @@ massage
 massaged
 massages
 massage someone's ego
+massage someone’s ego
 massaging
 massagist
 massagists
@@ -114885,6 +115626,7 @@ master of ceremonies
 Master of Science
 Master of the Horse
 Master of the King's Musick
+Master of the King’s Musick
 Master of the Queen's Musick
 Master of the Rolls
 masterpiece
@@ -115328,6 +116070,7 @@ mauvais
 mauvaise
 mauvais goût
 mauvais quart d'heure
+mauvais quart d’heure
 mauve
 mauveine
 mauvelin
@@ -115425,6 +116168,7 @@ maxixes
 maxwell
 maxwells
 Maxwell's demon
+Maxwell’s demon
 Maxwell's Silver Hammer
 may
 maya
@@ -115971,6 +116715,7 @@ meetings
 meetly
 meetness
 meet one's Waterloo
+meet one’s Waterloo
 meets
 mefloquine
 Meg
@@ -116429,6 +117174,7 @@ mending
 mendings
 Mendips
 mend one's fences
+mend one’s fences
 mend one's ways
 Mendoza
 mends
@@ -116500,6 +117246,7 @@ menorrhea
 menorrhoea
 Menotti
 men-o'-war
+men-o’-war
 Mensa
 mensal
 mensch
@@ -116520,8 +117267,10 @@ Menshevists
 Men should be what they seem
 mensing
 men's movement
+men’s movement
 men's room
 men's rooms
+men’s rooms
 mens sana in corpore sano
 menstrua
 menstrual
@@ -116616,6 +117365,7 @@ mercaptides
 mercat
 Mercator
 Mercator's projection
+Mercator’s projection
 mercats
 Mercedes
 mercenaries
@@ -116809,6 +117559,7 @@ mermaiden
 mermaidens
 mermaids
 mermaid's-glove
+mermaid’s-glove
 mermaid's purse
 merman
 mermen
@@ -118052,6 +118803,7 @@ midnight
 midnightly
 midnights
 Midnight's Children
+Midnight’s Children
 midnoon
 midnoons
 mid-ocean
@@ -118329,6 +119081,7 @@ miller
 millerite
 millers
 miller's-thumb
+miller’s-thumb
 millesimal
 millesimally
 millet
@@ -118552,6 +119305,7 @@ mindlessly
 mindlessness
 mind-numbing
 mind one's own business
+mind one’s own business
 mind one's p's and q's
 Mindoro
 mind-reader
@@ -118560,6 +119314,7 @@ mind-reading
 minds
 mind-set
 mind's eye
+mind’s eye
 mind your eye
 mind-your-own-business
 mine
@@ -118609,6 +119364,7 @@ mineralogy
 minerals
 miners
 miner's lamp
+miner’s lamp
 Minerva
 mines
 minestone
@@ -119804,6 +120560,7 @@ missayings
 missays
 Miss Buss and Miss Beale
 Miss Buss and Miss Beale Cupid's darts do not feel
+Miss Buss and Miss Beale Cupid’s darts do not feel
 missed
 missee
 misseeing
@@ -120708,6 +121465,7 @@ mollusk
 molluskan
 mollusks
 Mollweide's projection
+Mollweide’s projection
 molly
 mollycoddle
 mollycoddled
@@ -120898,6 +121656,7 @@ money-boxes
 money-broker
 money-brokers
 Money can't buy me love
+Money can’t buy me love
 money-changer
 money-changers
 moneyed
@@ -120909,6 +121668,7 @@ money-grubber
 money-grubbers
 money-grubbing
 Money isn't everything
+Money isn’t everything
 Money is the root of all evil
 money-lender
 money-lenders
@@ -120925,6 +121685,7 @@ moneys
 money-spinner
 money-spinners
 money's-worth
+money’s-worth
 money to burn
 moneywort
 moneyworts
@@ -121055,11 +121816,13 @@ monkhood
 monkish
 monks
 monk's cloth
+monk’s cloth
 monk-seal
 monk-seals
 monkshood
 monkshoods
 monk's rhubarb
+monk’s rhubarb
 monk's-seam
 Monmouth
 Monmouthshire
@@ -121463,6 +122226,7 @@ Montagnard
 Montagnards
 Montague
 Montagu's harrier
+Montagu’s harrier
 Montaigne
 montane
 Montanism
@@ -121502,6 +122266,7 @@ Monteverdi
 Montevideo
 Montezuma
 Montezuma's revenge
+Montezuma’s revenge
 montgolfier
 montgolfiers
 Montgomery
@@ -121511,6 +122276,7 @@ monthlies
 monthly
 months
 month's mind
+month’s mind
 monticellite
 monticle
 monticles
@@ -121540,6 +122306,7 @@ monture
 montures
 Monty
 Monty Python's Flying Circus
+Monty Python’s Flying Circus
 monument
 monumental
 monumentally
@@ -121888,6 +122655,7 @@ Morescoes
 Moresque
 Moresques
 more than one string to one's bow
+more than one string to one’s bow
 Moreton Bay chestnut
 Moreton Bay chestnuts
 Morgan
@@ -122117,6 +122885,7 @@ mortmain
 mortmains
 Morton
 Morton's fork
+Morton’s fork
 morts
 mort-safe
 mort-safes
@@ -122241,6 +123010,7 @@ mother
 motherboard
 motherboards
 Mother Carey's chicken
+Mother Carey’s chicken
 Mother Carey's chickens
 mother-cell
 mother-church
@@ -122252,6 +123022,7 @@ mothering
 motherings
 mother-in-law
 mother-in-law's tongue
+mother-in-law’s tongue
 Mother Knows Best
 motherland
 motherlands
@@ -122270,11 +123041,14 @@ mother-of-thousands
 mother of vinegar
 mothers
 Mother's Day
+Mother’s Day
 mother's help
 mothers-in-law
 mothers' meeting
+mothers’ meeting
 mother-spot
 mother's ruin
+mother’s ruin
 mothers-to-be
 mother-to-be
 mother-tongue
@@ -122753,6 +123527,7 @@ muchly
 muchness
 much of a muchness
 much to one's surprise
+much to one’s surprise
 mucic
 mucid
 muciferous
@@ -123332,6 +124107,7 @@ mumpsimus
 mumpsimuses
 mums
 mum's the word
+mum’s the word
 mumsy
 mun
 munch
@@ -123518,6 +124294,7 @@ murmurs
 murphies
 murphy
 Murphy's law
+Murphy’s law
 murra
 murrain
 murrains
@@ -123690,6 +124467,7 @@ music-stands
 music-stool
 music-stools
 music to one's ears
+music to one’s ears
 musimon
 musimons
 musing
@@ -124071,6 +124849,7 @@ mylonitized
 mylonitizes
 mylonitizing
 My mistress' eyes are nothing like the sun
+My mistress’ eyes are nothing like the sun
 myna
 mynah
 mynahs
@@ -124351,6 +125130,7 @@ nabobs
 Nabokov
 Naboth
 Naboth's vineyard
+Naboth’s vineyard
 nabs
 nabses
 Nabucco
@@ -124453,6 +125233,7 @@ nailing
 nailings
 nailless
 nail one's colours to the mast
+nail one’s colours to the mast
 nail-polishes
 nail-rod
 nails
@@ -124461,6 +125242,7 @@ nail-varnish
 nail-varnishes
 nain
 nainsel'
+nainsel’
 nainsook
 Naipaul
 Nair
@@ -124631,6 +125413,7 @@ naphthylamine
 Napier
 Napierian
 Napier's bones
+Napier’s bones
 napiform
 napkin
 napkin-ring
@@ -124825,6 +125608,7 @@ Nassau
 Nasser
 nastalik
 nasta'liq
+nasta’liq
 Nastase
 nastic
 nastier
@@ -125162,6 +125946,7 @@ near-sightedness
 near the bone
 near the knuckle
 near to one's heart
+near to one’s heart
 near-white
 Neasden
 neat
@@ -125178,6 +125963,7 @@ neat-house
 neatly
 neatness
 neat's-foot oil
+neat’s-foot oil
 neb
 nebbed
 nebbich
@@ -125411,6 +126197,7 @@ needling
 needly
 needment
 need one's head examined
+need one’s head examined
 needs
 needy
 neeld
@@ -125422,10 +126209,13 @@ neems
 neep
 neeps
 ne'er
+ne’er
 Ne'er cast a clout till May be out
 Ne'erday
+Ne’erday
 ne'er-do-well
 ne'er-do-wells
+ne’er-do-wells
 neesberries
 neesberry
 neese
@@ -125564,6 +126354,7 @@ nelly
 nelson
 nelsons
 Nelson's Column
+Nelson’s Column
 nelumbium
 nelumbiums
 nelumbo
@@ -126380,11 +127171,14 @@ Newtonian
 Newtonic
 newtons
 Newton's cradle
+Newton’s cradle
 Newton's laws of motion
 Newton's rings
+Newton’s rings
 newts
 New World Symphony
 New Year's Day
+New Year’s Day
 New Year's Eve
 New York City
 New York Times
@@ -126877,6 +127671,7 @@ nincompoops
 nincoms
 nine
 nine days' wonder
+nine days’ wonder
 nine-eyes
 ninefold
 nine-foot
@@ -126884,6 +127679,7 @@ nine-hole
 nine-holes
 nine-inch
 nine men's morris
+nine men’s morris
 nine-mile
 ninepence
 ninepences
@@ -127105,6 +127901,7 @@ Noachian
 Noachic
 Noah
 Noah's ark
+Noah’s ark
 nob
 no-ball
 no-balls
@@ -127148,6 +127945,7 @@ nobly
 nobodies
 nobody
 nobody's fool
+nobody’s fool
 no-brainer
 no-brainers
 nobs
@@ -127346,6 +128144,7 @@ No man can serve two masters
 No man is a hero to his valet
 No man is an Island
 no-man's-land
+no-man’s-land
 nomarch
 nomarchies
 nomarchs
@@ -127786,6 +128585,7 @@ Nordic
 Nord-Pas-de-Calais
 Nordrhein-Westfalen
 nor'-east
+nor’-east
 nor'-easter
 Noreen
 norepinephrine
@@ -127938,6 +128738,7 @@ Norway
 Norwegian
 Norwegians
 nor'-west
+nor’-west
 nor'-wester
 Norweyan
 Norwich
@@ -128005,6 +128806,7 @@ nosiness
 nosing
 nosings
 no skin off one's nose
+no skin off one’s nose
 nosocomial
 nosographer
 nosographers
@@ -128085,6 +128887,7 @@ notaryship
 not a sausage
 not a scrap
 not a snowball's chance in hell
+not a snowball’s chance in hell
 not at all
 notate
 notated
@@ -128194,6 +128997,7 @@ notitias
 not know a B from a battledore
 not know a B from a broomstick
 not know a B from a bull's foot
+not know a B from a bull’s foot
 not know chalk from cheese
 not long for this world
 not much cop
@@ -128236,6 +129040,7 @@ not see the wood for the trees
 nott
 not take no for an answer
 Not the Nine O'Clock News
+Not the Nine O’Clock News
 Nottingham
 Nottinghamshire
 Notting Hill Carnival
@@ -128395,6 +129200,7 @@ Now thank we all our God
 now then!
 nowy
 now you're talking
+now you’re talking
 Nox
 noxal
 noxious
@@ -128562,6 +129368,7 @@ nuked
 nukes
 nuking
 Nuku'alofa
+Nuku’alofa
 null
 nulla
 nullah
@@ -128712,6 +129519,7 @@ nunnishness
 nuns
 nunship
 nun's veiling
+nun’s veiling
 Nupe
 Nupes
 Nuphar
@@ -129159,8 +129967,10 @@ objectors
 objects
 objet
 objet d'art
+objet d’art
 objet de vertu
 objets d'art
+objets d’art
 objets de vertu
 objets trouvés
 objet trouvé
@@ -129258,6 +130068,7 @@ obnubilation
 obo
 oboe
 oboe d'amore
+oboe d’amore
 oboes
 oboist
 oboists
@@ -129525,6 +130336,7 @@ Occam
 Occamism
 Occamist
 Occam's razor
+Occam’s razor
 occamy
 occasion
 occasional
@@ -129683,6 +130495,7 @@ Ockham
 Ockhamism
 Ockhamist
 Ockham's razor
+Ockham’s razor
 o'clock
 O'Connell
 O'Connor
@@ -129977,6 +130790,7 @@ odour of sanctity
 odours
 ods
 od's-bodikins
+od’s-bodikins
 odso
 odsos
 odyl
@@ -130060,6 +130874,7 @@ offals
 Offaly
 off and on
 Offa's Dyke
+Offa’s Dyke
 off-beam
 offbeat
 off-board
@@ -130178,14 +130993,19 @@ offloads
 off-message
 off-off-Broadway
 off one's feed
+off one’s feed
 off one's game
 off one's guard
+off one’s guard
 off one's hands
 off one's head
+off one’s head
 off one's nut
 off one's own bat
+off one’s own bat
 off one's rocker
 off one's trolley
+off one’s trolley
 offpeak
 off-piste
 off-plan
@@ -130244,6 +131064,7 @@ off-the-record
 off-the-shelf
 off the shoulder
 off the top of one's head
+off the top of one’s head
 off the wall
 off-ward
 offwards
@@ -130260,6 +131081,7 @@ of no consequence
 of no fixed abode
 of one mind
 of one's own
+of one’s own
 of one's own accord
 Ofsted
 oft
@@ -130322,12 +131144,14 @@ ohmmeter
 ohmmeters
 ohms
 Ohm's law
+Ohm’s law
 oho
 ohone
 ohones
 ohos
 ohs
 Oh, to be in England, Now that April's there
+Oh, to be in England, Now that April’s there
 Oh, What a Lovely War!
 oi
 oidia
@@ -130445,6 +131269,7 @@ okimono
 okimonos
 Okinawa
 OK'ing
+OK’ing
 Oklahoman
 Oklahomans
 Okovango
@@ -130455,6 +131280,7 @@ Okta
 Oktas
 Olaf
 Olbers' paradox
+Olbers’ paradox
 Ol' Blue Eyes
 old
 old-age
@@ -130507,10 +131333,12 @@ Old Man of the Mountain
 old man of the sea
 Old Man River
 old man's beard
+old man’s beard
 Old men forget
 Old Mother Riley
 oldness
 Old Possum's Book of Practical Cats
+Old Possum’s Book of Practical Cats
 Old Red Sandstone
 old-rose
 olds
@@ -130524,10 +131352,13 @@ old-time
 old-timer
 old-timers
 old 'un
+old ’un
 Old Uncle Tom Cobbleigh and all
 old 'uns
+old ’uns
 old wives' tale
 old wives' tales
+old wives’ tales
 old-womanish
 Old Woman of Threadneedle Street
 old-world
@@ -130837,6 +131668,7 @@ once bitten, twice shy
 once in a blue moon
 once in a while
 Once in royal David's city
+Once in royal David’s city
 once more unto the breach, dear friends, once more
 once or twice
 once-over
@@ -130901,6 +131733,7 @@ one-er
 one-ers
 one-eyed
 One Flew Over the Cuckoo's Nest
+One Flew Over the Cuckoo’s Nest
 onefold
 One Foot in the Grave
 One For My Baby
@@ -130939,6 +131772,7 @@ one-man bands
 one-man show
 one-man shows
 one man's meat is another man's poison
+one man’s meat is another man’s poison
 oneness
 one-nighter
 one-nighters
@@ -130962,6 +131796,7 @@ onerousness
 oners
 ones
 one's better half
+one’s better half
 one's cup of tea
 oneself
 one-shot
@@ -130970,8 +131805,10 @@ one-sided
 one-sidedly
 one-sidedness
 one's own man
+one’s own man
 one's own woman
 one's self
+one’s self
 one-step
 one step at a time
 One Step Forward, Two Steps Back
@@ -131054,22 +131891,31 @@ onomatopoiesis
 Onondaga
 Onondagas
 on one's beam-ends
+on one’s beam-ends
 on one's best behaviour
 on one's conscience
+on one’s conscience
 on one's doorstep
 on one's guard
+on one’s guard
 on one's high horse
 on one's last legs
+on one’s last legs
 on one's own
 on one's own account
+on one’s own account
 on one's own head be it
 on one's own home ground
+on one’s own home ground
 on one's person
 on one's plate
+on one’s plate
 on one's tod
 on one's toes
+on one’s toes
 on one's uppers
 on one's way
+on one’s way
 Onora
 onrush
 onrushes
@@ -131083,6 +131929,7 @@ onsetters
 onsetting
 onsettings
 on Shanks's pony
+on Shanks’s pony
 onshore
 onside
 on-site
@@ -131167,6 +132014,7 @@ on the stump
 On the Sunny Side of the Street
 on the tiles
 on the tip of one's tongue
+on the tip of one’s tongue
 on the town
 on the trot
 on the turn
@@ -132233,6 +133081,7 @@ orioles
 Oriolidae
 Orion
 Orion's belt
+Orion’s belt
 orison
 orisons
 Orissa
@@ -132815,6 +133664,7 @@ otherworldly
 otherworlds
 otic
 O tiger's heart wrapped in a woman's hide!
+O tiger’s heart wrapped in a woman’s hide!
 otiose
 otioseness
 otiosity
@@ -133365,6 +134215,7 @@ out-of-fashion
 out of favour
 out-of-hand
 out of harm's way
+out of harm’s way
 out of humour
 out of it
 out-of-joint
@@ -133374,8 +134225,10 @@ out of kilter
 out of mind
 out of nowhere
 out of one's depth
+out of one’s depth
 out of one's head
 out of one's mind
+out of one’s mind
 out of one's tree
 out of order
 out of phase
@@ -133418,6 +134271,7 @@ out of whack
 out-of-work
 out on a limb
 out on one's ear
+out on one’s ear
 Out, out, brief candle!
 outpace
 outpaced
@@ -133654,6 +134508,7 @@ outstay
 outstayed
 outstaying
 outstay one's welcome
+outstay one’s welcome
 outstays
 outstep
 outstepped
@@ -134525,6 +135380,7 @@ overnight
 overnighter
 overnighters
 over one's head
+over one’s head
 overoptimism
 overoptimistic
 overpage
@@ -135399,6 +136255,7 @@ Ozzy
 p
 pa
 pa'anga
+pa’anga
 Pablo
 pabouche
 pabouches
@@ -135566,6 +136423,7 @@ paddled
 paddlefish
 paddlefishes
 paddle one's own canoe
+paddle one’s own canoe
 paddler
 paddlers
 paddles
@@ -135794,6 +136652,7 @@ painter
 painterly
 painters
 painter's colic
+painter’s colic
 painter-stainer
 paintier
 paintiest
@@ -136180,12 +137039,14 @@ palmcorders
 Palm Court Orchestra
 palmed
 Palme d'Or
+Palme d’Or
 palmer
 Palmerin
 palmers
 Palmerston
 palmer-worm
 Palmes d'Or
+Palmes d’Or
 palmette
 palmettes
 palmetto
@@ -136454,6 +137315,7 @@ pandoors
 pandora
 pandoras
 Pandora's box
+Pandora’s box
 pandore
 pandores
 pandour
@@ -137044,6 +137906,7 @@ parader
 paraders
 parades
 Parade's End
+Parade’s End
 paradiddle
 paradiddles
 paradigm
@@ -137657,6 +138520,7 @@ parkins
 Parkinson
 Parkinsonism
 Parkinson's disease
+Parkinson’s disease
 Parkinson's law
 parkis
 parkish
@@ -137897,6 +138761,7 @@ parsonical
 parsonish
 parsons
 parson's nose
+parson’s nose
 part
 partake
 partaken
@@ -138090,6 +138955,7 @@ pascal
 Pascale
 pascals
 Pascal's triangle
+Pascal’s triangle
 Pasch
 paschal
 paschal-candle
@@ -138346,6 +139212,7 @@ pastises
 past-master
 past-masters
 past one's best
+past one’s best
 pastor
 pastoral
 pastorale
@@ -138468,6 +139335,7 @@ paternosters
 paters
 Paterson
 Paterson's curse
+Paterson’s curse
 pates
 pâtés de foie gras
 path
@@ -138719,6 +139587,7 @@ paulownia
 paulownias
 pauls
 Paul's-man
+Paul’s-man
 Paul's-men
 paunch
 paunched
@@ -138879,6 +139748,7 @@ payoffs
 payola
 payolas
 pay one's way
+pay one’s way
 pay-out
 pay-packet
 pay-packets
@@ -139080,6 +139950,7 @@ peasantries
 peasantry
 peasants
 Peasants' Revolt
+Peasants’ Revolt
 Peasants' War
 peasanty
 peascod
@@ -139586,6 +140457,7 @@ Pelecypoda
 pelerine
 pelerines
 Pele's hair
+Pele’s hair
 Peleus
 pelf
 pelham
@@ -139933,6 +140805,7 @@ pennoncels
 pennoned
 pennons
 penn'orth
+penn’orth
 penn'orths
 Pennsylvanian
 Pennsylvanians
@@ -140189,8 +141062,10 @@ people
 peopled
 peoples
 people's democracy
+people’s democracy
 people's front
 People's Party
+People’s Party
 People's Republic
 peopling
 Peoria
@@ -140238,6 +141113,7 @@ pepper-pot
 pepper-pots
 peppers
 Pepper's ghost
+Pepper’s ghost
 pepperwort
 pepperworts
 peppery
@@ -140433,6 +141309,7 @@ perdus
 perdy
 père
 Père David's deer
+Père David’s deer
 peregrinate
 peregrinated
 peregrinates
@@ -141539,6 +142416,7 @@ petersham
 petershams
 Peterson
 Peter's pence
+Peter’s pence
 Peter's projection
 Peter the Hermit
 pethidine
@@ -141875,6 +142753,7 @@ phantomy
 Pharaoh
 Pharaohs
 Pharaoh's ant
+Pharaoh’s ant
 Pharaoh's serpent
 pharaonic
 phare
@@ -141957,6 +142836,7 @@ pheasantries
 pheasantry
 pheasants
 pheasant's-eye
+pheasant’s-eye
 pheer
 pheere
 pheeres
@@ -142191,6 +143071,7 @@ philosopheresses
 philosophers
 philosophers of the garden
 philosopher's stone
+philosopher’s stone
 philosophes
 philosophess
 philosophesses
@@ -143144,6 +144025,7 @@ pick-pockets
 pick-purse
 picks
 pick someone's brains
+pick someone’s brains
 pick someone's pocket
 pick-thank
 pick-tooth
@@ -143255,6 +144137,7 @@ piece
 pieced
 pièce de résistance
 pièce d'occasion
+pièce d’occasion
 piece-goods
 pieceless
 piecemeal
@@ -143273,6 +144156,7 @@ piecers
 pieces
 pièces de résistance
 pièces d'occasion
+pièces d’occasion
 pieces of eight
 piece-work
 piecing
@@ -143398,6 +144282,7 @@ pigeonries
 pigeonry
 pigeons
 pigeon's milk
+pigeon’s milk
 pigeon-toed
 pigeon-wing
 pig-eyed
@@ -143471,6 +144356,7 @@ pigs
 pigsconce
 pigsconces
 pig's ear
+pig’s ear
 pigskin
 pigskins
 pigs might fly
@@ -143590,6 +144476,7 @@ pilgrimizes
 pilgrimizing
 pilgrims
 Pilgrim's Progress
+Pilgrim’s Progress
 pili
 piliferous
 piliform
@@ -143958,6 +144845,7 @@ pinole
 pinoles
 piñon
 pin one's hopes on
+pin one’s hopes on
 piñons
 Pinot
 pinotage
@@ -144632,6 +145520,7 @@ planchettes
 planching
 Planck
 Planck's constant
+Planck’s constant
 Planck's law
 plane
 planed
@@ -144729,6 +145618,7 @@ planted
 planter
 planters
 planter's punch
+planter’s punch
 plant-formation
 plant-house
 plantigrade
@@ -145075,8 +145965,11 @@ playmates
 play-off
 play-offs
 play one's cards badly
+play one’s cards badly
 play one's cards close to one's chest
+play one’s cards close to one’s chest
 play one's cards well
+play one’s cards well
 play on words
 play-pen
 play-pens
@@ -145236,6 +146129,7 @@ Pléiade
 Pleiades
 Pleiads
 pleidiol wyf i'm gwlad
+pleidiol wyf i’m gwlad
 plein-air
 plein-airist
 Pleiocene
@@ -145402,6 +146296,7 @@ plighters
 plightful
 plighting
 plight one's troth
+plight one’s troth
 plights
 plim
 plimmed
@@ -145492,6 +146387,7 @@ ploughland
 ploughlands
 ploughman
 ploughman's lunch
+ploughman’s lunch
 ploughman's spikenard
 ploughmen
 plough-monday
@@ -145722,6 +146618,7 @@ plusage
 plusages
 plus ça change
 plus ça change, plus c'est la même chose
+plus ça change, plus c’est la même chose
 plused
 pluses
 plus-fours
@@ -145838,6 +146735,7 @@ poakas
 poas
 Pocahontas
 po'chaise
+po’chaise
 pochard
 pochards
 pochay
@@ -145998,6 +146896,7 @@ poetry
 poetry in motion
 poets
 Poets' Corner
+Poets’ Corner
 poetship
 po-faced
 pogge
@@ -146047,6 +146946,7 @@ point
 point-blank
 Point Counter Point
 point d'appui
+point d’appui
 point-device
 point-devise
 point-duty
@@ -146080,6 +146980,7 @@ point of the compass
 point of view
 points
 points d'appui
+points d’appui
 pointsman
 pointsmen
 points of honour
@@ -146120,8 +147021,10 @@ poison-pen letters
 poisons
 Poisson
 poisson d'avril
+poisson d’avril
 Poisson's distribution
 Poisson's ratio
+Poisson’s ratio
 Poitier
 Poitiers
 Poitou-Charentes
@@ -146141,6 +147044,7 @@ poke fun at
 Pokémon
 Pokémons
 poke one's nose into
+poke one’s nose into
 poker
 poker-face
 poker-faced
@@ -146427,6 +147331,7 @@ Pollyannas
 Pollyannish
 Polly put the kettle on
 Polly put the kettle on, we'll all have tea
+Polly put the kettle on, we’ll all have tea
 pollywig
 pollywigs
 pollywog
@@ -147026,6 +147931,7 @@ pontil
 pontile
 pontils
 Pont-l'Évêque
+Pont-l’Évêque
 pontlevis
 pontlevises
 ponton
@@ -147137,6 +148043,7 @@ poor-law
 Poor Little Rich Girl
 poorly
 poor man's weather glass
+poor man’s weather glass
 poor-mouth
 poor-mouthed
 poor-mouthing
@@ -147145,11 +148052,13 @@ poorness
 poor-rate
 poor-relief
 Poor Richard's Almanac
+Poor Richard’s Almanac
 poor-spirited
 poor-spiritedness
 poort
 poortith
 Poor Tom's a-cold
+Poor Tom’s a-cold
 poorts
 poorwill
 poorwills
@@ -147182,8 +148091,10 @@ poperins
 popery
 popes
 pope's eye
+pope’s eye
 popeship
 pope's nose
+pope’s nose
 pop-eye
 pop-eyed
 pop goes the weasel!
@@ -147209,6 +148120,7 @@ poplitic
 popmobility
 Popocatepetl
 pop one's clogs
+pop one’s clogs
 popover
 popovers
 Popp
@@ -147485,6 +148397,7 @@ porterhouse-steak
 porterly
 porters
 porters' knot
+porters’ knot
 porter's lodge
 portess
 portesse
@@ -147531,6 +148444,7 @@ portmantle
 Portmeirion
 portmen
 Portnoy's Complaint
+Portnoy’s Complaint
 Pôrto
 Pôrto Alegre
 port of call
@@ -147812,6 +148726,7 @@ postlude
 postludes
 postman
 postman's knock
+postman’s knock
 postmark
 postmarked
 postmarking
@@ -148122,8 +149037,10 @@ potteringly
 potterings
 potters
 Potter's Bar
+Potter’s Bar
 potter's field
 potter's wheel
+potter’s wheel
 pottery
 pottier
 potties
@@ -148141,6 +149058,7 @@ potto
 pottos
 potts
 Pott's disease
+Pott’s disease
 Pott's fracture
 potty
 potty-chair
@@ -148200,6 +149118,7 @@ poulter
 poulterer
 poulterers
 poulter's measure
+poulter’s measure
 poulter's measures
 poultfeet
 poultfoot
@@ -149277,6 +150196,7 @@ prelingual
 preliterate
 prelude
 Prélude à l'après-midi d'un faune
+Prélude à l’après-midi d’un faune
 preluded
 preludes
 preludi
@@ -150118,6 +151038,7 @@ prick-song
 prick-spur
 prick-the-garter
 prick up one's ears
+prick up one’s ears
 prickwood
 prickwoods
 pricy
@@ -150133,6 +151054,7 @@ prideless
 pride of place
 prides
 Pride's Purge
+Pride’s Purge
 pridian
 priding
 pried
@@ -150163,6 +151085,7 @@ priests
 priestship
 priestships
 priest's hole
+priest’s hole
 prig
 prigged
 prigger
@@ -150322,9 +151245,11 @@ Prince of Peace
 Prince of Wales
 Prince of Wales Island
 Prince Rupert's drop
+Prince Rupert’s drop
 Prince Rupert's drops
 princes
 prince's-feather
+prince’s-feather
 princess
 princesse
 princesses
@@ -150368,10 +151293,13 @@ printer
 printeries
 printers
 printer's devil
+printer’s devil
 printer's devilry
 printer's mark
+printer’s mark
 printer's marks
 printer's pie
+printer’s pie
 printery
 printhead
 printheads
@@ -150445,6 +151373,7 @@ prisoner of conscience
 prisoner of war
 prisoners
 prisoner's-base
+prisoner’s-base
 prisoners of war
 prison-house
 prisoning
@@ -150476,6 +151405,7 @@ privateersman
 privateersmen
 privately
 private member's bill
+private member’s bill
 privateness
 private pay bed
 private pay beds
@@ -150513,6 +151443,7 @@ privities
 privity
 privy
 Prix de l'Arc de Triomphe
+Prix de l’Arc de Triomphe
 Priya
 prizable
 prize
@@ -152346,6 +153277,7 @@ prudes
 prudhomme
 prudhommes
 Prud'hon
+Prud’hon
 prudish
 prudishly
 prudishness
@@ -152431,6 +153363,7 @@ prytaneum
 prythee
 prythees
 Przewalski's horse
+Przewalski’s horse
 psaligraphy
 psalm
 psalm-book
@@ -152939,6 +153872,7 @@ puckish
 puckle
 puckles
 Puck of Pook's Hill
+Puck of Pook’s Hill
 pucks
 pud
 pudden
@@ -152971,6 +153905,7 @@ puddling
 puddlings
 puddly
 Pudd'nhead Wilson
+Pudd’nhead Wilson
 puddock
 puddocks
 puddy
@@ -153146,6 +154081,7 @@ pulleys
 pull-in
 pulling
 pull in one's horns
+pull in one’s horns
 pull-ins
 Pullman
 Pullmans
@@ -153153,8 +154089,10 @@ pull-off
 pull-on
 pull oneself together
 pull oneself up by one's own bootstraps
+pull oneself up by one’s own bootstraps
 pull one's finger out
 pull one's punches
+pull one’s punches
 pull one's weight
 pull-out
 pull out all the stops
@@ -153167,6 +154105,7 @@ pull-tabs
 pull the other one
 pull the plug on
 pull the wool over one's eyes
+pull the wool over one’s eyes
 pull-through
 pullulate
 pullulated
@@ -153834,6 +154773,7 @@ pushing up the daisies
 Pushmi-Pullyu
 push-off
 push one's luck
+push one’s luck
 push-over
 push-overs
 push-pin
@@ -153863,8 +154803,10 @@ puss
 pusser
 pussers
 pusser's dagger
+pusser’s dagger
 pusser's logic
 pusser's sneer
+pusser’s sneer
 pusses
 pussies
 Puss in Boots
@@ -153897,6 +154839,7 @@ put
 put a brave face on it
 put a good face on it
 put all one's eggs into one basket
+put all one’s eggs into one basket
 putamen
 putamina
 put-and-take
@@ -153937,16 +154880,23 @@ putoises
 put-on
 put on a pedestal
 put one's best foot forward
+put one’s best foot forward
 put one's face on
 put one's foot down
+put one’s foot down
 put one's foot in it
 put one's hand to the plough
+put one’s hand to the plough
 put one's head on the block
 put one's house in order
+put one’s house in order
 put one's money where one's mouth is
+put one’s money where one’s mouth is
 put one's shoulder to the wheel
+put one’s shoulder to the wheel
 put on ice
 put on one's thinking-cap
+put on one’s thinking-cap
 put-ons
 put on the back burner
 put on the Ritz
@@ -154375,6 +155325,7 @@ pyruvate
 pyruvates
 Pythagoras
 Pythagoras' theorem
+Pythagoras’ theorem
 Pythagorean
 Pythagoreanism
 Pythagoreans
@@ -154656,6 +155607,7 @@ quahogs
 quaich
 quaichs
 Quai d'Orsay
+Quai d’Orsay
 quaigh
 quaighs
 quail
@@ -155022,8 +155974,10 @@ queechy
 queen
 Queen-Anne
 Queen Anne's Bounty
+Queen Anne’s Bounty
 Queen Anne's dead
 Queen Anne's lace
+Queen Anne’s lace
 queen-bee
 queen-cake
 Queen Charlotte Islands
@@ -155062,16 +156016,22 @@ queen-regent
 queen-regnant
 queens
 Queen's Award
+Queen’s Award
 Queen's Awards
 Queen's Bench
+Queen’s Bench
 Queensberry
 queen's bounty
+queen’s bounty
 Queen's Club
 Queen's Counsel
+Queen’s Counsel
 queen's English
 queen's evidence
+queen’s evidence
 Queen's Guide
 Queen's Guides
+Queen’s Guides
 queen's highway
 queenship
 queenships
@@ -155080,15 +156040,20 @@ Queensland
 Queenslander
 Queenslanders
 queen's messenger
+queen’s messenger
 Queen's Park Rangers
 Queen's Proctor
+Queen’s Proctor
 Queen's Regulations
 Queen's Scout
+Queen’s Scout
 Queen's Scouts
 Queen's speech
+Queen’s speech
 queen-stitch
 Queenstown
 Queen's ware
+Queen’s ware
 queeny
 queer
 queer-basher
@@ -155104,6 +156069,7 @@ queerly
 queerness
 queers
 queer someone's pitch
+queer someone’s pitch
 queer the pitch
 queest
 queests
@@ -155629,6 +156595,7 @@ quizzings
 Qum
 Qumran
 quo'
+quo’
 quoad
 quod
 quodded
@@ -155700,6 +156667,7 @@ quoth
 quotha
 quothas
 Quoth the Raven, 'Nevermore'
+Quoth the Raven, ‘Nevermore’
 quotidian
 quotidians
 quotient
@@ -155711,6 +156679,7 @@ quotum
 quotums
 quo vadis?
 Qur'an
+Qur’an
 Qwaqwa
 QWERTY
 r
@@ -155766,6 +156735,7 @@ rabbitries
 rabbitry
 rabbits
 rabbit's foot
+rabbit’s foot
 rabbit-squirrel
 rabbit-warren
 rabbit-warrens
@@ -155917,6 +156887,7 @@ Rackham
 racking
 rackings
 rack one's brains
+rack one’s brains
 rack-punch
 rack-rail
 rack-railway
@@ -156180,6 +157151,7 @@ rafale
 rafales
 raff
 Rafferty's rules
+Rafferty’s rules
 raffia
 raffias
 raffinate
@@ -156392,6 +157364,7 @@ rain-doctor
 raindrop
 raindrops
 Raindrops Keep Fallin' on my Head
+Raindrops Keep Fallin’ on my Head
 Raine
 rained
 rainfall
@@ -156431,6 +157404,7 @@ raise an eyebrow
 raise a stink
 raised
 raise one's eyebrows
+raise one’s eyebrows
 raise one's glass
 raiser
 raisers
@@ -156443,11 +157417,13 @@ raising-bee
 raising-bees
 raisins
 raison d'état
+raison d’état
 raison d'être
 raisonné
 raisonneur
 raisonneurs
 raisons d'état
+raisons d’état
 raisons d'être
 rait
 raita
@@ -156494,6 +157470,7 @@ rakery
 rakes
 rakeshame
 Rake's Progress
+Rake’s Progress
 raki
 raking
 rakings
@@ -156670,6 +157647,7 @@ Ramsey
 Ramsgate
 ramshackle
 ram's-horn
+ram’s-horn
 ramson
 ramsons
 ramstam
@@ -157172,6 +158150,7 @@ ratsbane
 ratsbanes
 Ratskeller
 rat's-tail
+rat’s-tail
 rat-tail
 rat-tailed
 rattan
@@ -157341,6 +158320,7 @@ raylet
 raylets
 Raymond
 Raynaud's disease
+Raynaud’s disease
 Raynaud's phenomenon
 ray of sunshine
 rayon
@@ -157487,6 +158467,7 @@ reader
 Reader, I married him
 readers
 Reader's Digest
+Reader’s Digest
 readership
 readerships
 readied
@@ -159132,6 +160113,7 @@ redshire
 red-shirt
 redshort
 Red sky at night, shepherd's delight
+Red sky at night, shepherd’s delight
 Red sky in the morning, shepherd's warning
 red-start
 redstreak
@@ -161519,6 +162501,7 @@ repoints
 repoman
 repomen
 répondez s'il vous plait
+répondez s’il vous plait
 repone
 reponed
 repones
@@ -162463,6 +163446,7 @@ restocked
 restocking
 restocks
 rest on one's laurels
+rest on one’s laurels
 rest on one's oars
 restorable
 restorableness
@@ -163497,6 +164481,7 @@ rewrote
 rex
 Rexine
 Reye's syndrome
+Reye’s syndrome
 Reykjavik
 reynard
 reynards
@@ -164916,6 +165901,7 @@ roamer
 roamers
 roaming
 Roamin' in the Gloamin'
+Roamin’ in the Gloamin’
 roams
 roan
 Roanoke
@@ -165197,6 +166183,7 @@ Rogerian
 Rogers
 Roget
 Roget's Thesaurus
+Roget’s Thesaurus
 rogue
 rogued
 rogue-elephant
@@ -165206,6 +166193,7 @@ rogueries
 roguery
 rogues
 rogues' gallery
+rogues’ gallery
 rogueship
 roguing
 roguish
@@ -165327,6 +166315,7 @@ roll-top desk
 roll-top desks
 roll-up
 roll up one's sleeves
+roll up one’s sleeves
 roll with the punches
 roly-polies
 roly-poly
@@ -165640,6 +166629,7 @@ ropers
 ropery
 ropes
 rope's end
+rope’s end
 rope-stitch
 rope-trick
 rope-walk
@@ -165678,6 +166668,7 @@ roric
 rorid
 rorie
 Rorke's Drift
+Rorke’s Drift
 ro-ro
 ro-ros
 rorqual
@@ -166420,6 +167411,7 @@ rubifying
 rubiginose
 rubiginous
 Rubik's Cube
+Rubik’s Cube
 Rubin
 Rubina
 rubine
@@ -166430,6 +167422,7 @@ ruble
 rubles
 rub of the green
 rub one's hands
+rub one’s hands
 rubric
 rubrical
 rubrically
@@ -166841,6 +167834,7 @@ runny
 Runnymede
 run-off
 run off one's feet
+run off one’s feet
 run-offs
 run off with
 run-of-the-mill
@@ -166879,6 +167873,7 @@ rupees
 Rupert
 Rupert of Hentzau
 Rupert's drop
+Rupert’s drop
 Rupert's drops
 rupestrian
 rupia
@@ -166949,6 +167944,7 @@ rushlights
 rush-like
 Rushmore
 rush one's fences
+rush one’s fences
 rush-ring
 rushy
 rusine
@@ -167136,6 +168132,7 @@ rypecks
 ryper
 s
 sa'
+sa’
 Saab
 Saam
 Saame
@@ -167498,6 +168495,7 @@ sadistic
 sadistically
 sadists
 Sadler's Wells
+Sadler’s Wells
 Sadler's Wells Theatre
 sadly
 sadness
@@ -167746,14 +168744,17 @@ saining
 sains
 saint
 Saint Agnes's Eve
+Saint Agnes’s Eve
 Saint Andrew's Cross
 Saint Anthony's Cross
+Saint Anthony’s Cross
 Saint Anthony's fire
 Saint Bernard Pass
 Saint-Denis
 saintdom
 sainted
 Saint Elmo's fire
+Saint Elmo’s fire
 Saint-Emilion
 saintess
 saintesses
@@ -167766,8 +168767,10 @@ sainting
 saintish
 saintism
 Saint James's Palace
+Saint James’s Palace
 Saint John's
 Saint John's bread
+Saint John’s bread
 Saint John's wort
 Saint-Julien
 Saint-Just
@@ -167779,6 +168782,7 @@ saintliness
 saintling
 saintlings
 Saint Luke's summer
+Saint Luke’s summer
 saintly
 Saintpaulia
 Saint Peter's
@@ -167786,6 +168790,7 @@ Saint-Quentin
 saints
 Saint-Saens
 saint's-day
+saint’s-day
 saint's-days
 saintship
 Saint-Simon
@@ -167794,8 +168799,10 @@ Saint-Simonianism
 Saint-Simonism
 Saint-Simonist
 Saint Swithin's Day
+Saint Swithin’s Day
 Saint Valentine's Day
 Saint Vitus's dance
+Saint Vitus’s dance
 saique
 saiques
 sair
@@ -169200,6 +170207,7 @@ saturniid
 saturnine
 saturnism
 Saturn's tree
+Saturn’s tree
 satyagraha
 satyr
 satyra
@@ -169361,6 +170369,7 @@ saved by the bell
 saveloy
 saveloys
 save one's breath
+save one’s breath
 save one's skin
 saver
 savers
@@ -170006,6 +171015,7 @@ scavengering
 scavengerings
 scavengers
 scavenger's daughter
+scavenger’s daughter
 scavengery
 scavenges
 scavenging
@@ -170099,6 +171109,7 @@ sceuophylax
 sceuophylaxes
 schadenfreude
 Schafer's method
+Schafer’s method
 schalstein
 schanse
 schantze
@@ -170121,6 +171132,7 @@ schedules
 scheduling
 Scheele
 Scheele's green
+Scheele’s green
 scheelite
 schefflera
 Scheherazade
@@ -170168,6 +171180,7 @@ schiedams
 Schiele
 Schiff
 Schiff's base
+Schiff’s base
 Schiff's reagent
 schiller
 schillerisation
@@ -170187,6 +171200,7 @@ schimmel
 schimmels
 Schindler
 Schindler's List
+Schindler’s List
 schindylesis
 schindyletic
 schipperke
@@ -170365,6 +171379,7 @@ scholars
 scholarship
 scholarships
 scholar's mate
+scholar’s mate
 scholastic
 scholastical
 scholastically
@@ -170422,6 +171437,7 @@ school-leaver
 school-leavers
 school-leaving
 school-ma'am
+school-ma’am
 schoolmaid
 schoolmaids
 schoolman
@@ -170739,6 +171755,7 @@ scoldingly
 scoldings
 scolds
 scold's bridle
+scold’s bridle
 scoleces
 scolecid
 scoleciform
@@ -171010,6 +172027,7 @@ scout-master
 scout-masters
 scouts
 scout's honour
+scout’s honour
 scout's pace
 scow
 scowder
@@ -172548,6 +173566,7 @@ sedums
 see
 seeable
 See, amid the winter's snow
+See, amid the winter’s snow
 seecatch
 seecatchie
 seed
@@ -172630,6 +173649,7 @@ See Naples and die
 See no evil, hear no evil, speak no evil
 See of Rome
 see one's way clear to
+see one’s way clear to
 seep
 seepage
 seepages
@@ -173373,6 +174393,7 @@ selle
 seller
 sellers
 sellers' market
+sellers’ market
 selles
 selling
 selling-plater
@@ -174214,6 +175235,7 @@ sergeant-fish
 sergeant-major
 sergeant-majors
 Sergeant Pepper's Lonely Hearts Club Band
+Sergeant Pepper’s Lonely Hearts Club Band
 sergeants
 sergeants at arms
 sergeantship
@@ -174481,6 +175503,7 @@ serve
 serve an apprenticeship
 served
 serve one's time
+serve one’s time
 server
 serveries
 servers
@@ -174622,8 +175645,10 @@ setness
 set-off
 seton
 set one's heart upon
+set one’s heart upon
 set one's house in order
 set one's sights on
+set one’s sights on
 set one's teeth on edge
 setons
 setose
@@ -174631,6 +175656,7 @@ set-out
 sets
 set-screw
 set someone's teeth on edge
+set someone’s teeth on edge
 set-square
 set-squares
 Setswana
@@ -174663,6 +175689,7 @@ settle old scores
 settler
 settlers
 settler's clock
+settler’s clock
 settles
 settling
 settling-day
@@ -174718,6 +175745,7 @@ seventy-eight
 Seven Wonders of the World
 seven-year itch
 Seven Years' War
+Seven Years’ War
 sever
 severable
 several
@@ -174812,6 +175840,7 @@ sex-limited
 sex-linked
 sexlocular
 Sex 'n' drugs 'n' rock 'n' roll
+Sex ’n’ drugs ’n’ rock ’n’ roll
 sexological
 sexologist
 sexologists
@@ -175032,6 +176061,7 @@ shake-downs
 shaken
 Shaken and not stirred
 shake one's head
+shake one’s head
 shake one's sides
 shake-out
 shake-outs
@@ -175073,6 +176103,7 @@ shaliest
 shall
 shalli
 shall I compare thee to a summer's day?
+shall I compare thee to a summer’s day?
 shallon
 shallons
 shalloon
@@ -175202,6 +176233,7 @@ shanked
 shanking
 shanks
 Shanks's pony
+Shanks’s pony
 shannies
 Shannon
 shanny
@@ -175291,6 +176323,7 @@ sharks
 sharkskin
 sharkskins
 shark's manners
+shark’s manners
 Sharmaine
 sharn
 sharny
@@ -175533,13 +176566,17 @@ sheep-pox
 sheep-rot
 sheep-run
 sheep's-bit
+sheep’s-bit
 sheep-scab
 sheep's-eye
+sheep’s-eye
 sheep's-eyes
 sheep's fescue
+sheep’s fescue
 sheepshank
 sheepshanks
 sheep's-head
+sheep’s-head
 sheep-shearer
 sheep-shearing
 sheep-silver
@@ -175707,6 +176744,7 @@ shent
 Shenyang
 she-oak
 she'ol
+she’ol
 shepherd
 shepherded
 shepherdess
@@ -175717,12 +176755,16 @@ shepherdling
 shepherdlings
 shepherds
 Shepherd's Bush
+Shepherd’s Bush
 shepherd's check
 shepherd's crook
+shepherd’s crook
 shepherd's needle
 shepherd's pie
+shepherd’s pie
 shepherd's plaid
 shepherd's-purse
+shepherd’s-purse
 Sheppard
 Shepperton
 Sheppey
@@ -176039,13 +177081,17 @@ ship-railway
 ship-rigged
 ships
 ship's biscuit
+ship’s biscuit
 ship's boy
 ship's-carpenter
+ship’s-carpenter
 ship's-chandler
 shipshape
 ship's husband
+ship’s husband
 ships of the desert
 ship's papers
+ship’s papers
 Ships that pass in the night
 ship the oars
 ship-tire
@@ -176309,6 +177355,7 @@ shoot
 shootable
 shoot down in flames
 shoot-'em-up
+shoot-’em-up
 shooter
 shooters
 shoot from the hip
@@ -176317,6 +177364,7 @@ shootings
 shootist
 shoot oneself in the foot
 shoot one's mouth off
+shoot one’s mouth off
 shoot-out
 shoot-outs
 shoots
@@ -176638,6 +177686,7 @@ show-off
 show-offs
 show of hands
 show one's face
+show one’s face
 show one's hand
 showpiece
 showpieces
@@ -177423,6 +178472,7 @@ sign-manual
 sign of the cross
 sign of the zodiac
 sign one's own death-warrant
+sign one’s own death-warrant
 sign on the dotted line
 signor
 signora
@@ -177948,6 +178998,7 @@ singingly
 singing-master
 singings
 Singin' in the Rain
+Singin’ in the Rain
 single
 single-acting
 single-action
@@ -178308,6 +179359,7 @@ sitiology
 sitiophobia
 sitology
 sit on one's hands
+sit on one’s hands
 sit on the fence
 sitophobia
 sitrep
@@ -178438,6 +179490,7 @@ sjambokked
 sjambokking
 sjamboks
 Sjögren's syndrome
+Sjögren’s syndrome
 ska
 skag
 skail
@@ -178493,6 +179546,7 @@ skeesicks
 skeet
 skeeter
 Skeffington's daughter
+Skeffington’s daughter
 skeg
 skegg
 skegger
@@ -178596,6 +179650,7 @@ skeuomorphic
 skeuomorphism
 skeuomorphs
 Skevington's daughter
+Skevington’s daughter
 skew
 skew-back
 skewbald
@@ -179511,6 +180566,7 @@ slinger
 slingers
 slinging
 sling one's hook
+sling one’s hook
 slings
 slings and arrows
 sling-shot
@@ -179669,6 +180725,7 @@ slogger
 sloggers
 slogging
 slog one's guts out
+slog one’s guts out
 slogs
 sloid
 slo-mo
@@ -179962,6 +181019,7 @@ smackers
 smacking
 smackings
 smack one's lips
+smack one’s lips
 smacks
 smaik
 smaiks
@@ -180487,6 +181545,7 @@ snails
 snail-shell
 snail-slow
 snail's pace
+snail’s pace
 snail-wheel
 snaily
 snake
@@ -180510,6 +181569,7 @@ snakeroots
 snakes
 snakes and ladders
 snake's-head
+snake’s-head
 snakeskin
 snakestone
 snakestones
@@ -180693,6 +181753,7 @@ snellest
 snelling
 snells
 Snell's law
+Snell’s law
 snelly
 snib
 snibbed
@@ -181391,6 +182452,7 @@ Sodor
 Sodor and Man
 sods
 Sod's law
+Sod’s law
 soever
 sofa
 sofar
@@ -181815,6 +182877,7 @@ Solomon
 Solomonian
 Solomonic
 Solomon's-seal
+Solomon’s-seal
 Solon
 solonchak
 solonets
@@ -181937,6 +183000,7 @@ somebodies
 somebody
 someday
 Someday I'll Find You
+Someday I’ll Find You
 somedeal
 somegate
 somehow
@@ -182742,6 +183806,7 @@ souvenirs
 souvlaki
 souvlakia
 sou'-wester
+sou’-wester
 sou'-westers
 sov
 sovenance
@@ -182785,6 +183850,7 @@ sow-bread
 sow-bug
 sowed
 So we'll go no more a-roving
+So we’ll go no more a-roving
 sowens
 sower
 sowers
@@ -182809,6 +183875,7 @@ sowling
 sowls
 sown
 sow one's wild oats
+sow one’s wild oats
 sows
 sowse
 sow the wind and reap the whirlwind
@@ -183255,6 +184322,7 @@ speakerphone
 speakerphones
 speakers
 Speakers' Corner
+Speakers’ Corner
 speakership
 speakerships
 speaking
@@ -183266,6 +184334,7 @@ speaking-trumpets
 speaking-tube
 speaking-tubes
 speak one's mind
+speak one’s mind
 speaks
 speak the same language
 speal
@@ -184439,6 +185508,7 @@ split-level
 split-new
 split-off
 split one's sides
+split one’s sides
 splits
 split-second
 splitter
@@ -184747,6 +185817,7 @@ sportiveness
 sportless
 sport of kings
 sport one's oak
+sport one’s oak
 sports
 sports-car
 sports-cars
@@ -184901,6 +185972,7 @@ spreading
 spreadingly
 spreadings
 spread one's wings
+spread one’s wings
 spread-over
 spreads
 spreadsheet
@@ -185749,6 +186821,7 @@ stagnating
 stagnation
 stagnations
 St Agnes's Eve
+St Agnes’s Eve
 stag-parties
 stag-party
 stags
@@ -186036,8 +187109,10 @@ standoffishly
 stand-offishness
 stand on ceremony
 stand one's ground
+stand one’s ground
 stand on one's dignity
 stand on one's own two feet
+stand on one’s own two feet
 stand-patter
 stand-pattism
 stand-pipe
@@ -186045,6 +187120,7 @@ stand-pipes
 standpoint
 standpoints
 St Andrew's cross
+St Andrew’s cross
 St Andrew's Day
 stands
 standstill
@@ -186087,6 +187163,7 @@ stannites
 stannotype
 stannous
 St Anthony's cross
+St Anthony’s cross
 St Anthony's fire
 stanza
 stanzaic
@@ -186371,6 +187448,7 @@ stationed
 stationer
 stationers
 Stationers' Hall
+Stationers’ Hall
 stationery
 station-house
 stationing
@@ -186475,8 +187553,10 @@ stay the course
 stay the pace
 St Bernard Pass
 St Crispin's Day
+St Crispin’s Day
 St Cuthbert's beads
 St Cuthbert's duck
+St Cuthbert’s duck
 St David's Day
 St-Denis
 stead
@@ -186820,6 +187900,7 @@ stells
 stellular
 stellulate
 St Elmo's fire
+St Elmo’s fire
 stem
 stembok
 stemboks
@@ -187181,6 +188262,7 @@ stewardries
 stewardry
 stewards
 stewards' enquiries
+stewards’ enquiries
 stewards' enquiry
 stewardship
 stewardships
@@ -187193,6 +188275,7 @@ stewers
 stewing
 stewings
 stew in one's own juice
+stew in one’s own juice
 stewpan
 stewpans
 stewpond
@@ -187203,6 +188286,7 @@ stews
 stewy
 stey
 St George's cross
+St George’s cross
 St George's Day
 sthenic
 stiacciato
@@ -187242,6 +188326,7 @@ stickability
 stick at nothing
 sticked
 stick 'em up!
+stick ’em up!
 sticker
 stickers
 stickful
@@ -187260,6 +188345,7 @@ sticking-point
 sticking-points
 stickings
 stick in one's craw
+stick in one’s craw
 stick-insect
 stick-insects
 stick-in-the-mud
@@ -187278,9 +188364,11 @@ sticklers
 stickles
 stickling
 stick one's neck out
+stick one’s neck out
 stick out like a sore thumb
 sticks
 stick to one's guns
+stick to one’s guns
 stickup
 stickups
 stickweed
@@ -187561,6 +188649,7 @@ stirless
 Stirling
 Stirlingshire
 stir one's stumps
+stir one’s stumps
 stirp
 stirpes
 stirpiculture
@@ -187585,6 +188674,7 @@ stirrup-strap
 stirs
 stir the possum
 stir up a hornet's nest
+stir up a hornet’s nest
 stishie
 stitch
 stitchcraft
@@ -187611,14 +188701,19 @@ stiving
 stivy
 St James's
 St James's Palace
+St James’s Palace
 St John's
 St John's bread
+St John’s bread
 St Johnston's ribbon
 St Johnston's tippet
+St Johnston’s tippet
 St John's wort
 St Luke's summer
+St Luke’s summer
 St Martin's evil
 St Martin's summer
+St Martin’s summer
 St Nicholas's clerks
 stoa
 stoae
@@ -187645,6 +188740,7 @@ stock-breeding
 stockbroker
 stockbrokers
 stockbrokers' Tudor
+stockbrokers’ Tudor
 stockbroking
 stockbrokings
 stockcar
@@ -187784,6 +188880,7 @@ stoker
 stokers
 stokes
 Stokes' law
+Stokes’ law
 stoking
 Stokowski
 STOL
@@ -187917,6 +189014,7 @@ stoneshot
 stoneshots
 stone-snipe
 stone's-throw
+stone’s-throw
 stone-still
 stone the crows!
 stonewall
@@ -188066,6 +189164,7 @@ storiology
 stork
 storks
 stork's-bill
+stork’s-bill
 storm
 storm-beat
 storm-beaten
@@ -188204,11 +189303,14 @@ stown
 stownlins
 stows
 St Patrick's cabbage
+St Patrick’s cabbage
 St Patrick's cross
 St Patrick's Day
+St Patrick’s Day
 St Paul's
 St Peter's
 St Peter's fish
+St Peter’s fish
 St Peter's wort
 St-Quentin
 strabism
@@ -188287,6 +189389,7 @@ straightforward
 straightforwardly
 straightforwardness
 straight from the horse's mouth
+straight from the horse’s mouth
 straight from the shoulder
 straighting
 straightish
@@ -188356,6 +189459,7 @@ strangeness
 stranger
 strangers
 stranger's gallery
+stranger’s gallery
 strangest
 Strangeways
 strangle
@@ -188675,6 +189779,7 @@ stretching
 stretching-course
 stretchless
 stretch one's legs
+stretch one’s legs
 stretchy
 Stretford
 stretta
@@ -189069,6 +190174,7 @@ struthioid
 Struthiones
 struthious
 strut one's stuff
+strut one’s stuff
 struts
 strutted
 strutter
@@ -189085,6 +190191,7 @@ strychnism
 st's
 St Stephen's
 St Swithin's Day
+St Swithin’s Day
 St Trinian's
 Stuart
 stub
@@ -189238,6 +190345,7 @@ stunsail
 stunsails
 stuns'l
 stuns'ls
+stuns’ls
 stunt
 stunted
 stuntedness
@@ -189319,6 +190427,7 @@ stutters
 Stuttgart
 Stuyvesant
 St Valentine's Day
+St Valentine’s Day
 St Vitus's dance
 sty
 stye
@@ -190525,6 +191634,7 @@ succentors
 succès
 succès de scandale
 succès d'estime
+succès d’estime
 succès fou
 succès fous
 success
@@ -190904,6 +192014,7 @@ suites
 suiting
 suitings
 suit one's book
+suit one’s book
 suitor
 suitors
 suitress
@@ -192182,6 +193293,7 @@ surgeons
 surgeonship
 surgeonships
 surgeon's knot
+surgeon’s knot
 surgeries
 surgery
 surges
@@ -193021,6 +194133,7 @@ swine-pox
 swineries
 swinery
 swine's cress
+swine’s cress
 swinestone
 swine-sty
 swine vesicular disease
@@ -194084,6 +195197,7 @@ systematizing
 systematology
 systemed
 Système International d'Unités
+Système International d’Unités
 systemic
 systemically
 systemisation
@@ -194183,6 +195297,7 @@ table-cover
 table-cut
 tabled
 table-d'hôte
+table-d’hôte
 tableful
 tablefuls
 table-knife
@@ -194196,6 +195311,7 @@ table-money
 table-rapping
 tables
 tables-d'hôte
+tables-d’hôte
 table-skittles
 table-spoon
 tablespoonful
@@ -194424,6 +195540,7 @@ tae kwon do
 tael
 taels
 ta'en
+ta’en
 taenia
 taeniacide
 taeniacides
@@ -194565,6 +195682,7 @@ tailormakes
 tailormaking
 tailors
 tailor's chalk
+tailor’s chalk
 tailpiece
 tailpieces
 tail-pipe
@@ -194665,6 +195783,7 @@ take-home pay
 take-in
 take in hand
 take in one's stride
+take in one’s stride
 take into account
 take into consideration
 take in tow
@@ -194672,21 +195791,26 @@ take it easy
 Take It From Here
 take it from me
 take it into one's head
+take it into one’s head
 take it kindly
 take it lying down
 take it on the chin
 take it or leave it
 take leave of one's senses
+take leave of one’s senses
 Take me to your leader
 taken
 take-off
 take-offs
 take on board
 take one's courage in both hands
+take one’s courage in both hands
 take one's place
 take one's seat
+take one’s seat
 take one's time
 take one's turn
+take one’s turn
 take-out
 take-over
 take-overs
@@ -194696,11 +195820,13 @@ takers
 takes
 take the biscuit
 take the bit between one's teeth
+take the bit between one’s teeth
 take the bull by the horns
 take the field
 take the Fifth
 take the floor
 take the king's shilling
+take the king’s shilling
 take the law into one's own hands
 take the mick
 take the mickey
@@ -194708,6 +195834,7 @@ Take the Money and Run
 take the pledge
 take the plunge
 take the queen's shilling
+take the queen’s shilling
 take the shine off
 take the veil
 take the wheel
@@ -194715,6 +195842,7 @@ Take thou thy pound of flesh
 take time out
 take to heart
 take to one's bed
+take to one’s bed
 take to pieces
 take to task
 take to the boats
@@ -194834,6 +195962,7 @@ talks
 talks about talks
 talk the hind legs off a donkey
 talk through one's hat
+talk through one’s hat
 talk through the back of one's neck
 talky
 talky-talky
@@ -195018,6 +196147,7 @@ tammies
 Tammuz
 tammy
 Tam-o'-Shanter
+Tam-o’-Shanter
 Tam-o'-Shanters
 tamoxifen
 tamp
@@ -195697,6 +196827,7 @@ tasteless
 tastelessly
 tastelessness
 taste of one's own medicine
+taste of one’s own medicine
 taster
 tasters
 tastes
@@ -196048,6 +197179,7 @@ teachers
 teachership
 teacherships
 teacher's pet
+teacher’s pet
 teaches
 tea-chest
 tea-chests
@@ -196148,6 +197280,7 @@ tear-jerkers
 tear-jerking
 tearless
 tear one's hair out
+tear one’s hair out
 tea-room
 tea-rooms
 tea-rose
@@ -196327,6 +197460,7 @@ teddies
 tedding
 teddy
 teddy bears' picnic
+teddy bears’ picnic
 tedesca
 tedesche
 tedeschi
@@ -197660,6 +198794,7 @@ tesseral
 tessitura
 tessituras
 Tess of the d'Urbervilles
+Tess of the d’Urbervilles
 test
 testa
 testable
@@ -198143,6 +199278,7 @@ thankworthy
 thank-you
 thank you for nothing
 thank-you-ma'am
+thank-you-ma’am
 thank-yous
 thanna
 thannah
@@ -198165,24 +199301,32 @@ thatchings
 thatchless
 that is to say
 that'll be the day
+that’ll be the day
 that'll teach you
 that makes two of us
 thatness
 That old black magic
 That's all folks!
+That’s all folks!
 that's as may be
 that's done it
+that’s done it
 that's flat
 That Shakespearian Rag
 that's how the cookie crumbles
+that’s how the cookie crumbles
 that's just the ticket
 That's Life!
+That’s Life!
 that's more like it
 that's one small step for man, one giant leap for mankind
+that’s one small step for man, one giant leap for mankind
 that's that
 that's the stuff!
+that’s the stuff!
 that's the way the cookie crumbles
 that's torn it!
+that’s torn it!
 That Was The Week That Was
 That way madness lies
 that will be the day
@@ -198286,17 +199430,21 @@ Thebaid
 thebaine
 The Ballad of Reading Gaol
 the ball's in your court
+the ball’s in your court
 Theban
 the bane of one's life
+the bane of one’s life
 Thebans
 The battle of Waterloo was won on the playing fields of Eton
 The beautiful and the damned
 the beautiful people
 the bee's knees
+the bee’s knees
 The Beggar's Opera
 The bells of Hell go ting-a-ling-a-ling
 Thebes
 the best laid schemes o' mice an' men Gang aft a-gley
+the best laid schemes o’ mice an’ men Gang aft a-gley
 the best things come in small parcels
 the best things in life are free
 The better part of valour is discretion
@@ -198316,6 +199464,7 @@ the blind leading the blind
 The Blind Watchmaker
 The Bonfire of the Vanities
 The Bonnie Banks o' Loch Lomond
+The Bonnie Banks o’ Loch Lomond
 The Book of Household Management
 the boot is on the other foot
 the boy next door
@@ -198331,11 +199480,13 @@ thecae
 thecal
 The Call of the Wild
 The Campbells are comin'
+The Campbells are comin’
 The Canterbury Tales
 the cap fits
 The Catcher in the Rye
 thecate
 the cat's pyjamas
+the cat’s pyjamas
 the cat's whiskers
 The Chambers Dictionary
 The Charge of the Light Brigade
@@ -198353,11 +199504,13 @@ the common good
 the common people
 The Compleat Angler
 the courage of one's convictions
+the courage of one’s convictions
 the course of true love never did run smooth
 The Courtship of the Yonghy-Bonghy-Bò
 the customer is always right
 The customer is never wrong
 the cut of someone's jib
+the cut of someone’s jib
 thé dansant
 the darkest hour is just before the dawn
 The Darling Buds of May
@@ -198368,17 +199521,20 @@ The Deserted Village
 The Destruction of Sennacherib
 the devil finds work for idle hands to do
 The Devil's Disciple
+The Devil’s Disciple
 the devil's tattoo
 the devil to pay
 the die is cast
 The divided self
 The Doctor's Dilemma
+The Doctor’s Dilemma
 The dog it was that died
 the done thing
 The Dong with a Luminous Nose
 The Dream of Gerontius
 The Duchess of Malfi
 The Duke's Children
+The Duke’s Children
 thee
 The Eagle has landed
 the early bird catches the worm
@@ -198408,6 +199564,7 @@ The Female of the Species
 the female of the species is more deadly than the male
 The Fighting Téméraire
 The first thing we do, let's kill all the lawyers
+The first thing we do, let’s kill all the lawyers
 the five Ks
 the Forty-Five
 the fourth estate
@@ -198459,6 +199616,7 @@ the hell I will!
 The hills are alive with the sound of music
 The History of the Decline and Fall of the Roman Empire
 The Hitch-Hiker's Guide to the Galaxy
+The Hitch-Hiker’s Guide to the Galaxy
 The Hollow Men
 The Holly and the Ivy
 The Honeysuckle and the Bee
@@ -198486,6 +199644,7 @@ the jet set
 The Jungle Book
 The King and I
 The king's name is a tower of strength
+The king’s name is a tower of strength
 The kiss of death
 the labourer is worthy of his hire
 The Lady and the Tramp
@@ -198494,6 +199653,7 @@ the lady doth protest too much, methinks
 The Lady of Shalott
 The Lady of the Lake
 The Lady's not for Burning
+The Lady’s not for Burning
 The Lady Vanishes
 The Lake Isle of Innisfree
 The Lark Ascending
@@ -198613,6 +199773,7 @@ The Old Folks at Home
 The Old Man and the Sea
 The Old Vicarage, Grantchester
 The Old Wives' Tale
+The Old Wives’ Tale
 the Old World
 theologaster
 theologasters
@@ -198747,6 +199908,7 @@ theow
 The Owl and the Pussy-Cat
 theows
 the party's over
+the party’s over
 The pen is mightier than the sword
 the penny drops
 The Peter Principle
@@ -198754,10 +199916,13 @@ The Pickwick Papers
 The Picture of Dorian Gray
 The Pied Piper of Hamelin
 The Pilgrim's Progress
+The Pilgrim’s Progress
 The Pirates of Penzance
 The Playboy of the Western World
 The play's the thing
+The play’s the thing
 The play's the thing Wherein I'll catch the conscience of the king
+The play’s the thing Wherein I’ll catch the conscience of the king
 The Pobble Who Has No Toes
 The Portrait of a Lady
 The postman always rings twice
@@ -198770,6 +199935,7 @@ the proof of the pudding is in the eating
 the quality of mercy is not strained
 The Queen of Hearts
 The Queen's College
+The Queen’s College
 The quick brown fox jumps over the lazy dog
 The Quiet American
 Thera
@@ -198826,6 +199992,7 @@ There is a green hill far away
 There is a tavern in the town
 There is a tide in the affairs of men, which, taken at the flood, leads on to fortune
 There'll always be an England
+There’ll always be an England
 The Remains of the Day
 thereness
 thereof
@@ -198835,17 +200002,24 @@ thereout
 theres
 Theresa
 There's a divinity that shapes our ends
+There’s a divinity that shapes our ends
 There's a divinity that shapes our ends, Rough-hew them how we will
 There's a long, long trail awinding
+There’s a long, long trail awinding
 There's a sucker born every minute
 there's many a slip 'twixt the cup and the lip
+there’s many a slip ’twixt the cup and the lip
 There's no business like show business
+There’s no business like show business
 there's no fool like an old fool
 there's no love lost between them
+there’s no love lost between them
 there's no place like home
 there's no smoke without fire
+there’s no smoke without fire
 There's no such thing as a free lunch
 there's no telling
+there’s no telling
 there's nowt so queer as folk
 The rest is silence
 therethrough
@@ -199033,10 +200207,12 @@ Thesiger
 The Sign of Four
 The Silence of the Lambs
 The singeing of the King of Spain's Beard
+The singeing of the King of Spain’s Beard
 The singer not the song
 thesis
 the size of it
 the sky's the limit
+the sky’s the limit
 the slings and arrows of outrageous fortune
 the Slough of Despond
 The Small House at Allington
@@ -199070,6 +200246,7 @@ thetas
 thetch
 thete
 The Teddy Bear's Picnic
+The Teddy Bear’s Picnic
 The Tenant of Wildfell Hall
 thetes
 the thin end of the wedge
@@ -199087,6 +200264,7 @@ thetically
 The Time Machine
 the time of day
 the time of one's life
+the time of one’s life
 The Times They Are A-Changing
 The Tin Drum
 Thetis
@@ -199120,6 +200298,7 @@ The Water Babies
 The Way of All Flesh
 The Way of the World
 the way to a man's heart is through his stomach
+the way to a man’s heart is through his stomach
 The Way We Live Now
 The Weakest Link
 thewed
@@ -199131,12 +200310,14 @@ the whole shooting-match
 The Wind in the Willows
 The Wings of the Dove
 The Winter's Tale
+The Winter’s Tale
 The wisest fool in Christendom
 The Wizard of Oz
 thewless
 The Woman in White
 The world is too much with us
 the world's mine oyster
+the world’s mine oyster
 the world the flesh and the devil
 the worse for wear
 The Wreck of the Hesperus
@@ -199149,10 +200330,13 @@ they'd
 the year dot
 The Yeomen of the Guard
 they'll
+they’ll
 they're
 They're changing guard at Buckingham Palace
+They’re changing guard at Buckingham Palace
 They shall not pass
 They think it's all over
+They think it’s all over
 they've
 thiamin
 thiamine
@@ -199217,6 +200401,7 @@ thieved
 thievery
 thieves
 thieves' kitchen
+thieves’ kitchen
 thieves' Latin
 thieving
 thievings
@@ -199918,6 +201103,7 @@ throw in the towel
 thrown
 throw oneself into
 throw one's hat into the ring
+throw one’s hat into the ring
 throw one's weight about
 throw on the scrapheap
 throw out the baby with the bathwater
@@ -200402,6 +201588,7 @@ tiger-moth
 tiger-nut
 tigers
 tiger's-eye
+tiger’s-eye
 tiger-shark
 tiger-snake
 tiger-wolf
@@ -200420,6 +201607,7 @@ tightener
 tighteners
 tightening
 tighten one's belt
+tighten one’s belt
 tightens
 tighter
 tightest
@@ -200489,6 +201677,7 @@ tillages
 tillandsia
 tillandsias
 Till a' the seas gang dry
+Till a’ the seas gang dry
 tilled
 tiller
 tillerless
@@ -200872,6 +202061,7 @@ tip-off
 tip-offs
 tip of the iceberg
 tip one's hat
+tip one’s hat
 tippable
 tipped
 tipper
@@ -200987,9 +202177,11 @@ tis
 tisane
 tisanes
 Tishah b'Av
+Tishah b’Av
 Tishri
 Tisiphone
 'Tis Pity She's a Whore
+'Tis Pity She’s a Whore
 Tissot
 tissue
 tissued
@@ -201442,6 +202634,7 @@ toisechs
 toises
 toison
 toison d'or
+toison d’or
 toisons
 toitoi
 Tokaj
@@ -201588,6 +202781,7 @@ tomboyishly
 tomboyishness
 tomboys
 Tom Brown's Schooldays
+Tom Brown’s Schooldays
 tombs
 tombstone
 tombstones
@@ -201622,6 +202816,7 @@ tommy-shop
 tom-noddies
 tom-noddy
 Tom o' Bedlam
+Tom o’ Bedlam
 tomogram
 tomograms
 tomograph
@@ -201639,6 +202834,7 @@ tompons
 toms
 Tomsk
 Tom Tiddler's ground
+Tom Tiddler’s ground
 tomtit
 tomtits
 tom-tom
@@ -201787,6 +202983,7 @@ too
 tooart
 tooarts
 too big for one's boots
+too big for one’s boots
 too big for one's breeches
 toodle-oo
 toodle-pip
@@ -202505,11 +203702,13 @@ tourbillons
 tour de force
 Tour de France
 tour d'horizon
+tour d’horizon
 toured
 tourer
 tourers
 Tourette
 Tourette's syndrome
+Tourette’s syndrome
 tourie
 touries
 touring
@@ -202556,6 +203755,7 @@ tout à fait
 tout au contraire
 tout à vous
 Tout comprendre c'est tout pardonner
+Tout comprendre c’est tout pardonner
 tout de même
 tout de suite
 touted
@@ -203018,6 +204218,7 @@ trailingly
 trail-less
 trail-net
 trail one's coat
+trail one’s coat
 trails
 train
 trainability
@@ -203060,12 +204261,14 @@ traitorously
 traitorousness
 traitors
 Traitor's Gate
+Traitor’s Gate
 traitorship
 traitress
 traitresses
 traits
 Trajan
 Trajan's Column
+Trajan’s Column
 traject
 trajected
 trajecting
@@ -203804,10 +205007,13 @@ travelled
 traveller
 travellers
 traveller's cheque
+traveller’s cheque
 traveller's cheques
 traveller's joy
+traveller’s joy
 traveller's tale
 traveller's tales
+traveller’s tales
 travelling
 travellings
 travelog
@@ -204714,6 +205920,7 @@ trimmingly
 trimmings
 trimness
 trim one's sails
+trim one’s sails
 trimonthly
 trimorphic
 trimorphism
@@ -205228,6 +206435,7 @@ tromp
 trompe
 tromped
 trompe-l'oeil
+trompe-l’oeil
 trompes
 tromping
 tromps
@@ -205534,6 +206742,7 @@ true-life
 true-love
 true-love-knot
 true-lover's-knot
+true-lover’s-knot
 true-loves
 trueman
 truemen
@@ -205700,6 +206909,7 @@ tryings
 try it on
 try-on
 try one's hand at
+try one’s hand at
 try-ons
 try-out
 try-outs
@@ -206370,8 +207580,10 @@ Turko-Tatar
 Turks
 Turks and Caicos Islands
 Turk's cap
+Turk’s cap
 Turk's cap lily
 Turk's head
+Turk’s head
 turlough
 turm
 turmeric
@@ -206418,6 +207630,7 @@ turning-points
 turnings
 turning-saw
 turn in one's grave
+turn in one’s grave
 turnip
 turniped
 turnip-flea
@@ -206427,6 +207640,7 @@ turnips
 turnkey
 turnkeys
 turn king's evidence
+turn king’s evidence
 turn of events
 turn-off
 turn-offs
@@ -206436,8 +207650,10 @@ turn of the century
 turn of the year
 turn-on
 turn one's back on
+turn one’s back on
 turn one's face to the wall
 turn one's head
+turn one’s head
 turn on one's heel
 turn-ons
 turn-out
@@ -206452,6 +207668,7 @@ turnpike-road
 turnpike-roads
 turnpikes
 turn queen's evidence
+turn queen’s evidence
 turnround
 turnrounds
 turns
@@ -206463,6 +207680,7 @@ turnsoles
 turnspit
 turnspits
 turn State's evidence
+turn State’s evidence
 turnstile
 turnstiles
 turnstone
@@ -206801,6 +208019,7 @@ Twickenham
 twiddle
 twiddled
 twiddle one's thumbs
+twiddle one’s thumbs
 twiddler
 twiddlers
 twiddles
@@ -206905,6 +208124,7 @@ twirlier
 twirliest
 twirling
 twirl one's thumbs
+twirl one’s thumbs
 twirls
 twirly
 twirp
@@ -207012,6 +208232,7 @@ two-pence pieces
 twopences
 twopennies
 twopenn'orth
+twopenn’orth
 twopenn'orths
 twopenny
 twopenny-halfpenny
@@ -207028,6 +208249,7 @@ twos
 twoseater
 twoseaters
 two shakes of a lamb's tail
+two shakes of a lamb’s tail
 two-sided
 two-sidedness
 twosome
@@ -207052,6 +208274,7 @@ two-wheeled
 two-wheeler
 two-wheelers
 two wrongs don't make a right
+two wrongs don’t make a right
 two-year-old
 two-year-olds
 twp
@@ -208450,6 +209673,7 @@ unclerical
 uncles
 uncle-ship
 Uncle Tom's Cabin
+Uncle Tom’s Cabin
 unclew
 unclewed
 unclewing
@@ -209195,10 +210419,13 @@ undernourished
 undernourishment
 underntime
 under one's belt
+under one’s belt
 under one's breath
 under one's hat
+under one’s hat
 under one's own steam
 under one's very nose
+under one’s very nose
 underpaid
 under pain of
 underpainting
@@ -209352,6 +210579,7 @@ understandingly
 understandings
 understands
 under starter's orders
+under starter’s orders
 understate
 understated
 understatement
@@ -213848,8 +215076,10 @@ upmanship
 up-market
 upmost
 upo'
+upo’
 upon
 up one's street
+up one’s street
 upon my honour
 upon my soul!
 upon my word
@@ -214077,6 +215307,7 @@ Up to a point, Lord Copper
 up-to-date
 up to no good
 up to one's neck
+up to one’s neck
 up to one's tricks
 uptorn
 up to snuff
@@ -214850,6 +216081,7 @@ valanced
 valances
 Val-de-Marne
 Val-d'Oise
+Val-d’Oise
 vale
 valediction
 valedictions
@@ -215073,6 +216305,7 @@ Vanderbilt
 Van der Post
 van der Waals
 van der Waals' forces
+van der Waals’ forces
 Vandyke
 vandyked
 Vandykes
@@ -215131,6 +216364,7 @@ vantbrace
 vantbraces
 vant-brass
 van't Hoff
+van’t Hoff
 vanward
 vapid
 vapidity
@@ -215270,6 +216504,7 @@ varieties
 variety
 Variety is the spice of life
 Variety's the very spice of life
+Variety’s the very spice of life
 varifocal
 varifocals
 variform
@@ -215968,10 +217203,13 @@ venuses
 Venusian
 Venusians
 Venus's comb
+Venus’s comb
 Venus's flower basket
 Venus's-flytrap
+Venus’s-flytrap
 Venus's-girdle
 Venus's looking glass
+Venus’s looking glass
 Venutian
 venville
 Vera
@@ -216235,6 +217473,7 @@ vernation
 vernations
 Verne
 Verner's law
+Verner’s law
 vernicle
 vernicles
 vernier
@@ -216978,6 +218217,7 @@ Vincennes
 Vincent
 Vincentian
 Vincent's angina
+Vincent’s angina
 vincibility
 vincible
 vincristine
@@ -217095,6 +218335,7 @@ violaceous
 viola da braccio
 viola da gamba
 viola d'amore
+viola d’amore
 viola da spalla
 violas
 violate
@@ -217145,6 +218386,7 @@ viperous
 viperously
 vipers
 viper's bugloss
+viper’s bugloss
 viper's grass
 viraemia
 viraemic
@@ -217189,6 +218431,7 @@ virginium
 virginly
 virgins
 virgin's-bower
+virgin’s-bower
 Virgo
 Virgoan
 Virgoans
@@ -217388,8 +218631,10 @@ visitor
 visitorial
 visitors
 visitors' book
+visitors’ book
 visitors' books
 visitor's passport
+visitor’s passport
 visitress
 visitresses
 visits
@@ -218141,6 +219386,7 @@ voter
 voters
 votes
 vote with one's feet
+vote with one’s feet
 voting
 votive
 votress
@@ -218267,6 +219513,7 @@ vulcanologists
 vulcanology
 vulcans
 Vulcan's badge
+Vulcan’s badge
 vulgar
 vulgarian
 vulgarians
@@ -218340,6 +219587,7 @@ vying
 vyingly
 w
 wa'
+wa’
 Waac
 Waaf
 Waafs
@@ -218411,6 +219659,7 @@ wadt
 wady
 wae
 waefu'
+waefu’
 waeful
 waeness
 waesome
@@ -218448,8 +219697,10 @@ wafture
 waftures
 wag
 wag-at-the-wa'
+wag-at-the-wa’
 wag-at-the-wall
 wag-by-the wa'
+wag-by-the wa’
 wag-by-the-wall
 wage
 waged
@@ -218502,6 +219753,7 @@ waggoning
 waggons
 waging
 wag-'n-bietjie
+wag-’n-bietjie
 Wagner
 Wagneresque
 Wagnerian
@@ -218763,6 +220015,7 @@ wallaby
 Wallace
 Wallace and Gromit
 Wallace's line
+Wallace’s line
 Wallachian
 wallah
 wallahs
@@ -219344,6 +220597,7 @@ washland
 wash-leather
 wash-leathers
 wash one's dirty linen in public
+wash one’s dirty linen in public
 wash one's hands of
 wash-out
 wash-outs
@@ -219374,6 +220628,7 @@ waspishly
 waspishness
 wasps
 wasp's nest
+wasp’s nest
 wasp's nests
 wasp-stung
 wasp-waisted
@@ -219466,6 +220721,7 @@ watch-making
 watchman
 watchmen
 watch one's back
+watch one’s back
 watch one's step
 watch-out
 watch-outs
@@ -219976,10 +221232,12 @@ wearability
 wearable
 wear and tear
 We are merely the stars' tennis-balls
+We are merely the stars’ tennis-balls
 we are not amused
 wearer
 wearers
 We are so very 'umble
+We are so very ’umble
 we are such stuff as dreams are made on
 wearied
 wearier
@@ -220000,7 +221258,9 @@ wearisome
 wearisomely
 wearisomeness
 wear one's heart on one's sleeve
+wear one’s heart on one’s sleeve
 wear out one's welcome
+wear out one’s welcome
 wears
 wear several hats
 wear the breeches
@@ -220094,6 +221354,7 @@ weaver-birds
 weaver-finch
 weavers
 weaver's hitch
+weaver’s hitch
 weaver's knot
 weaves
 weaving
@@ -220323,6 +221584,7 @@ weil
 Weill
 weils
 Weil's disease
+Weil’s disease
 Weimar
 Weimaraner
 Wein, Weib und Gesang
@@ -220584,6 +221846,7 @@ wendigos
 wending
 Wendish
 wend one's way
+wend one’s way
 wends
 Wendy
 We never closed
@@ -220603,6 +221866,7 @@ were
 weregild
 weregilds
 We're in the money
+We’re in the money
 weren't
 werewolf
 werewolfery
@@ -220707,6 +221971,7 @@ wetness
 wet-nurse
 wet-nurses
 wet one's whistle
+wet one’s whistle
 wets
 wet-shod
 wetsuit
@@ -220716,11 +221981,13 @@ wetter
 Wetterhorn
 wettest
 wet the baby's head
+wet the baby’s head
 wetting
 wettish
 wetware
 Wet Wet Wet
 we've
+we’ve
 We was robbed!
 We were a ghastly crew
 Wexford
@@ -220818,12 +222085,16 @@ what an idea!
 What a pair of spectacles is here!
 What bloody man is that?
 what can't be cured, must be endured
+what can’t be cured, must be endured
 what cheer?
 what do you know?
 what-d'ye-call-'em
+what-d’ye-call-’em
 what-d'ye-call-it
+what-d’ye-call-it
 what-d'you-call-em
 what-d'you-call-it
+what-d’you-call-it
 whate'er
 whatever
 What goes around comes around
@@ -220842,28 +222113,38 @@ what of it?
 what reck?
 whats
 What's Become of Waring
+What’s Become of Waring
 what's cooking?
 what's done cannot be undone
+what’s done cannot be undone
 what's eating you?
 what's-her-name
+what’s-her-name
 what's-his-name
 What's in a name?
+What’s in a name?
 whatsis
 whatsit
 whatsits
 what's-its-name
+what’s-its-name
 What's mine is yours, and what is yours is mine
 What's My Line?
+What’s My Line?
 what's new?
 whatso
 whatsoe'er
+whatsoe’er
 whatsoever
 whatsomever
 what's the big idea?
+what’s the big idea?
 what's the damage?
 What's up Doc?
+What’s up Doc?
 what's up with you?
 what's what
+what’s what
 what's your poison?
 whatten
 What the Butler Saw
@@ -220872,10 +222153,12 @@ what the dickens
 what the doctor ordered
 what the hell
 what you don't know can't hurt you
+what you don’t know can’t hurt you
 what you lose on the swings you gain on the roundabouts
 what-you-may-call-it
 what you see is what you get
 what you've never had you never miss
+what you’ve never had you never miss
 whaup
 whaups
 whaur
@@ -220901,6 +222184,7 @@ wheatsheaf
 wheatsheaves
 Wheatstone
 Wheatstone's bridge
+Wheatstone’s bridge
 wheat-worm
 whee
 wheech
@@ -221012,8 +222296,10 @@ whences
 whencesoever
 whencever
 whene'er
+whene’er
 whenever
 When I'm Cleaning Windows
+When I’m Cleaning Windows
 When I'm Sixty Four
 when in Rome, do as the Romans do
 When lovely woman stoops to folly
@@ -221021,9 +222307,11 @@ when one door shuts, another opens
 when push comes to shove
 whens
 whensoe'er
+whensoe’er
 whensoever
 when the balloon goes up
 when the cat's away, the mice will play
+when the cat’s away, the mice will play
 when the chips are down
 when the fat lady sings
 When the going gets tough, the tough get going
@@ -221041,6 +222329,7 @@ whereby
 Where Did You Get That Hat?
 Where Eagles Dare
 where'er
+where’er
 wherefor
 wherefore
 wherefrom
@@ -221049,6 +222338,7 @@ wherein
 whereinsoever
 whereinto
 where it's at
+where it’s at
 whereness
 whereof
 whereon
@@ -221056,11 +222346,14 @@ whereout
 wheres
 whereso
 wheresoe'er
+wheresoe’er
 wheresoever
 where's the beef?
+where’s the beef?
 where's the fire?
 Where the bee sucks, there suck I
 where there's a will there's a way
+where there’s a will there’s a way
 where there's muck there's brass
 wherethrough
 whereto
@@ -221166,6 +222459,7 @@ whilere
 whiles
 While shepherds watched their flocks by night
 while there's life there's hope
+while there’s life there’s hope
 while you wait
 whiling
 whilk
@@ -221433,6 +222727,7 @@ whists
 whit
 Whitaker
 Whitaker's Almanac
+Whitaker’s Almanac
 Whitbread
 Whitby
 white
@@ -221500,6 +222795,7 @@ white-listed
 white-livered
 whitely
 White man's burden
+White man’s burden
 white-mustard
 whiten
 whitened
@@ -221517,6 +222813,7 @@ whiter than white
 white-rumped
 whites
 White's Club
+White’s Club
 white-seam
 white-shoe
 whitesmith
@@ -221656,6 +222953,7 @@ wholist
 wholistic
 wholists
 who'll
+who’ll
 wholly
 wholly-owned
 whom
@@ -221712,13 +223010,16 @@ whortleberries
 whortleberry
 who's
 Who's Afraid of Virginia Woolf
+Who’s Afraid of Virginia Woolf
 whose
 whosesoever
 whosever
 who's he when he's at home?
+who’s he when he’s at home?
 whoso
 whosoever
 who's who
+who’s who
 who've
 Who wants to be a millionaire?
 Who Was Who
@@ -221730,8 +223031,10 @@ whunstane
 whunstanes
 why
 Why can't a woman be more like a man?
+Why can’t a woman be more like a man?
 whydah
 why don't you come up sometime, and see me?
+why don’t you come up sometime, and see me?
 whyever
 Whymper
 why-not
@@ -221829,8 +223132,10 @@ widowing
 widow-man
 widows
 widow's cruse
+widow’s cruse
 widow's mite
 widow's peak
+widow’s peak
 widow's weeds
 widow-wail
 width
@@ -221838,6 +223143,7 @@ widths
 widthways
 widthwise
 wie geht's?
+wie geht’s?
 wield
 wieldable
 wielded
@@ -222006,6 +223312,7 @@ will-less
 will-lessly
 will-lessness
 will-o'-the-wisp
+will-o’-the-wisp
 will-o'-the-wisps
 willow
 willowed
@@ -222217,6 +223524,7 @@ wind-sock
 wind-socks
 winds of change
 wind someone round one's little finger
+wind someone round one’s little finger
 Windsor
 Windsor-soap
 windstorm
@@ -222367,6 +223675,7 @@ winns
 wino
 Winona
 win one's spurs
+win one’s spurs
 winos
 wins
 winsey
@@ -222594,10 +223903,13 @@ witchens
 witchery
 witches
 witches' brew
+witches’ brew
 witches'-broom
 witches' butter
+witches’ butter
 witches' meat
 witches' Sabbath
+witches’ Sabbath
 witchetties
 witchetty
 witch-finder
@@ -222674,18 +223986,24 @@ withies
 withiest
 within
 within arm's reach
+within arm’s reach
 withing
 with-it
 with knobs on
 with one fell swoop
 with one's back to the wall
+with one’s back to the wall
 with one's bare hands
 with one's head in the clouds
+with one’s head in the clouds
 with one's nose in the air
 with one's pants down
+with one’s pants down
 with one's tongue hanging out
 with one's tongue in one's cheek
+with one’s tongue in one’s cheek
 with one's trousers down
+with one’s trousers down
 with one voice
 with open arms
 without
@@ -222842,6 +224160,7 @@ Wolfian
 wolfing
 wolfings
 wolf in sheep's clothing
+wolf in sheep’s clothing
 wolfish
 wolfishly
 Wolfit
@@ -222923,6 +224242,7 @@ woman of the world
 woman-post
 womans
 Woman's Hour
+Woman’s Hour
 woman-suffrage
 woman-vested
 womb
@@ -222940,14 +224260,19 @@ womenfolks
 Women in Love
 womenkind
 Women's Institute
+Women’s Institute
 women's lib
 women's libber
+women’s libber
 women's libbers
 Women's Liberation
+Women’s Liberation
 Women's Movement
 women's rights
+women’s rights
 Women's Royal Voluntary Service
 women's suffrage
+women’s suffrage
 womenswear
 womera
 womeras
@@ -223231,6 +224556,7 @@ woolsheds
 woolsorter
 woolsorters
 woolsorter's disease
+woolsorter’s disease
 wool-staple
 wool-stapler
 woolward
@@ -223339,6 +224665,7 @@ worked to rule
 worker
 workers
 workers' cooperative
+workers’ cooperative
 workers' cooperatives
 workfare
 work-fellow
@@ -223382,8 +224709,10 @@ workmistress
 workmistresses
 work of art
 work one's fingers to the bone
+work one’s fingers to the bone
 work one's guts out
 work one's passage
+work one’s passage
 work-out
 work-outs
 work-people
@@ -223472,6 +224801,7 @@ worm-powder
 worms
 worm-seed
 worm's eye view
+worm’s eye view
 worm-tube
 worm-wheel
 wormwood
@@ -223545,6 +224875,7 @@ worthless
 worthlessly
 worthlessness
 worth one's while
+worth one’s while
 worths
 worthwhile
 worthy
@@ -223787,6 +225118,7 @@ writeresses
 writerly
 writers
 writer's block
+writer’s block
 writer's cramp
 writership
 writerships
@@ -223845,6 +225177,7 @@ wrongously
 wrongs
 wrong-timed
 wrong'un
+wrong’un
 wrong'uns
 wrong way round
 wrong way up
@@ -224592,6 +225925,7 @@ yeomanly
 Yeoman of the guard
 yeomanry
 yeoman's service
+yeoman’s service
 yeomen
 Yeomen of the Guard
 yep
@@ -224879,21 +226213,29 @@ You cannot be serious!
 you can say that again
 you can talk
 you can't get a quart into a pint pot
+you can’t get a quart into a pint pot
 you can't get blood out of a stone
 you can't make an omelette without breaking eggs
+you can’t make an omelette without breaking eggs
 you can't make a silk purse out of a sow's ear
+you can’t make a silk purse out of a sow’s ear
 you can't make bricks without straw
+you can’t make bricks without straw
 you can't please everyone
 you can't talk
+you can’t talk
 you can't teach an old dog new tricks
 you can't tell a book by its cover
+you can’t tell a book by its cover
 you can't win
 you can't win them all
+you can’t win them all
 You come most carefully upon your hour
 you could have fooled me
 you could have knocked me down with a feather
 you'd
 you don't know the half of it
+you don’t know the half of it
 you don't say!
 youk
 youked
@@ -224902,6 +226244,7 @@ you-know-what
 you-know-who
 youks
 you'll
+you’ll
 You'll Never Walk Alone
 you must be joking
 you name it
@@ -224921,11 +226264,14 @@ youngness
 young-offender institution
 young-offender institutions
 Young's modulus
+Young’s modulus
 youngster
 youngsters
 Youngstown
 young 'un
+young ’un
 young 'uns
+young ’uns
 younker
 younkers
 You Only Live Twice
@@ -224933,10 +226279,13 @@ you pays your money and you takes your choice
 your
 Your country needs you!
 you're
+you’re
 You're a better man than I am, Gunga Din!
 you're on
+you’re on
 you're telling me
 You're the Top
+You’re the Top
 you're welcome
 your guess is as good as mine
 your humble servant
@@ -224949,6 +226298,7 @@ yourt
 Your tiny hand is frozen
 yourts
 you scratch my back and I'll scratch yours
+you scratch my back and I’ll scratch yours
 You see, but you do not observe
 youth
 youthful
@@ -224963,6 +226313,7 @@ youthsome
 Youth Training Scheme
 youthy
 you've
+you’ve
 you've got me there
 you wait!
 yow
@@ -225352,6 +226703,7 @@ Zenobia
 Zeno of Citium
 Zeno of Elea
 Zeno's paradoxes
+Zeno’s paradoxes
 zeolite
 zeolites
 zeolitic
@@ -225659,8 +227011,10 @@ Zola
 Zolaism
 Zöllner
 Zöllner's illusion
+Zöllner’s illusion
 Zöllner's lines
 Zöllner's pattern
+Zöllner’s pattern
 Zollverein
 zombi
 zombie
