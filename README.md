@@ -13,7 +13,7 @@ Pull requests are greatly appreciated. 🙏
 ![](_images/new_popover.png)
 ##### UI revamp:
 
-* implement UI as a button in SC with a popover pref window 
+* implemented UI as a button in SC with a popover pref window 
 * removed status bar. it was unnecessary, because the prefs are no longer always visible, and the status is spelled out in Space Center itself
 * rebuilt the UI with [ezui](https://typesupply.github.io/ezui/overview.html)
 
