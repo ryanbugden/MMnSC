@@ -4,6 +4,7 @@ import random
 import AppKit
 from mojo.UI import CurrentSpaceCenter, OpenSpaceCenter
 from mojo.subscriber import Subscriber, registerSpaceCenterSubscriber
+from lib.tools.unicodeTools import GN2UV
 
 import metricsMachine
 
@@ -14,6 +15,7 @@ from vanilla import Button
 from mojo.extensions import getExtensionDefault, setExtensionDefault, ExtensionBundle
 import codecs
 import ezui
+import re
 
 '''
 MM2SpaceCenter by CJ Dunn
@@ -21,10 +23,6 @@ MM2SpaceCenter by CJ Dunn
 
 Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
 Nina Stössinger for help and inspiration with this script
-
-
-Ryan Bugden edit
-2023.03.24
 
 To do:       
 - Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
@@ -47,21 +45,19 @@ def get_setting_from_defaults(setting):
 
     return setting
 
+def get_key(my_dict, val):
+    for key, value in my_dict.items():
+        if val == value:
+            return key
 
-class MM2SCButton(Subscriber):
-    
+
+class MM2SC_Tool(Subscriber):
     '''
-    Puts the MM2SC pref button in Space Center.
-    
-    Ryan Bugden
-    2023.03.24
+    Carries forward all of the MM2SC utilities.
     '''
     
     def build(self):
-        self.icon_path = os.path.abspath('../resources/_icon_MM2SC.pdf')
-
-        
-
+        self.icon_path = os.path.abspath('../resources/_icon_MM2SC.pdf')  # Image icon to potentially be used on the SC button
         self.font = CurrentFont()
 
         try:
@@ -69,339 +65,249 @@ class MM2SCButton(Subscriber):
         except:
             self.pair = ('A', 'V')
             
-        self.loadDictionaries()
-
-        self.wordCount = get_setting_from_defaults('wordCount')
-
-        # print(self.icon_path)
+        self.load_dictionaries()
+        self.word_count = get_setting_from_defaults('wordCount')
         
 
     def spaceCenterDidOpen(self, info):
+        '''
+        Puts the MM2SC pref button in Space Center,
+        and activates the MM observer. 
+        '''
+
         self.sc = info['spaceCenter']
-        
         gutter = 10
         b_w = 30
         inset_b = 1
+
         x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
-        b_h = h - inset_b*2
-        # print("line is at", x, y, w, h)
+        b_h = h - inset_b * 2
+
+        # Resize glyph line input
         self.sc.top.glyphLineInput.setPosSize((x, y, w - b_w - gutter, h))
         x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
-        # print("now resized to", x, y, w, h)
+
+        # Create MM2SC button
         button_placement = (w + gutter, y + inset_b, b_w, b_h)
-        # print('making button', button_placement)
         self.sc.MM2SC_button = Button(
             button_placement, 
-            title = 'MM',
-            # imageNamed=AppKit.NSImageNameMultipleDocuments,
-            # imagePath = self.icon_path,  # For image buttons only
-            callback = self.buttonCallback, 
-            sizeStyle = 'small'
+            title='MM',
+            callback=self.button_callback, 
+            sizeStyle='small'
             )
         self.sc.MM2SC_button.getNSButton().setBordered_(0)
         self.sc.MM2SC_button.getNSButton().setBezelStyle_(2)
 
-        self.activateModule()
+        self.activate_module()
 
 
     def spaceCenterWillClose(self, info):
-        self.deactivateModule()
+        self.deactivate_module()
         
 
-    def buttonCallback(self, sender):
-        # run the prefs window
-        if not len(AllFonts()) > 0:
+    def button_callback(self, sender):
+        '''
+        Opens the prefs window.
+        '''
+
+        if len(AllFonts()) == 0:  # In case this is somehow possible despite having a Space Center open...
             print('You must have a font open.')
             return
 
-        try:
-            p = metricsMachine.GetCurrentPair()
-            font = metricsMachine.CurrentFont()
-        
-        except:
-            p = ('A', 'V') # set initial value
-            font = CurrentFont()
-        
-        if font.path:
-            p = MM2SpaceCenterPopover(self.sc.MM2SC_button, self.sc)    
-        else:
-            print("Save your font (give it a path) before trying to open MM2SC.")
+        MM2SpaceCenterPopover(self.sc.MM2SC_button, self.sc)
 
 
-    def activateModule(self):
-        # Make sure Show Kerning is on in the Space Center
-        lv = self.sc.glyphLineView
-        v = lv.getApplyKerning()
-        if v == False:
-            lv.setApplyKerning(True)
-
-        addObserver(self, "MMPairChanged", "MetricsMachine.currentPairChanged")
-        print('MM observer is now activated.')
+    def activate_module(self):
+        addObserver(self, 'MM_pair_changed', 'MetricsMachine.currentPairChanged')
+        print('MM2SC observer is now activated.')
         
         
-    def deactivateModule(self):
+    def deactivate_module(self):
+        removeObserver(self, 'MetricsMachine.currentPairChanged')
+        print('MM2SC observer is deactivated.')
 
-        removeObserver(self, "MetricsMachine.currentPairChanged")
-        print('MM observer is deactivated.')
 
+    def load_dictionaries(self):
+        '''
+        Loads the available wordlists and reads their contents.
+        '''
 
-    def loadDictionaries(self):
+        self.dict_words = {}
+        self.text_files = ['catalan', 'czech', 'danish', 'dutch', 'ukacd', 'finnish', 'french', 'german', 'hungarian', 'icelandic', 'italian', 'latin', 'norwegian', 'polish', 'slovak', 'spanish', 'vietnamese']
+        self.language_names = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
 
-        """Load the available wordlists and read their contents."""
-        self.dictWords = {}
-        self.allWords = []
-        self.outputWords = []
+        bundle = ExtensionBundle('MM2SpaceCenter')
+        content_limit  = '*****'  # If word list file contains a header, start looking for content after this delimiter
 
-        self.textfiles = ['catalan', 'czech', 'danish', 'dutch', 'ukacd', 'finnish', 'french', 'german', 'hungarian', 'icelandic', 'italian', 'latin', 'norwegian', 'polish', 'slovak', 'spanish', 'vietnamese']
-        self.languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
-
-        bundle = ExtensionBundle("MM2SpaceCenter")
-        contentLimit  = '*****' # If word list file contains a header, start looking for content after this delimiter
-
-        # read included textfiles
-        for textfile in self.textfiles:
-            path = bundle.getResourceFilePath(textfile)
-            #print(path)
-            with codecs.open(path, mode="r", encoding="utf-8") as fo:
+        # Read included text files
+        for text_file in self.text_files:
+            path = bundle.getResourceFilePath(text_file)
+            with codecs.open(path, mode='r', encoding='utf-8') as fo:
                 lines = fo.read()
+            self.dict_words[text_file] = lines.splitlines()  # This assumes no whitespace has to be stripped
 
-            self.dictWords[textfile] = lines.splitlines() # this assumes no whitespace has to be stripped
-
-            # strip header
+            # Strip header
             try:
-                contentStart = self.dictWords[textfile].index(contentLimit) + 1
-                self.dictWords[textfile] = self.dictWords[textfile][contentStart:]
+                contentStart = self.dict_words[text_file].index(content_limit) + 1
+                self.dict_words[text_file] = self.dict_words[text_file][contentStart:]
             except ValueError:
                 pass
 
-        # read user dictionary
+        # Read user dictionary
         with open('/usr/share/dict/words', 'r') as userFile:
             lines = userFile.read()
-        self.dictWords["user"] = lines.splitlines()
+        self.dict_words['user'] = lines.splitlines()
 
             
-
-    def sortWordsByWidth(self, wordlist):
-
+    def sort_words_by_width(self, word_list):
         '''
-        Sort output word list by width.
+        Sorts the list of words by width.
         '''
+        def find_kerning(chars):
+            '''
+            Helper function to find kerning between two given glyphs.
+            This assumes MetricsMachine style group names.
+            '''
+            markers = ['@MMK_L_', '@MMK_R_']
+            keys = [c for c in chars]
+            for i in range(2):
+                all_groups = self.font.groups.findGlyph(chars[i])
+                if len(all_groups) > 0:
+                    for g in all_groups:
+                        if markers[i] in g:
+                            keys[i] = g
+                            continue
+            key = (keys[0], keys[1])
+            if self.font.kerning.has_key(key):
+                return self.font.kerning[key]
+            else:
+                return 0
 
         f = self.font
-        wordWidths = []
-
-        for word in wordlist:
-            unitCount = 0
+        word_widths = []
+        for word in word_list:
+            unit_count = 0
             for char in word:
+                glyph = None
                 try:
-                    glyphWidth = f[char].width
-                except:
-                    try:
-                        gname = self.glyphNamesForValues[char]
-                        glyphWidth = f[gname].width
-                    except:
-                        glyphWidth = 0
-                unitCount += glyphWidth
-            # add kerning
-            for i in range(len(word)-1):
-                pair = list(word[i:i+2])
-                unitCount += int(self.findKerning(pair))
-            wordWidths.append(unitCount)
+                    glyph = f[char]
+                except KeyError:
+                    gname = self.get_gname_from_char(char)
+                    if gname:
+                        glyph = f[gname]
+                if glyph:
+                    unit_count += glyph.width
+            # Add kerning
+            for i in range(len(word) - 1):
+                pair = word[i:i + 2]
+                unit_count += int(find_kerning(pair))
+            word_widths.append((word, unit_count))
 
-        wordWidths_sorted, wordlist_sorted = zip(*sorted(zip(wordWidths, wordlist))) # thanks, stackoverflow
-        return wordlist_sorted
+        word_widths_sorted = sorted(word_widths, key=lambda x: x[1])
 
-
-    def findKerning(self, chars):
-
-        '''
-        Helper function to find kerning between two given glyphs.
-        This assumes MetricsMachine style group names.
-        '''
-
-        markers = ["@MMK_L_", "@MMK_R_"]
-        keys = [c for c in chars]
-
-        for i in range(2):
-            allGroups = self.font.groups.findGlyph(chars[i])
-            if len(allGroups) > 0:
-                for g in allGroups:
-                    if markers[i] in g:
-                        keys[i] = g
-                        continue
-
-        key = (keys[0], keys[1])
-        if self.font.kerning.has_key(key):
-            return self.font.kerning[key]
-        else:
-            return 0
+        return [word for word, width in word_widths_sorted]
 
 
-    def MMPairChanged(self, sender):
-
-        # print("get_setting_from_defaults('mirroredPair')", get_setting_from_defaults('mirroredPair'))
-        # not sure this is doing anything
+    def MM_pair_changed(self, sender):
         if get_setting_from_defaults('activateToggle') == True:
-
-            #add code here for when myObserver is triggered
-            currentPair = sender["pair"]
-            if currentPair == self.pair:
-                return
-            
-            self.pair = currentPair
-            #print('current MM pair changed', self.pair)        
-            self.wordsForMMPair()
+            current_pair = sender['pair']
+            if current_pair != self.pair:
+                self.pair = current_pair
+                self.words_for_pair()
 
 
-    ## same as MM Pair Changed Observer above, but making a separate function just to be safe
-    def FPPairChangedObserver(self, sender):
-
-        #add code here for when myObserver is triggered
-        currentPair = sender["pair"]
-        if currentPair == self.pair:
-            return
-        
-        self.pair = currentPair
-    
-        #print('current FP pair changed', self.pair)        
-        self.wordsForMMPair()
-
-
-    def setSpaceCenter(self, font, text):    
-
-        currentSC = self.sc
-        if currentSC is None:
-            print('opening space center, click back into kerning window')
+    def set_space_center(self, font, text):    
+        try:
+            self.sc.setRaw(text)
+            # Make sure 'Show Kerning' is on in the Space Center
+            if not self.sc.glyphLineView.getApplyKerning():
+                lv.setApplyKerning(True)
+        except AttributeError:
+            print('Opening Space Center. Go back to MetricsMachine.')
             OpenSpaceCenter(font, newWindow=False)
-            currentSC = self.sc
-        currentSC.setRaw(text)
+            self.sc = CurrentSpaceCenter()
+            self.sc.setRaw(text)
 
     
-    def randomly(self, seq):
-
-        shuffled = list(seq)
-        random.shuffle(shuffled)
-        return iter(shuffled)
+    def randomize_list(self, word_list):
+        return iter(random.sample(word_list, len(word_list)))
 
 
-    def gname2char(self, f, gname):
-
-        uni = f[gname].unicodes[0]
-        char = chr(uni)
-        return char
-
-    def spaceCenterStringForUnencoded(self, gname):
-        
-        scString = '/'+gname+' '
-        return scString 
-
-
-    def checkForUnencodedGname(self, font, gname):
-
-        glyphIsEncoded = False
-        
-        escapeList = ['slash', 'backslash']
-        
-        if (not font[gname].unicodes) or (gname in escapeList):
-            scString = self.spaceCenterStringForUnencoded(gname)
-            
+    def check_encoded(self, gname):
+        if not self.font[gname].unicodes:
+            return False
         else: 
-            scString = self.gname2char(font, gname)
-            glyphIsEncoded = True
-            
-        return(scString, glyphIsEncoded)
+            return True
 
 
-    def getPairstring(self, pair):
-
-        left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
-        right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
-            
-        pairstring = left+right
-            
-        return pairstring
-
-
-    def pair2char(self, pair):
-
+    def get_pair_to_char(self, pair):
         '''
-        Convert char gnames to chars to find words in dict.
+        Converts glyph names to characters, in order to find words in dictionary.
         '''
-        
-        self.debug = False
+
+        def remove_suffix(gname):
+            '''
+            Removes the suffix from a glyph name.
+            '''
+            period_pos = gname.find('.')
+            return gname[:period_pos] if period_pos > 0 else gname
         
         try:
-            #print('pair =', pair)
-
-            leftNoSuffix = pair[0]
-            rightNoSuffix = pair[1]
-
-            leftPeriodPos = pair[0].find(".")
-            if leftPeriodPos > 0:
-                leftNoSuffix = pair[0][:leftPeriodPos]
-
-            rightPeriodPos = pair[1].find(".")
-            if rightPeriodPos > 0:
-                rightNoSuffix = pair[1][:rightPeriodPos]
-
-            left = self.gname2char(CurrentFont(), leftNoSuffix)
-            right = self.gname2char(CurrentFont(), rightNoSuffix)
-            pair_char = (left, right)
-            return pair_char
+            left_no_suffix = remove_suffix(pair[0])
+            right_no_suffix = remove_suffix(pair[1])
+            return self.get_pair_string((left_no_suffix, right_no_suffix))
         except:
-            if self.debug == True:
-                print("couldn't convert pair to chars")            
+            if self.debug:
+                print('Couldn’t convert pair to chars.')
             return pair
-        
-
-    def lcString(self, pairstring):
-
-        string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
-
-        return string
-            
-
-    def getSpacingString(self, pairstring):
-
-        string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
-        
-        if get_setting_from_defaults('context') == 0:  # if self.context == 'Auto':
-            string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
-
-        if get_setting_from_defaults('context') == 1:  # if self.context == 'UC':
-            string = 'HH'+pairstring+'HOHO'+pairstring+'OO'
-
-        if get_setting_from_defaults('context') == 2:  # if self.context == 'LC':
-            string = 'non'+pairstring+'nono'+pairstring+'oo' #lc
-        
-        if get_setting_from_defaults('context') == 3:   # if self.context == 'Figs':
-            string = '11'+pairstring+'1010'+pairstring+'00' #use for numbers
-
-        if get_setting_from_defaults('context') == 4:   # if self.context == 'Frac': 
-            # start with figs context
-            string = '11'+pairstring+'⁄1010⁄'+pairstring+'00' #use for numbers
-
-            #look for fraction at start of pair
-            if pairstring.startswith('⁄'): ##fraction unicode glyph, not slash
-                string = '11/eight.numr '+pairstring+' 10/one.numr '+pairstring+'00'
-                #print('starts')
-
-            #look for fraction at end of pair    
-            if pairstring.endswith('⁄'): ##fraction unicode glyph, not slash
-                string = '11'+pairstring+'/eight.dnom 10'+pairstring+'/eight.dnom 00'
-                #print('ends')
-
-        return string
 
 
-    def ucString(self, pairstring):
-        string = 'HH'+pairstring+'HOHO'+pairstring+'OO'
-        return string
+    def get_gname_from_char(self, char):
+        uni = ord(char)
+        gname = str(get_key(GN2UV, uni))
+        return gname
 
 
-    openClosePairs = {
+    def get_pair_string(self, pair):
+        return self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
 
-        # initial/final punctuation (from https://www.compart.com/en/unicode/category/Pi and https://www.compart.com/en/unicode/category/Pf)
+
+    def gname_to_sc_string(self, gname, chr_only=False):
+        if not self.check_encoded(gname) and not chr_only:
+            sc_string = '/' + gname + ' '
+        else:
+            uni = self.font[gname].unicodes[0]
+            char = chr(uni)
+            sc_string = char
+        return sc_string 
+
+
+    def get_spacing_string(self, pair_string):
+        context = get_setting_from_defaults('context')
+
+        context_strings = {
+            0: 'nn__no__on__oo__nn',     # 'Auto' context
+            1: 'HH__HO__OH__OO__HH',     # 'UC' context
+            2: 'nn__no__on__oo__nn',     # 'LC' context
+            3: '11__10__01__00__11',     # 'Figs' context
+            4: '11__/10/__01__/00/__11'  # 'Frac' context
+        }
+
+        string = context_strings[context].replace('__', pair_string)
+
+        # Not sure what this is, but keeping it in
+        if context == 4:
+            if pair_string.startswith('⁄'):  # fraction at start of pair
+                string = '11/eight.numr ' + pair_string + ' 10/one.numr ' + pair_string + '00'
+            elif pair_string.endswith('⁄'):  # fraction at end of pair
+                string = '11' + pair_string + '/eight.dnom 10' + pair_string + '/eight.dnom 00'
+
+        return string + '\\n'
+
+
+
+    open_close_pairs = {
+        # Initial/final punctuation (from https://www.compart.com/en/unicode/category/Pi and https://www.compart.com/en/unicode/category/Pf)
         "’": "‘",
         "„": "“",
         "„": "”",
@@ -419,7 +325,7 @@ class MM2SCButton(Subscriber):
         "⸌": "⸍",
         "⸜": "⸝",
         "⸠": "⸡",
-        #"”": "”",  ##these will make two contexts show up for quotes so leaving them off for now
+        #"”": "”",  # These will make two contexts show up for quotes so leaving them off for now
         #"’": "’",
 
         # Miscellaneous but common open/close pairs
@@ -431,20 +337,18 @@ class MM2SCButton(Subscriber):
         "→": "←",
         "/": "\\",
         
-        "<": ">", #less, greater
-        ">": "<", #greater, less
+        "<": ">",  # less, greater
+        ">": "<",  # greater, less
 
-        # opening/closing punctuation (from https://www.compart.com/en/unicode/category/Ps & https://www.compart.com/en/unicode/category/Pe)
+        # Opening/closing punctuation (from https://www.compart.com/en/unicode/category/Ps & https://www.compart.com/en/unicode/category/Pe)
         "(": ")",
         "[": "]",
         "{": "}",
-        "༺": "༻", "༼": "༽", "᚛": "᚜", "‚": "‘", "„": "“", "⁅": "⁆", "⁽": "⁾", "₍": "₎", "⌈": "⌉", "⌊": "⌋", "〈": "〉", "❨": "❩", "❪": "❫", "❬": "❭", "❮": "❯", "❰": "❱", "❲": "❳", "❴": "❵", "⟅": "⟆", "⟦": "⟧", "⟨": "⟩", "⟪": "⟫", "⟬": "⟭", "⟮": "⟯", "⦃": "⦄", "⦅": "⦆", "⦇": "⦈", "⦉": "⦊", "⦋": "⦌", "⦍": "⦎", "⦏": "⦐", "⦑": "⦒", "⦓": "⦔", "⦕": "⦖", "⦗": "⦘", "⧘": "⧙", "⧚": "⧛", "⧼": "⧽", "⸢": "⸣", "⸤": "⸥", "⸦": "⸧", "⸨": "⸩", "〈": "〉", "《": "》", "「": "」", "『": "』", "【": "】", "〔": "〕", "〖": "〗", "〘": "〙", "〚": "〛", "〝": "〞", "⹂": "〟", "﴿": "﴾", "︗": "︘", "︵": "︶", "︷": "︸", "︹": "︺", "︻": "︼", "︽": "︾", "︿": "﹀", "﹁": "﹂", "﹃": "﹄", "﹇": "﹈", "﹙": "﹚", "﹛": "﹜", "﹝": "﹞", "（": "）", "［": "］", "｛": "｝", "｟": "｠", "｢": "｣", 
-   
-   
-   
+        "༺": "༻", "༼": "༽", "᚛": "᚜", "‚": "‘", "„": "“", "⁅": "⁆", "⁽": "⁾", "₍": "₎", "⌈": "⌉", "⌊": "⌋", "〈": "〉", "❨": "❩", "❪": "❫", "❬": "❭", "❮": "❯", "❰": "❱", "❲": "❳", "❴": "❵", "⟅": "⟆", "⟦": "⟧", "⟨": "⟩", "⟪": "⟫", "⟬": "⟭", "⟮": "⟯", "⦃": "⦄", "⦅": "⦆", "⦇": "⦈", "⦉": "⦊", "⦋": "⦌", "⦍": "⦎", "⦏": "⦐", "⦑": "⦒", "⦓": "⦔", "⦕": "⦖", "⦗": "⦘", "⧘": "⧙", "⧚": "⧛", "⧼": "⧽", "⸢": "⸣", "⸤": "⸥", "⸦": "⸧", "⸨": "⸩", "〈": "〉", "《": "》", "「": "」", "『": "』", "【": "】", "〔": "〕", "〖": "〗", "〘": "〙", "〚": "〛", "〝": "〞", "⹂": "〟", "﴿": "﴾", "︗": "︘", "︵": "︶", "︷": "︸", "︹": "︺", "︻": "︼", "︽": "︾", "︿": "﹀", "﹁": "﹂", "﹃": "﹄", "﹇": "﹈", "﹙": "﹚", "﹛": "﹜", "﹝": "﹞", "（": "）", "［": "］", "｛": "｝", "｟": "｠", "｢": "｣",
     }
 
-    openCloseUnencodedPairs = {
+    # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
+    open_close_pairs_unencoded = {
         "parenleft.uc": "parenright.uc", 
         "bracketleft.uc": "bracketright.uc", 
         "braceleft.uc": "braceright.uc", 
@@ -456,388 +360,223 @@ class MM2SCButton(Subscriber):
         "guilsinglright.uc": "guilsinglleft.uc",
         "guillemotright.uc": "guillemotleft.uc",
 
-        "slash": "backslash", #should be encoded but adding here because those aren't working for some reason
-        "backslash": "slash", #should be encoded but adding here because those aren't working for some reason
+        "slash": "backslash",  # Should be encoded but adding here because those aren't working for some reason
+        "backslash": "slash",  # Should be encoded but adding here because those aren't working for some reason
     }
 
-    def openCloseContextReturn(self, pair):
+    def make_open_close_context(self, pair):
+        '''
+        Returns a string of the pair within an open/close context, to judge the symmetry of open/close kerns.
+        '''
 
-        # get unicodes to make sure we don’t show pairs that don’t exist in the font
-        # TODO? may be better to move outside this function, if running it each time is slow. BUT it would have to listen for the CurrentFont to change.
-        unicodesInFont = [u for glyph in CurrentFont() for u in glyph.unicodes]
+        # Get all unicodes to make sure we don’t show pairs that don’t exist in the font
+        unis_in_font = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
-        left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
-        right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
-        #print('left:', left, self.leftEncoded)
-        #print('right:', right, self.rightEncoded)
-        
+        left, right = self.gname_to_sc_string(pair[0], chr_only=True), self.gname_to_sc_string(pair[1], chr_only=True)
+        is_left_encoded = self.check_encoded(pair[0])
+        is_right_encoded = self.check_encoded(pair[1])
 
-        openCloseString = ""
+        print('OPEN/CLOSE INFO', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
 
-        for openClose in self.openClosePairs.items():
-            
-            # if both sides of pair are in an open+close pair, just add them
-            if openClose[0] == left and openClose[1] == right:
-                openCloseString += left + right + "" #remove trailing space
+        # Stop if the glyphs aren't open/close
+        if not left in self.open_close_pairs.keys() and not left in self.open_close_pairs.values():
+            if not right in self.open_close_pairs.keys() and not right in self.open_close_pairs.values():
+                return ''
 
-            # if the left is in an openClose pair and its companion is in the font, add them
-            if openClose[0] == left and ord(openClose[1]) in unicodesInFont:
-                openCloseString += left + right + self.openClosePairs[left] + "" #remove trailing space
+        open_close_string = ''
+        for open_close_pair in self.open_close_pairs.items():
+            if open_close_pair == (left, right):
+                print('Debug: Open/Close situation 1')
+                open_close_string = left + right
+            elif open_close_pair == (right, left):
+                print('Debug: Open/Close situation 2')
+                open_close_string = right + left
 
-            # if the right is in an openClose pair and its companion is in the font, add them
-            if openClose[1] == right  and ord(openClose[0]) in unicodesInFont:
-                openCloseString += openClose[0] + left + right + "" #remove trailing space
-                
-                # print('right matches', right, openCloseString)
-            
-            else:
-                continue
-        
+            # Open and close
+            elif open_close_pair[0] == left and ord(open_close_pair[1]) in unis_in_font:
+                print('Debug: Open/Close situation 3')
+                open_close_string = left + right + self.open_close_pairs[left]
+            elif open_close_pair[1] == right and ord(open_close_pair[0]) in unis_in_font:
+                print('Debug: Open/Close situation 4')
+                open_close_string = get_key(self.open_close_pairs, right) + left + right
 
-        if (self.leftEncoded == False) or (self.rightEncoded == False):
-            for openCloseGnames in self.openCloseUnencodedPairs.items():
+            # Now close and open
+            elif open_close_pair[0] == right and ord(open_close_pair[1]) in unis_in_font:
+                print('Debug: Open/Close situation 5')
+                open_close_string = self.open_close_pairs[right] + left + right
+            elif open_close_pair[1] == left and ord(open_close_pair[0]) in unis_in_font:
+                print('Debug: Open/Close situation 6')
+                open_close_string =  left + right + get_key(self.open_close_pairs, left)
 
-                #left
-                
-                openCloseLeft = openCloseGnames[0]
+        # If we did the above, stop here.
+        if is_left_encoded and is_right_encoded:
+            print(open_close_string)
+            return open_close_string + ' '
 
-                openCloseRight = openCloseGnames[1]
+        # Handle unencoded glyph names
+        # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
+        for gname_pair in self.open_close_pairs_unencoded.items():
+            if gname_pair[0] in self.open_close_pairs_unencoded.items() and gname_pair[1] in self.open_close_pairs_unencoded.items(): # If both are in there:
+                print('Debug: Open/Close situation 7')
+                open_close_string += self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0]) + self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0])
+            elif pair[0] == gname_pair[0]:
+                print('Debug: Open/Close situation 8')
+                open_close_string += left + right + self.gname_to_sc_string(gname_pair[1])
+            elif pair[1] == gname_pair[1]:
+                print('Debug: Open/Close situation 9')
+                open_close_string += self.gname_to_sc_string(gname_pair[0]) + left + right
+            # Now reverse to close/open
+            elif pair[0] == gname_pair[1]:
+                print('Debug: Open/Close situation 10')
+                open_close_string += left + right + self.gname_to_sc_string(gname_pair[0])
+            elif pair[1] == gname_pair[0]:
+                print('Debug: Open/Close situation 11')
+                open_close_string += self.gname_to_sc_string(gname_pair[1]) + left + right
 
-                #spaceCenterStringForUnencoded
-                if self.pair[0] == openCloseLeft:
-                    #print('left unencoded pair found' )
-                    openCloseString += left + right + self.spaceCenterStringForUnencoded(openCloseRight) + " "
-                
-                #right 
-                if self.pair[1] == openCloseRight:
-                    #print( 'right unencoded pair found' )  
-                    openCloseString += self.spaceCenterStringForUnencoded(openCloseLeft) + left + right  + " "
-
-        return openCloseString
+        print('Open/close string:', open_close_string)
+        return open_close_string + ' '
            
 
+    def pair_mirrored(self, pair):
+        '''
+        Returns a string of the pair mirrored, to judge the symmetry of kerns.
+        '''
 
-    # make mirrored pair to judge symmetry of kerns
-    def pairMirrored(self, pair):
+        left, right = self.get_pair_string(pair)
+        return right + left + right + left + right + '  ' 
 
-        if get_setting_from_defaults('mirroredPair') == True:
-            left, self.leftEncoded = self.checkForUnencodedGname(self.font, pair[0])
-            right, self.rightEncoded = self.checkForUnencodedGname(self.font, pair[1])
-            return left + right + left + right + " " 
+
+    def words_for_pair(self, ):
+        '''
+        Generates all output text and puts it in Space Center.
+        '''
+
+        # Store settings in variables so the function only needs to be called once
+        language           = get_setting_from_defaults('language')
+        word_count         = int(get_setting_from_defaults('wordCount'))
+        all_uppercase      = get_setting_from_defaults('allUppercase')
+        list_output        = get_setting_from_defaults('listOutput')
+        mirrored_pair      = get_setting_from_defaults('mirroredPair')
+        open_close_context = get_setting_from_defaults('openCloseContext')
+        context            = get_setting_from_defaults('context')
+        
+        # Try getting pair_string once in order to check if encoded
+        pair_string = ''.join(list(self.get_pair_string(self.pair)))
+
+        # Convert MM tuple into search pair to check uc, lc, mixed case
+        pair_to_char_string = ''.join(self.get_pair_to_char(self.pair))
+
+        # Search for non-suffixed
+        search_string = ''.join(chr(self.font[gname.split('.')[0]].unicode) for gname in self.pair)
+
+        # Get the spacing string
+        spacing_string = self.get_spacing_string(search_string)
+
+        # Check if string is uppercase
+        if pair_to_char_string.isupper():
+            make_upper = True
+            search_string = search_string.lower()
         else:
-            return ""
+            make_upper = False
 
+        # Check for mixed case
+        mixed_case = False
+        pair_chars = self.get_pair_to_char(self.pair)
+        is_left_encoded = self.check_encoded(self.pair[0])
+        is_right_encoded = self.check_encoded(self.pair[1])
+        if pair_chars[0].isupper() and pair_chars[1].islower() and is_left_encoded and is_right_encoded:
+            mixed_case = True
 
-    def wordsForMMPair(self, ):
-        
-
-        wordsAll = []
-
-        ### temp comment out to check speed
-        self.language = get_setting_from_defaults('language')
-
-        languageCount = len(self.textfiles)
-        if self.language == languageCount: # Use all languages
-            for i in range(languageCount):
-                # if any language: concatenate all the wordlists
-                wordsAll.extend(self.dictWords[self.textfiles[i]])
+        # Get all the words from the text file
+        all_words = []
+        if language == len(self.text_files):  # Use all languages
+            for i in len(self.text_files):
+                # If any language: concatenate all the word lists
+                all_words.extend(self.dict_words[self.text_files[i]])
         else:
-            wordsAll = self.dictWords[self.textfiles[self.language]]
-        
-        #default values are hard coded for now
-        #self.wordCount = self.getIntegerValue(self.wordCount)
+            all_words = self.dict_words[self.text_files[language]]
 
-        #v = self.getIntegerValue(self.wordCount)
-        
-        wordCountValue = int(get_setting_from_defaults('wordCount')) 
-        
-        #print(v)
+        # Add words to the word list until we reach the desired amount of words
+        # Currently allows any word length. This could be customized later.
+        count = 0
+        word_list = []
+        word_set = set(word_list)
+        for word in self.randomize_list(all_words):
+            if search_string in word and word not in word_set:
+                word_set.add(word)
+                word_list.append(word)
+                count += 1
 
-        #print('self.wordCount', self.wordCount)
-        
-        #currently allows any word lenght, this could be customized later
+            # Try capitalizing lowercase words
+            elif mixed_case and search_string.lower() in word[:2]:
+                word = word.capitalize()
+                if word not in word_set:
+                    word_set.add(word)
+                    word_list.append(word)
+                    count += 1
 
-        text = ''
-        textList = []
+            if count >= word_count:
+                break
 
-        # try getting pairstring once in order to check if encoded
-        pairstring = self.getPairstring(self.pair)
+        if all_uppercase or make_upper:
+            # Make text uppercase again
+            word_list = [text.upper() for text in word_list]
 
-        #convert MM tuple into search pair to check uc, lc, mixed case. Maybe need a different var name here? 
-        pair2charString = ''.join(self.pair2char(self.pair))
-
-        # search for non-suffixed
-        searchString = ""
-        for g_name in self.pair:
-            no_suff = g_name.split(".")[0]
-            rep = chr(self.font[no_suff].unicode)
-            searchString += rep
-
-        #check Encoding
-        
-        #print(pairstring)
-
-        #default value
-        makeUpper = False
-
-        if pair2charString.isupper():
-            #print(pairstring, 'upper')
-            makeUpper = True
-            #make lower for searching
-            searchString = searchString.lower()
-
-        else:
-            #print(pairstring, 'not upper')
-            makeUpper = False
-            searchString = searchString
-            pass
-
-        #check for mixed case
-        self.mixedCase = False
-        if self.pair2char(self.pair)[0].isupper():
-            if self.pair2char(self.pair)[1].islower():
-                if (self.leftEncoded == True) and (self.rightEncoded == True) : 
-                    self.mixedCase = True
-    
-        try:
-            currentSC = self.sc
-            previousText = currentSC.getRaw()
-        except:
-            previousText = ''
-            pass
-
-        count = 0 
-        
-        #self.usePhrases = False 
-        
-        # more results for mixed case if we include lc words and capitalize
-        if self.mixedCase == True:
-            for word in self.randomly(wordsAll):
-
-                # first look for words that are already mixed case
-                if searchString in word:              
-                    #avoid duplicates
-                    if not word in textList:
-                
-                        #print(word)
-                        textList.append(word)
-                        count +=1
-                        
-                #then try capitalizing lowercase words
-                if (searchString.lower() in word[:2]):
-                    word = word.capitalize()               
-                    #avoid duplicates
-                    if not word in textList:
-                
-                        #print(word)
-                        textList.append(word)
-                        count +=1
-        
-                #stop when you get enough results
-                if count >= wordCountValue:
-                    #print(text)
-                
-                    break
-                    
-            pass            
-        
-        else:
-            for word in self.randomly(wordsAll):
-                if searchString in word:
-                
-                    #avoid duplicates
-                    if not word in textList:
-                
-                        #print(word)
-                        textList.append(word)
-                        count +=1
-        
-                #stop when you get enough results
-                if count >= wordCountValue:
-                    #print(text)
-                
-                    break
-        
-        ###### check All Uppercase setting, and if true set variable makeUpper to True, which makes space center text UC
-        if get_setting_from_defaults('allUppercase') == True:
-            makeUpper = True
-
-        if makeUpper == True:    
-            #make text upper again
-            ### should we force the pair to stay as is? for example with .uc punctuation if words are found, currently lc punct is shown. Should we find the pair in each work and re-insert the .uc version? 
-            textList = list(  text.upper() for text in textList ) 
-
-        if not len(textList) == 0:            
-            #see if box is checked
-            self.sorted = get_setting_from_defaults('listOutput')
-        
-            #self.sorted = False
-            if self.sorted == True:
-                sortedText = self.sortWordsByWidth(textList)
-            
-                textList = sortedText
-            
-                joinString = "\\n"            
-                text = joinString.join([str(word) for word in textList])
-
-                if get_setting_from_defaults('mirroredPair') == True:  #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + joinString + text 
-
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
-                    # print("here 5")
-                    text = self.openCloseContextReturn(self.pair) + text 
-
+        words_text = ''
+        # If there are sample words
+        if word_list:
+            if list_output: # If 'Output as list' is checked:
+                sorted_text = self.sort_words_by_width(word_list)
+                join_string = '\\n'
+                words_text = join_string.join(map(str, sorted_text))
             else:
-                text = ' '.join([str(word) for word in textList])
-                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + text
+                words_text = ' '.join(map(str, word_list))
 
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
-                    # print("here 4")
-                    text = self.openCloseContextReturn(self.pair) + text 
-
-
-        # if no words are found, show spacing string and previous text
-        if len(text) == 0:
-            #do i need to get pairstring again or can I used the previous one? 
-            #pairstring = self.getPairstring(self.pair)
-            previousText = '\\n no words for pair ' + pairstring
-                            
-            #print(len(pairstring)) ## debugging
-
-            if makeUpper == True:
-                
-                text = self.ucString(pairstring)+ previousText
-
-
-                if get_setting_from_defaults('context') != 0:  # If context is not Auto
-                    text = self.getSpacingString(pairstring)+ previousText
-
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
-                    # print("here 3")
-                    openClosePair = self.openCloseContextReturn(self.pair)  
-                
-                    ### debug start 2
-                    #print('openClosePair:'+openClosePair+'#')
-                    openClosePair = openClosePair.lstrip()
-                
-                    #print('openClosePair:'+openClosePair+'#')
-                    ### debug end 2
-                
-                    if len(openClosePair) > 0 : ## pair found      
-                        spacingString = self.ucString(openClosePair)
-                        # print('here 5', spacingString)           
-
-                    else: ## pair not found
-                        
-                        if self.debug == True:
-                            print('open+close pair not found')
-                        spacingString = self.ucString(pairstring)
-                        # print('here 6')
-                
-                
-                    ## for uc pair, if not auto, use context dropdown 
-                    if get_setting_from_defaults('context') != 0:
-                        spacingString = self.getSpacingString(pairstring)
-                        # print('here 7')
-
-                    for i in range(3):
-                        spacingString = spacingString.replace("  ", " ")  ## extra space gets added, later maybe it's best to change self.ucString function??
-
-                    text = spacingString + previousText
-                    # print('here 8', text)
-            
-                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + text 
-                    # print('here 9', text)
- 
-
-            ## for non uc pair, if not auto, use context dropdown 
-            else:
-                ## auto will choose lc string
-                spacingString = self.lcString(searchString)
-
-                ## non-auto option will use dropdown context
-                if get_setting_from_defaults('context') != 0:
-                    spacingString = self.getSpacingString(searchString)
-                                    
-                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + spacingString + previousText
-                else:
-                    text = spacingString + previousText
-                
-                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + text 
-
-                if get_setting_from_defaults('openCloseContext') == True: # if "show open+close" is checked, add this to text
-                    # print("here 1")
-                    text = self.openCloseContextReturn(self.pair) + text 
-
-                    openClosePair = self.openCloseContextReturn(self.pair) 
-                
-                    ### debug start
-                    #print('openClosePair:'+openClosePair+'#')
-                    #print('pair:'+str(self.pair)+'#')
-                    #openClosePair= openClosePair.lstrip()
-                    #print('openClosePair:'+openClosePair+'#')
-                    ### debug end
-
-                    openClosePair = openClosePair.replace("  ", " ") ## extra space gets added, later maybe it's best to change self.ucString function??
-                    openClosePair = openClosePair.replace("  ", " ") ## do again to catch double spaces 
-                
-                    if len(openClosePair) > 0 : ## pair found 
-                        spacingString = self.lcString( openClosePair )
-                    
-                    else:
-                        if self.debug == True:
-                            print('open+close pair not found')
-                    
-                        spacingString = self.lcString( pairstring )
-                    
-                    spacingString = spacingString.replace("  ", " ")                    
-                    # spacingString = spacingString.replace("  ", " ") ## do again to catch double spaces 
-                
-                
-                if get_setting_from_defaults('mirroredPair') == True: #if "start with mirrored pair" is checked, add this to text
-                    text = self.pairMirrored(self.pair) + spacingString + previousText
-                else:
-                    text = spacingString + previousText   
-
-            text = text.lstrip() #remove whitespace  
-            self.setSpaceCenter(self.font, text)
-
-        ## Success! words are found : )
+            words_text = words_text.lstrip()
+            words_text = words_text.replace(pair_to_char_string, '/'+'/'.join(self.pair)+' ' )
+        # If there are no sample words, add some failure text in the place of words_text.
         else:
-            #set space center if words are found
-            #not sure why there's always a /slash in from of the first word, added ' '+ to avoid losing the first word
-            # print("here 2")
-            text = text.lstrip() #remove whitespace    
+            words_text = f'There are no words for pair: {pair_string}'
+            
+        # If you want your pair mirrored
+        mirror_text = ''
+        if mirrored_pair:
+            mirror_text = self.pair_mirrored(self.pair)
 
-            # replace normalised search pair with original suffixed pair
-            text = text.replace(pair2charString, '/'+'/'.join(self.pair)+' ' )                        
+        # If you want your pair in an open/close context
+        open_close_text = ''
+        if open_close_context:
+            open_close_text = self.make_open_close_context(self.pair)
 
-            self.setSpaceCenter(self.font, text)
+        text = ' '.join([mirror_text, open_close_text, spacing_string]) + words_text
+        text = text.lstrip()
+        text = re.sub(r'\s{3,}', '  ', text)  # Replace any 3+ spaces with 2 spaces. We keep 2 spaces, because of /glyphnames_
+        self.set_space_center(self.font, text)
 
 
 
 
+
+
+
+
+# ========== MM2SC Preferences Popover (Made with EZUI) ========== #
 
 class MM2SpaceCenterPopover(ezui.WindowController):
     
-
     
     def build(self, parent, space_center):
 
         self.sc = space_center
 
-        content = """
+        content = '''
         [ ] Activate MM2SC                 @activateToggle
         
         ---------------
         
         * TwoColumnForm @form
 
-        > : Word count:
+        > : Max word count:
         > [_30               _]            @wordCount
         
         > : Language:
@@ -848,16 +587,15 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         
         ---------------
 
+        [ ] Make words all-caps            @allUppercase
         [ ] Output as list sorted by width @listOutput
-        [X] Show open & close context {n}  @openCloseContext
         [X] Show mirrored pair (LRLR)      @mirroredPair
-        [ ] Make context all-caps          @allUppercase
+        [X] Show open & close context {n}  @openCloseContext
+        '''
         
-        """
-        
-        initialWordCount = 30
-        contextOptions = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
-        languageNames = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
+        initial_word_count = 30
+        context_options = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
+        language_names = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
 
         descriptionData = dict(
             form=dict(
@@ -868,10 +606,10 @@ class MM2SpaceCenterPopover(ezui.WindowController):
             #         continuous=False,
             # ),
             language=dict(
-                    items=languageNames
+                    items=language_names
             ),
             context=dict(
-                    items=contextOptions
+                    items=context_options
             ),
             listOutput=dict(
                     sizeStyle='small'
@@ -892,112 +630,78 @@ class MM2SpaceCenterPopover(ezui.WindowController):
             controller=self,
             parent=parent,
             parentAlignment='bottom',
-            size="auto"
+            size='auto'
         )
-        
-
-        self.activateToggle   = self.w.getItem("activateToggle")
-        self.wordCountField   = self.w.getItem("wordCount")
-        self.wordCountField.set(initialWordCount)
-        self.languageField    = self.w.getItem("language")
-        self.contextField     = self.w.getItem("context")
-        self.listOutput       = self.w.getItem("listOutput")
-        self.openCloseContext = self.w.getItem("openCloseContext")
-        self.mirroredPair     = self.w.getItem("mirroredPair")
-        self.allUppercase     = self.w.getItem("allUppercase")
-
-        # register extension defaults
-        # print("1", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-
-        # if this sc is int he prefs, set to extension defaults. If not, it should just start as default...
-    
-
+        self.wordCountField   = self.w.getItem('wordCount')
+        self.wordCountField.set(initial_word_count)
+        # May not need these:
+        self.activateToggle   = self.w.getItem('activateToggle')
+        self.languageField    = self.w.getItem('language')
+        self.contextField     = self.w.getItem('context')
+        self.listOutput       = self.w.getItem('listOutput')
+        self.openCloseContext = self.w.getItem('openCloseContext')
+        self.mirroredPair     = self.w.getItem('mirroredPair')
+        self.allUppercase     = self.w.getItem('allUppercase')
     
     def flush_and_register_defaults(self):
         setExtensionDefault(EXTENSION_KEY, {})  # This might not be necessary anymore.
         setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
-        print(getExtensionDefault(EXTENSION_KEY))
-
+        print(getExtensionDefault(EXTENSION_KEY))  # Print a readout of the user’s updated MM2SC settings
 
     def started(self):
         self.w.open()
-
         values = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
-        self.w.setItemValues(values)
-
+        self.w.setItemValues(values)  # Set the previous preferences from user
         
     def activateToggleCallback(self, sender):
         self.flush_and_register_defaults()
-
         activation = sender.get()
-        print(activation)
-        
-        # can no longer do observer stuff from the pref menu object
+        # Can no longer activate the actual observer from this pref menu object/class
         if activation == True:
-            print(f'MM2SpaceCenter is now activated.')
+            print(f'MM2SpaceCenter is now set to Active.')
         else:
-            print(f'MM2SpaceCenter is now deactivated.')
-
-        self.wordsForMMPair()
+            print(f'MM2SpaceCenter is now set to Inactive.')
+        # Update the Space Center here somehow?
         
-        
-    def sortedCallback(self, sender):
-        self.flush_and_register_defaults()
-        self.sorted = get_setting_from_defaults('listOutput')
-        self.wordsForMMPair()  
-        
-        
-    def wordCountCallback(self,sender):
-        self.flush_and_register_defaults()
-        #print('old', self.wordCount)
-        self.wordCount = get_setting_from_defaults('wordCount')
-        self.wordsForMMPair()        
-
-
-    def languageCallback(self,sender):
-        self.flush_and_register_defaults()  
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        customIndex = len(self.textfiles) + 2
-        if sender.get() == customIndex: # Custom word list
-            try:
-                filePath = getFile(title="Load custom word list", messageText="Select a text file with words on separate lines", fileTypes=["txt"])[0]
-            except TypeError:
-                filePath = None
-                self.customWords = []
-                print("Input of custom word list canceled, using default")
-            if filePath is not None:
-                with codecs.open(filePath, mode="r", encoding="utf-8") as fo:
-                    lines = fo.read()
-
-                self.customWords = []
-                for line in lines.splitlines():
-                    w = line.strip() # strip whitespace from beginning/end
-                    self.customWords.append(w)
-        
-        # update space center
-        self.wordsForMMPair()
-
-
     def contextCallback(self,sender):
-        # print("3", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
-        self.flush_and_register_defaults()  
-        """On changing source/wordlist, check if a custom word list should be loaded."""
-        
-        self.wordsForMMPair()
-
-
+        self.flush_and_register_defaults()
     def listOutputCallback(self,sender):
-        # print("4", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
         self.flush_and_register_defaults()  
     def openCloseContextCallback(self,sender):
-        # print("5", getExtensionDefault(EXTENSION_KEY, fallback={}), self.w.getItemValues())
         self.flush_and_register_defaults()  
     def mirroredPairCallback(self,sender):
         self.flush_and_register_defaults()  
     def allUppercaseCallback(self,sender):
         self.flush_and_register_defaults()  
-        
+    def sortedCallback(self, sender):
+        self.flush_and_register_defaults()
+    def wordCountCallback(self,sender):
+        self.flush_and_register_defaults()
+    def languageCallback(self,sender):
+        self.flush_and_register_defaults()  
+        '''
+        On changing source/word-list, check if a custom word-list should be loaded.
+        '''
+
+        custom_index = len(self.text_files) + 2
+        if sender.get() == custom_index: # Custom word list
+            try:
+                file_path = getFile(title='Load custom word list', messageText='Select a text file with words on separate lines', fileTypes=['txt'])[0]
+            except TypeError:
+                file_path = None
+                self.custom_words = []
+                print('Input of custom word list canceled, using default')
+            if file_path is not None:
+                with codecs.open(file_path, mode='r', encoding='utf-8') as fo:
+                    lines = fo.read()
+
+                self.custom_words = []
+                for line in lines.splitlines():
+                    w = line.strip() # strip whitespace from beginning/end
+                    self.custom_words.append(w)
+
+        # Update the Space Center here somehow?
 
     
-
-registerSpaceCenterSubscriber(MM2SCButton)
+        
+registerSpaceCenterSubscriber(MM2SC_Tool)
