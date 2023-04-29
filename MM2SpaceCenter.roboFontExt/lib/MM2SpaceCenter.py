@@ -136,6 +136,24 @@ class MM2SC_Tool(Subscriber):
         self.text_files = ['catalan', 'czech', 'danish', 'dutch', 'ukacd', 'finnish', 'french', 'german', 'hungarian', 'icelandic', 'italian', 'latin', 'norwegian', 'polish', 'slovak', 'spanish', 'vietnamese']
         self.language_names = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
 
+        # # Check if a custom word-list should be loaded. (Defunct)
+        # custom_index = len(self.text_files) + 2
+        # if sender.get() == custom_index: # Custom word list
+        #     try:
+        #         file_path = getFile(title='Load custom word list', messageText='Select a text file with words on separate lines', fileTypes=['txt'])[0]
+        #     except TypeError:
+        #         file_path = None
+        #         self.custom_words = []
+        #         print('Input of custom word list canceled, using default')
+        #     if file_path is not None:
+        #         with codecs.open(file_path, mode='r', encoding='utf-8') as fo:
+        #             lines = fo.read()
+
+        #         self.custom_words = []
+        #         for line in lines.splitlines():
+        #             w = line.strip() # strip whitespace from beginning/end
+        #             self.custom_words.append(w)
+
         bundle = ExtensionBundle('MM2SpaceCenter')
         content_limit  = '*****'  # If word list file contains a header, start looking for content after this delimiter
 
@@ -148,8 +166,8 @@ class MM2SC_Tool(Subscriber):
 
             # Strip header
             try:
-                contentStart = self.dict_words[text_file].index(content_limit) + 1
-                self.dict_words[text_file] = self.dict_words[text_file][contentStart:]
+                content_start = self.dict_words[text_file].index(content_limit) + 1
+                self.dict_words[text_file] = self.dict_words[text_file][content_start:]
             except ValueError:
                 pass
 
@@ -679,27 +697,6 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         self.flush_and_register_defaults()
     def languageCallback(self,sender):
         self.flush_and_register_defaults()  
-        '''
-        On changing source/word-list, check if a custom word-list should be loaded.
-        '''
-
-        custom_index = len(self.text_files) + 2
-        if sender.get() == custom_index: # Custom word list
-            try:
-                file_path = getFile(title='Load custom word list', messageText='Select a text file with words on separate lines', fileTypes=['txt'])[0]
-            except TypeError:
-                file_path = None
-                self.custom_words = []
-                print('Input of custom word list canceled, using default')
-            if file_path is not None:
-                with codecs.open(file_path, mode='r', encoding='utf-8') as fo:
-                    lines = fo.read()
-
-                self.custom_words = []
-                for line in lines.splitlines():
-                    w = line.strip() # strip whitespace from beginning/end
-                    self.custom_words.append(w)
-
         # Update the Space Center here somehow?
 
     
