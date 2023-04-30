@@ -265,7 +265,7 @@ class MM2SC_Tool(Subscriber):
             return False
 
 
-    def get_pair_to_char(self, pair):
+    def get_pair_in_chars(self, pair):
         '''
         Converts glyph names to characters, in order to find words in dictionary.
         '''
@@ -284,6 +284,20 @@ class MM2SC_Tool(Subscriber):
         except:
             if self.debug: print('Couldn’t convert pair to chars.')
             return pair
+
+
+    def get_pair_in_sc_strings(self, pair):
+        return self.get_sc_string_from_gname(pair[0]), self.get_sc_string_from_gname(pair[1])
+
+
+    def get_sc_string_from_gname(self, gname):
+        if not self.check_encoded(gname):
+            sc_string = '/' + gname + ' '
+        else:
+            uni = self.font[gname].unicodes[0]
+            char = chr(uni)
+            sc_string = char
+        return sc_string 
 
 
     def get_gname_from_char(self, char):
@@ -307,20 +321,6 @@ class MM2SC_Tool(Subscriber):
         else:
             char = ''
         return char
-
-
-    def get_pair_in_sc_strings(self, pair):
-        return self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
-
-
-    def gname_to_sc_string(self, gname):
-        if not self.check_encoded(gname):
-            sc_string = '/' + gname + ' '
-        else:
-            uni = self.font[gname].unicodes[0]
-            char = chr(uni)
-            sc_string = char
-        return sc_string 
 
 
     def get_spacing_string(self, pair):
@@ -426,7 +426,7 @@ class MM2SC_Tool(Subscriber):
         # Left and right, to compare against the dictionary
         left_search, right_search = self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)
         # Left and right, to add to the Space Center
-        l_sc, r_sc  = self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
+        l_sc, r_sc  = self.get_sc_string_from_gname(pair[0]), self.get_sc_string_from_gname(pair[1])
 
         is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
@@ -464,13 +464,13 @@ class MM2SC_Tool(Subscriber):
             elif open_close_pair[0] == left_search and ord(open_close_pair[1]) in unis_in_font:
                 if self.debug: print('Debug: Open/Close situation 3')
                 # Get the close/open equivalent suffixed for open/close
-                close_with_l_suff = self.gname_to_sc_string(self.get_gname_from_char(self.open_close_pairs[left_search]) + l_suff)
+                close_with_l_suff = self.get_sc_string_from_gname(self.get_gname_from_char(self.open_close_pairs[left_search]) + l_suff)
                 open_close_string = l_sc + r_sc + close_with_l_suff
                 break
             # If the right is a close. And the open is in the font
             elif open_close_pair[1] == right_search and ord(open_close_pair[0]) in unis_in_font:
                 if self.debug: print('Debug: Open/Close situation 4')
-                open_with_r_suff  = self.gname_to_sc_string(self.get_gname_from_char(get_key(self.open_close_pairs, right_search)) + r_suff) 
+                open_with_r_suff  = self.get_sc_string_from_gname(self.get_gname_from_char(get_key(self.open_close_pairs, right_search)) + r_suff) 
                 open_close_string = open_with_r_suff + l_sc + r_sc
                 break
 
@@ -478,13 +478,13 @@ class MM2SC_Tool(Subscriber):
             # If the right is an open. And the close is in the font
             elif open_close_pair[0] == right_search and ord(open_close_pair[1]) in unis_in_font:
                 if self.debug: print('Debug: Open/Close situation 5')
-                close_with_r_suff = self.gname_to_sc_string(self.get_gname_from_char(self.open_close_pairs[right_search]) + r_suff)
+                close_with_r_suff = self.get_sc_string_from_gname(self.get_gname_from_char(self.open_close_pairs[right_search]) + r_suff)
                 open_close_string = close_with_r_suff + l_sc + r_sc
                 break
             # If the left is a close. And the open is in the font
             elif open_close_pair[1] == left_search and ord(open_close_pair[0]) in unis_in_font:
                 if self.debug: print('Debug: Open/Close situation 6')
-                open_with_l_suff  = self.gname_to_sc_string(self.get_gname_from_char(get_key(self.open_close_pairs, left_search)) + l_suff)
+                open_with_l_suff  = self.get_sc_string_from_gname(self.get_gname_from_char(get_key(self.open_close_pairs, left_search)) + l_suff)
                 open_close_string =  l_sc + r_sc + open_with_l_suff
                 break
 
@@ -519,7 +519,7 @@ class MM2SC_Tool(Subscriber):
         pair_string = ''.join(list(self.get_pair_in_sc_strings(self.pair)))
 
         # Convert MM tuple into search pair to check uc, lc, mixed case
-        pair_to_char_string = ''.join(self.get_pair_to_char(self.pair))
+        pair_to_char_string = ''.join(self.get_pair_in_chars(self.pair))
 
         # Search for non-suffixed
         search_string = ''.join(chr(self.font[gname.split('.')[0]].unicode) for gname in self.pair)
@@ -536,7 +536,7 @@ class MM2SC_Tool(Subscriber):
 
         # Check for mixed case
         mixed_case = False
-        pair_chars = self.get_pair_to_char(self.pair)
+        pair_chars = self.get_pair_in_chars(self.pair)
         is_left_encoded = self.check_encoded(self.pair[0])
         is_right_encoded = self.check_encoded(self.pair[1])
         if pair_chars[0].isupper() and pair_chars[1].islower() and is_left_encoded and is_right_encoded:
