@@ -278,7 +278,7 @@ class MM2SC_Tool(Subscriber):
         try:
             left_no_suffix = remove_suffix(pair[0])
             right_no_suffix = remove_suffix(pair[1])
-            return self.get_pair_string((left_no_suffix, right_no_suffix))
+            return self.get_pair_in_sc_strings((left_no_suffix, right_no_suffix))
         except:
             if self.debug:
                 print('Couldn’t convert pair to chars.')
@@ -294,7 +294,9 @@ class MM2SC_Tool(Subscriber):
         return gname
 
 
-    def get_char_from_gname(self, gname):
+    def get_char_from_gname(self, gname, allow_suff=False):
+        if allow_suff == True:
+            gname = gname.split(".")[0]
         if gname in GN2UV.keys():
             char = chr(GN2UV[gname])
         else:
@@ -302,7 +304,7 @@ class MM2SC_Tool(Subscriber):
         return char
 
 
-    def get_pair_string(self, pair):
+    def get_pair_in_sc_strings(self, pair):
         return self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
 
 
@@ -316,39 +318,52 @@ class MM2SC_Tool(Subscriber):
         return sc_string 
 
 
-    def get_spacing_string(self, pair_string):
+    def get_spacing_string(self, pair):
         context = get_setting_from_defaults('context')
 
+        # Accurate pair string to be easily swapped into the context
+        pair_string = ''.join(list(self.get_pair_in_sc_strings(pair)))  
+
         context_strings = {
-            1: 'HH__HO__OH__OO__HH',     # 'UC' context
-            2: 'nn__no__on__oo__nn',     # 'LC' context
-            3: '11__10__01__00__11',     # 'Figs' context
-            4: '11__/10/__01__/00/__11'  # 'Frac' context
+            1: 'HH__HO__OH__OO__HH',                    # 'UC' context
+            2: 'nn__no__on__oo__nn',                    # 'LC' context
+            3: '11__10__01__00__11',                    # 'Figs' context
+
+            # Fraction contexts probably need some love.
+            4:   '11__/10/__01__/00/__11',              # 'Frac' context
+            4.1: '11/eight.numr __10/one.numr __00' ,   # 'Frac' alt context 1
+            4.2: '11__/eight.dnom 10__/eight.dnom 00',  # 'Frac' alt context 2
         }
+        
+        # The pair string to use when searching for appropriate contexts. (Ignore suffix)
+        pair_search_string = ''.join([self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)])
 
         # If it's not set to Auto context, then just pull the context from above.
         if not context == 0:
-            string = context_strings[context].replace('__', pair_string)
-
-            # Not sure what this is, but keeping it in
+            # Fractions
             if context == 4:
+                string = context_strings[4].replace('__', pair_string)
+                # Not sure what this is, but keeping it in
                 if pair_string.startswith('⁄'):  # fraction at start of pair
-                    string = '11/eight.numr ' + pair_string + ' 10/one.numr ' + pair_string + '00'
+                    string = context_strings[4.1].replace('__', pair_string)
                 elif pair_string.endswith('⁄'):  # fraction at end of pair
-                    string = '11' + pair_string + '/eight.dnom 10' + pair_string + '/eight.dnom 00'
+                    string = context_strings[4.2].replace('__', pair_string)
+            # If not Fractions, just set the context to whatever the selected setting is.
+            else:
+                string = context_strings[context].replace('__', pair_string)
 
-        # Auto (Need to support suffixed here.)
+        # Automatic contexts
         else:
             # Figures
-            if bool(set(pair_string) & set("0123456789")):  # A check to see if any side of the pair is a figure
+            if bool(set(pair_search_string) & set("0123456789")):  # A check to see if any side of the pair is a figure
                 string = context_strings[3].replace('__', pair_string)
             # UC
-            elif pair_string == pair_string.upper():
+            elif pair_search_string == pair_search_string.upper():
                 string = context_strings[1].replace('__', pair_string)
             # lc
             else:
                 string = context_strings[2].replace('__', pair_string)
-            # Support Fractions later
+            # Support auto-fractions later
 
         return string + '\\n'
 
@@ -501,7 +516,7 @@ class MM2SC_Tool(Subscriber):
         Returns a string of the pair mirrored, to judge the symmetry of kerns.
         '''
 
-        left, right = self.get_pair_string(pair)
+        left, right = self.get_pair_in_sc_strings(pair)
         return left + right + left + right + '  ' 
 
 
@@ -520,7 +535,7 @@ class MM2SC_Tool(Subscriber):
         context            = get_setting_from_defaults('context')
         
         # Try getting pair_string once in order to check if encoded
-        pair_string = ''.join(list(self.get_pair_string(self.pair)))
+        pair_string = ''.join(list(self.get_pair_in_sc_strings(self.pair)))
 
         # Convert MM tuple into search pair to check uc, lc, mixed case
         pair_to_char_string = ''.join(self.get_pair_to_char(self.pair))
@@ -529,7 +544,7 @@ class MM2SC_Tool(Subscriber):
         search_string = ''.join(chr(self.font[gname.split('.')[0]].unicode) for gname in self.pair)
 
         # Get the spacing string
-        spacing_string = self.get_spacing_string(pair_string)
+        spacing_string = self.get_spacing_string(self.pair)
 
         # Check if string is uppercase
         if pair_to_char_string.isupper():
@@ -641,7 +656,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         > : Language:
         > (English ...)                    @language
 
-        > : Fallback context:
+        > : Context:
         > (Auto ...)                       @context
         
         ---------------
@@ -658,8 +673,8 @@ class MM2SpaceCenterPopover(ezui.WindowController):
 
         descriptionData = dict(
             form=dict(
-                titleColumnWidth=104,
-                itemColumnWidth=78
+                titleColumnWidth=100,
+                itemColumnWidth=80
             ),
             # wordCount=dict(
             #         continuous=False,
