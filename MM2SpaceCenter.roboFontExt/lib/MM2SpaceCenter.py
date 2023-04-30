@@ -416,7 +416,7 @@ class MM2SC_Tool(Subscriber):
         is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
 
-        print('MM2SC open/close info:', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
+        # print('MM2SC open/close info:', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
 
         # Stop if the glyphs aren't open/close
         if not left in self.open_close_pairs.keys() and not left in self.open_close_pairs.values():
