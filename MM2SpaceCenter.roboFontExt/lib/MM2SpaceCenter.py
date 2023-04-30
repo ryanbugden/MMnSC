@@ -323,7 +323,7 @@ class MM2SC_Tool(Subscriber):
         return char
 
 
-    def get_spacing_string(self, pair):
+    def make_spacing_string(self, pair):
         context = get_setting_from_defaults('context')
 
         # Accurate pair string to be easily swapped into the context
@@ -492,7 +492,7 @@ class MM2SC_Tool(Subscriber):
         return open_close_string + ' '
            
 
-    def pair_mirrored(self, pair):
+    def make_mirrored_pair(self, pair):
         '''
         Returns a string of the pair mirrored, to judge the symmetry of kerns.
         '''
@@ -525,7 +525,7 @@ class MM2SC_Tool(Subscriber):
         search_string = ''.join(chr(self.font[gname.split('.')[0]].unicode) for gname in self.pair)
 
         # Get the spacing string
-        spacing_string = self.get_spacing_string(self.pair)
+        spacing_string = self.make_spacing_string(self.pair)
 
         # Check if string is uppercase
         if pair_to_char_string.isupper():
@@ -596,7 +596,7 @@ class MM2SC_Tool(Subscriber):
         # If you want your pair mirrored
         mirror_text = ''
         if mirrored_pair:
-            mirror_text = self.pair_mirrored(self.pair)
+            mirror_text = self.make_mirrored_pair(self.pair)
 
         # If you want your pair in an open/close context
         open_close_text = ''
