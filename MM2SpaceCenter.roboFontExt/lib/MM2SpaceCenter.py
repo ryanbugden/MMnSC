@@ -231,6 +231,7 @@ class MM2SC_Tool(Subscriber):
             current_pair = sender['pair']
             if current_pair != self.pair:
                 self.pair = current_pair
+                self.font = metricsMachine.CurrentFont()
                 self.words_for_pair()
 
 
@@ -252,10 +253,14 @@ class MM2SC_Tool(Subscriber):
 
 
     def check_encoded(self, gname):
-        if not self.font[gname].unicodes:
+        escape_set = {'slash'}  # 'backslash'
+        if gname in self.font.keys():
+            if gname in escape_set or self.font[gname].unicodes == ():
+                return False
+            else: 
+                return True
+        else:
             return False
-        else: 
-            return True
 
 
     def get_pair_to_char(self, pair):
@@ -304,21 +309,35 @@ class MM2SC_Tool(Subscriber):
         context = get_setting_from_defaults('context')
 
         context_strings = {
-            0: 'nn__no__on__oo__nn',     # 'Auto' context
             1: 'HH__HO__OH__OO__HH',     # 'UC' context
             2: 'nn__no__on__oo__nn',     # 'LC' context
             3: '11__10__01__00__11',     # 'Figs' context
             4: '11__/10/__01__/00/__11'  # 'Frac' context
         }
 
-        string = context_strings[context].replace('__', pair_string)
+        # If it's not set to Auto context, then just pull the context from above.
+        if not context == 0:
+            string = context_strings[context].replace('__', pair_string)
 
-        # Not sure what this is, but keeping it in
-        if context == 4:
-            if pair_string.startswith('⁄'):  # fraction at start of pair
-                string = '11/eight.numr ' + pair_string + ' 10/one.numr ' + pair_string + '00'
-            elif pair_string.endswith('⁄'):  # fraction at end of pair
-                string = '11' + pair_string + '/eight.dnom 10' + pair_string + '/eight.dnom 00'
+            # Not sure what this is, but keeping it in
+            if context == 4:
+                if pair_string.startswith('⁄'):  # fraction at start of pair
+                    string = '11/eight.numr ' + pair_string + ' 10/one.numr ' + pair_string + '00'
+                elif pair_string.endswith('⁄'):  # fraction at end of pair
+                    string = '11' + pair_string + '/eight.dnom 10' + pair_string + '/eight.dnom 00'
+
+        # Auto (Need to support suffixed here.)
+        else:
+            # Figures
+            if bool(set(pair_string) & set("0123456789")):  # A check to see if any side of the pair is a figure
+                string = context_strings[3].replace('__', pair_string)
+            # UC
+            elif pair_string == pair_string.upper():
+                string = context_strings[1].replace('__', pair_string)
+            # lc
+            else:
+                string = context_strings[2].replace('__', pair_string)
+            # Support Fractions later
 
         return string + '\\n'
 
@@ -390,11 +409,14 @@ class MM2SC_Tool(Subscriber):
         # Get all unicodes to make sure we don’t show pairs that don’t exist in the font
         unis_in_font = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
-        left, right = self.gname_to_sc_string(pair[0], chr_only=True), self.gname_to_sc_string(pair[1], chr_only=True)
-        is_left_encoded = self.check_encoded(pair[0])
+        # Left and right, to compare against the dictionary
+        left, right = self.gname_to_sc_string(pair[0], chr_only=True),  self.gname_to_sc_string(pair[1], chr_only=True)
+        # Left and right, to add to the Space Center
+        l_sc, r_sc  = self.gname_to_sc_string(pair[0], chr_only=False), self.gname_to_sc_string(pair[1], chr_only=False)
+        is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
 
-        print('OPEN/CLOSE INFO', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
+        print('MM2SC open/close info:', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
 
         # Stop if the glyphs aren't open/close
         if not left in self.open_close_pairs.keys() and not left in self.open_close_pairs.values():
@@ -402,54 +424,62 @@ class MM2SC_Tool(Subscriber):
                 return ''
 
         open_close_string = ''
-        for open_close_pair in self.open_close_pairs.items():
-            if open_close_pair == (left, right):
-                print('Debug: Open/Close situation 1')
-                open_close_string = left + right
-            elif open_close_pair == (right, left):
-                print('Debug: Open/Close situation 2')
-                open_close_string = right + left
-
-            # Open and close
-            elif open_close_pair[0] == left and ord(open_close_pair[1]) in unis_in_font:
-                print('Debug: Open/Close situation 3')
-                open_close_string = left + right + self.open_close_pairs[left]
-            elif open_close_pair[1] == right and ord(open_close_pair[0]) in unis_in_font:
-                print('Debug: Open/Close situation 4')
-                open_close_string = get_key(self.open_close_pairs, right) + left + right
-
-            # Now close and open
-            elif open_close_pair[0] == right and ord(open_close_pair[1]) in unis_in_font:
-                print('Debug: Open/Close situation 5')
-                open_close_string = self.open_close_pairs[right] + left + right
-            elif open_close_pair[1] == left and ord(open_close_pair[0]) in unis_in_font:
-                print('Debug: Open/Close situation 6')
-                open_close_string =  left + right + get_key(self.open_close_pairs, left)
-
-        # If we did the above, stop here.
         if is_left_encoded and is_right_encoded:
-            print(open_close_string)
-            return open_close_string + ' '
+            for open_close_pair in self.open_close_pairs.items():
+                if open_close_pair == (left, right):
+                    # print('Debug: Open/Close situation 1')
+                    open_close_string = l_sc + r_sc
+                    break
+                elif open_close_pair == (right, left):
+                    # print('Debug: Open/Close situation 2')
+                    open_close_string = r_sc + l_sc
+                    break
+
+                # Open and close
+                elif open_close_pair[0] == left and ord(open_close_pair[1]) in unis_in_font:
+                    # print('Debug: Open/Close situation 3')
+                    open_close_string = l_sc + r_sc + self.open_close_pairs[left]
+                    break
+                elif open_close_pair[1] == right and ord(open_close_pair[0]) in unis_in_font:
+                    # print('Debug: Open/Close situation 4')
+                    open_close_string = get_key(self.open_close_pairs, right) + l_sc + r_sc
+                    break
+
+                # Now close and open
+                elif open_close_pair[0] == right and ord(open_close_pair[1]) in unis_in_font:
+                    # print('Debug: Open/Close situation 5')
+                    open_close_string = self.open_close_pairs[right] + l_sc + r_sc
+                    break
+                elif open_close_pair[1] == left and ord(open_close_pair[0]) in unis_in_font:
+                    # print('Debug: Open/Close situation 6')
+                    open_close_string =  l_sc + r_sc + get_key(self.open_close_pairs, left)
+                    break
 
         # Handle unencoded glyph names
-        # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
-        for gname_pair in self.open_close_pairs_unencoded.items():
-            if gname_pair[0] in self.open_close_pairs_unencoded.items() and gname_pair[1] in self.open_close_pairs_unencoded.items(): # If both are in there:
-                print('Debug: Open/Close situation 7')
-                open_close_string += self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0]) + self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0])
-            elif pair[0] == gname_pair[0]:
-                print('Debug: Open/Close situation 8')
-                open_close_string += left + right + self.gname_to_sc_string(gname_pair[1])
-            elif pair[1] == gname_pair[1]:
-                print('Debug: Open/Close situation 9')
-                open_close_string += self.gname_to_sc_string(gname_pair[0]) + left + right
-            # Now reverse to close/open
-            elif pair[0] == gname_pair[1]:
-                print('Debug: Open/Close situation 10')
-                open_close_string += left + right + self.gname_to_sc_string(gname_pair[0])
-            elif pair[1] == gname_pair[0]:
-                print('Debug: Open/Close situation 11')
-                open_close_string += self.gname_to_sc_string(gname_pair[1]) + left + right
+        else:
+            # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
+            for gname_pair in self.open_close_pairs_unencoded.items():
+                if gname_pair[0] in self.open_close_pairs_unencoded.items() and gname_pair[1] in self.open_close_pairs_unencoded.items(): # If both are in there:
+                    # print('Debug: Open/Close situation 7')
+                    open_close_string += self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0]) + self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0])
+                    break
+                elif pair[0] == gname_pair[0]:
+                    # print('Debug: Open/Close situation 8')
+                    open_close_string += l_sc + r_sc + self.gname_to_sc_string(gname_pair[1])
+                    break
+                elif pair[1] == gname_pair[1]:
+                    # print('Debug: Open/Close situation 9')
+                    open_close_string += self.gname_to_sc_string(gname_pair[0]) + l_sc + r_sc
+                    break
+                # Now reverse to close/open
+                elif pair[0] == gname_pair[1]:
+                    # print('Debug: Open/Close situation 10')
+                    open_close_string += l_sc + r_sc + self.gname_to_sc_string(gname_pair[0])
+                    break
+                elif pair[1] == gname_pair[0]:
+                    # print('Debug: Open/Close situation 11')
+                    open_close_string += self.gname_to_sc_string(gname_pair[1]) + l_sc + r_sc
+                    break
 
         print('Open/close string:', open_close_string)
         return open_close_string + ' '
@@ -461,7 +491,7 @@ class MM2SC_Tool(Subscriber):
         '''
 
         left, right = self.get_pair_string(pair)
-        return right + left + right + left + right + '  ' 
+        return left + right + left + right + '  ' 
 
 
     def words_for_pair(self, ):
@@ -488,7 +518,7 @@ class MM2SC_Tool(Subscriber):
         search_string = ''.join(chr(self.font[gname.split('.')[0]].unicode) for gname in self.pair)
 
         # Get the spacing string
-        spacing_string = self.get_spacing_string(search_string)
+        spacing_string = self.get_spacing_string(pair_string)
 
         # Check if string is uppercase
         if pair_to_char_string.isupper():
@@ -552,7 +582,7 @@ class MM2SC_Tool(Subscriber):
 
             words_text = words_text.lstrip()
             words_text = words_text.replace(pair_to_char_string, '/'+'/'.join(self.pair)+' ' )
-        # If there are no sample words, add some failure text in the place of words_text.
+        # If there are no sample words, add some failure text in the place of words text.
         else:
             words_text = f'There are no words for pair: {pair_string}'
             
