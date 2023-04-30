@@ -313,8 +313,8 @@ class MM2SC_Tool(Subscriber):
         return gname
 
 
-    def get_char_from_gname(self, gname, allow_suff=False):
-        if allow_suff == True:
+    def get_char_from_gname(self, gname, no_suff=False):
+        if no_suff == True:
             gname = gname.split(".")[0]
         if gname in GN2UV.keys():
             char = chr(GN2UV[gname])
@@ -341,7 +341,7 @@ class MM2SC_Tool(Subscriber):
         }
         
         # The pair string to use when searching for appropriate contexts. (Ignore suffix)
-        pair_search_string = ''.join([self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)])
+        pair_search_string = ''.join([self.get_char_from_gname(pair[0], no_suff=True), self.get_char_from_gname(pair[1], no_suff=True)])
 
         # If it's not set to Auto context, then just pull the context from above.
         if not context == 0:
@@ -424,7 +424,7 @@ class MM2SC_Tool(Subscriber):
         unis_in_font = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
         # Left and right, to compare against the dictionary
-        left_search, right_search = self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)
+        left_search, right_search = self.get_char_from_gname(pair[0], no_suff=True), self.get_char_from_gname(pair[1], no_suff=True)
         # Left and right, to add to the Space Center
         l_sc, r_sc  = self.get_sc_string_from_gname(pair[0]), self.get_sc_string_from_gname(pair[1])
 
