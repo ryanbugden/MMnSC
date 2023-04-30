@@ -427,7 +427,7 @@ class MM2SC_Tool(Subscriber):
         left_search, right_search = self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)
         # Left and right, to add to the Space Center
         l_sc, r_sc  = self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
-        
+
         is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
 
@@ -628,14 +628,14 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         
         * TwoColumnForm @form
 
-        > : Max word count:
-        > [_30               _]            @wordCount
-        
         > : Language:
         > (English ...)                    @language
 
-        > : Context:
+        > : Spacing Context:
         > (Auto ...)                       @context
+
+        > : Max Word Count:
+        > [_30               _]            @wordCount
         
         ---------------
 
@@ -646,13 +646,13 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         '''
         
         initial_word_count = 30
-        context_options = ['Auto', 'UC', 'LC', 'Figs', 'Frac']
+        context_options = ['Auto', 'Uppercase', 'Lowercase', 'Figures', 'Fractions']
         language_names = ['Catalan', 'Czech', 'Danish', 'Dutch', 'English', 'Finnish', 'French', 'German', 'Hungarian', 'Icelandic', 'Italian', 'Latin', 'Norwegian', 'Polish', 'Slovak', 'Spanish', 'Vietnamese syllables']
 
         descriptionData = dict(
             form=dict(
-                titleColumnWidth=100,
-                itemColumnWidth=80
+                titleColumnWidth=106,
+                itemColumnWidth=90
             ),
             # wordCount=dict(
             #         continuous=False,
@@ -682,6 +682,7 @@ class MM2SpaceCenterPopover(ezui.WindowController):
             controller=self,
             parent=parent,
             parentAlignment='bottom',
+            behavior='transient',
             size='auto'
         )
         self.wordCountField   = self.w.getItem('wordCount')
