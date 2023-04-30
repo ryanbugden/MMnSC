@@ -55,7 +55,9 @@ class MM2SC_Tool(Subscriber):
     '''
     Carries forward all of the MM2SC utilities.
     '''
-    
+
+    debug = False
+
     def build(self):
         self.icon_path = os.path.abspath('../resources/_icon_MM2SC.pdf')  # Image icon to potentially be used on the SC button
         self.font = CurrentFont()
@@ -280,13 +282,16 @@ class MM2SC_Tool(Subscriber):
             right_no_suffix = remove_suffix(pair[1])
             return self.get_pair_in_sc_strings((left_no_suffix, right_no_suffix))
         except:
-            if self.debug:
-                print('Couldn’t convert pair to chars.')
+            if self.debug: print('Couldn’t convert pair to chars.')
             return pair
 
 
     def get_gname_from_char(self, char):
-        uni = ord(char)
+        try:
+            uni = ord(char)
+        except TypeError:
+            return ''
+
         if uni in GN2UV.values():
             gname = str(get_key(GN2UV, uni))
         else:
@@ -368,20 +373,20 @@ class MM2SC_Tool(Subscriber):
         return string + '\\n'
 
 
-
+    # Can delete all the close/open duplicates of open/close
     open_close_pairs = {
         # Initial/final punctuation (from https://www.compart.com/en/unicode/category/Pi and https://www.compart.com/en/unicode/category/Pf)
         "’": "‘",
-        "„": "“",
-        "„": "”",
+        # "„": "“",
+        # "„": "”",
         "‘": "’",
         "‛": "’",
         "“": "”",
         "‟": "”",
         "‹": "›",
-        "›": "‹",
+        # "›": "‹",
         "«": "»",
-        "»": "«",
+        # "»": "«",
         "⸂": "⸃",
         "⸄": "⸅",
         "⸉": "⸊",
@@ -397,34 +402,17 @@ class MM2SC_Tool(Subscriber):
         "¡": "!",
         "¿": "?",
         "←": "→",
-        "→": "←",
+        # "→": "←",
         "/": "\\",
         
         "<": ">",  # less, greater
-        ">": "<",  # greater, less
+        # ">": "<",  # greater, less
 
         # Opening/closing punctuation (from https://www.compart.com/en/unicode/category/Ps & https://www.compart.com/en/unicode/category/Pe)
         "(": ")",
         "[": "]",
         "{": "}",
-        "༺": "༻", "༼": "༽", "᚛": "᚜", "‚": "‘", "„": "“", "⁅": "⁆", "⁽": "⁾", "₍": "₎", "⌈": "⌉", "⌊": "⌋", "〈": "〉", "❨": "❩", "❪": "❫", "❬": "❭", "❮": "❯", "❰": "❱", "❲": "❳", "❴": "❵", "⟅": "⟆", "⟦": "⟧", "⟨": "⟩", "⟪": "⟫", "⟬": "⟭", "⟮": "⟯", "⦃": "⦄", "⦅": "⦆", "⦇": "⦈", "⦉": "⦊", "⦋": "⦌", "⦍": "⦎", "⦏": "⦐", "⦑": "⦒", "⦓": "⦔", "⦕": "⦖", "⦗": "⦘", "⧘": "⧙", "⧚": "⧛", "⧼": "⧽", "⸢": "⸣", "⸤": "⸥", "⸦": "⸧", "⸨": "⸩", "〈": "〉", "《": "》", "「": "」", "『": "』", "【": "】", "〔": "〕", "〖": "〗", "〘": "〙", "〚": "〛", "〝": "〞", "⹂": "〟", "﴿": "﴾", "︗": "︘", "︵": "︶", "︷": "︸", "︹": "︺", "︻": "︼", "︽": "︾", "︿": "﹀", "﹁": "﹂", "﹃": "﹄", "﹇": "﹈", "﹙": "﹚", "﹛": "﹜", "﹝": "﹞", "（": "）", "［": "］", "｛": "｝", "｟": "｠", "｢": "｣",
-    }
-
-    # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
-    open_close_pairs_unencoded = {
-        "parenleft.uc": "parenright.uc", 
-        "bracketleft.uc": "bracketright.uc", 
-        "braceleft.uc": "braceright.uc", 
-        "exclamdown.uc": "exclam.uc", 
-        "questiondown.uc": "question.uc", 
-        "guilsinglleft.uc": "guilsinglright.uc",
-        "guillemotleft.uc": "guillemotright.uc",
-
-        "guilsinglright.uc": "guilsinglleft.uc",
-        "guillemotright.uc": "guillemotleft.uc",
-
-        "slash": "backslash",  # Should be encoded but adding here because those aren't working for some reason
-        "backslash": "slash",  # Should be encoded but adding here because those aren't working for some reason
+        "༺": "༻", "༼": "༽", "᚛": "᚜", "‚": "‘", "⁅": "⁆", "⁽": "⁾", "₍": "₎", "⌈": "⌉", "⌊": "⌋", "〈": "〉", "❨": "❩", "❪": "❫", "❬": "❭", "❮": "❯", "❰": "❱", "❲": "❳", "❴": "❵", "⟅": "⟆", "⟦": "⟧", "⟨": "⟩", "⟪": "⟫", "⟬": "⟭", "⟮": "⟯", "⦃": "⦄", "⦅": "⦆", "⦇": "⦈", "⦉": "⦊", "⦋": "⦌", "⦍": "⦎", "⦏": "⦐", "⦑": "⦒", "⦓": "⦔", "⦕": "⦖", "⦗": "⦘", "⧘": "⧙", "⧚": "⧛", "⧼": "⧽", "⸢": "⸣", "⸤": "⸥", "⸦": "⸧", "⸨": "⸩", "〈": "〉", "《": "》", "「": "」", "『": "』", "【": "】", "〔": "〕", "〖": "〗", "〘": "〙", "〚": "〛", "〝": "〞", "⹂": "〟", "﴿": "﴾", "︗": "︘", "︵": "︶", "︷": "︸", "︹": "︺", "︻": "︼", "︽": "︾", "︿": "﹀", "﹁": "﹂", "﹃": "﹄", "﹇": "﹈", "﹙": "﹚", "﹛": "﹜", "﹝": "﹞", "（": "）", "［": "］", "｛": "｝", "｟": "｠", "｢": "｣",
     }
 
     def make_open_close_context(self, pair):
@@ -436,78 +424,71 @@ class MM2SC_Tool(Subscriber):
         unis_in_font = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
         # Left and right, to compare against the dictionary
-        left, right = self.get_char_from_gname(pair[0]), self.get_char_from_gname(pair[1])
+        left_search, right_search = self.get_char_from_gname(pair[0], allow_suff=True), self.get_char_from_gname(pair[1], allow_suff=True)
         # Left and right, to add to the Space Center
         l_sc, r_sc  = self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
+        
         is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
 
-        # print('MM2SC open/close info:', pair, left, right, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
+        if self.debug: print('MM2SC open/close info:', pair, l_sc, r_sc, "\tHave unicodes?:", is_left_encoded, is_right_encoded)
 
         # Stop if the glyphs aren't open/close
-        if not left in self.open_close_pairs.keys() and not left in self.open_close_pairs.values():
-            if not right in self.open_close_pairs.keys() and not right in self.open_close_pairs.values():
+        if not left_search in self.open_close_pairs.keys() and not left_search in self.open_close_pairs.values():
+            if not right_search in self.open_close_pairs.keys() and not right_search in self.open_close_pairs.values():
                 return ''
 
         open_close_string = ''
-        if is_left_encoded and is_right_encoded:
-            for open_close_pair in self.open_close_pairs.items():
-                if open_close_pair == (left, right):
-                    # print('Debug: Open/Close situation 1')
-                    open_close_string = l_sc + r_sc
-                    break
-                elif open_close_pair == (right, left):
-                    # print('Debug: Open/Close situation 2')
-                    open_close_string = r_sc + l_sc
-                    break
+        # if is_left_encoded and is_right_encoded:
+        for open_close_pair in self.open_close_pairs.items():
 
-                # Open and close
-                elif open_close_pair[0] == left and ord(open_close_pair[1]) in unis_in_font:
-                    # print('Debug: Open/Close situation 3')
-                    open_close_string = l_sc + r_sc + self.open_close_pairs[left]
-                    break
-                elif open_close_pair[1] == right and ord(open_close_pair[0]) in unis_in_font:
-                    # print('Debug: Open/Close situation 4')
-                    open_close_string = get_key(self.open_close_pairs, right) + l_sc + r_sc
-                    break
+            # Saving the suffixes to add back to the correlating open/close
+            l_suff = ''
+            if '.' in l_sc:
+                l_suff = '.' + '.'.join(pair[0].split('.')[1:])
+            r_suff = ''
+            if '.' in r_sc:
+                r_suff = '.' + '.'.join(pair[1].split('.')[1:])
 
-                # Now close and open
-                elif open_close_pair[0] == right and ord(open_close_pair[1]) in unis_in_font:
-                    # print('Debug: Open/Close situation 5')
-                    open_close_string = self.open_close_pairs[right] + l_sc + r_sc
-                    break
-                elif open_close_pair[1] == left and ord(open_close_pair[0]) in unis_in_font:
-                    # print('Debug: Open/Close situation 6')
-                    open_close_string =  l_sc + r_sc + get_key(self.open_close_pairs, left)
-                    break
+            if open_close_pair == (left_search, right_search):
+                if self.debug: print('Debug: Open/Close situation 1')
+                open_close_string = l_sc + r_sc
+                break
+            elif open_close_pair == (right_search, left_search):
+                if self.debug: print('Debug: Open/Close situation 2')
+                open_close_string = r_sc + l_sc
+                break
 
-        # Handle unencoded glyph names
-        else:
-            # Note: Handle this programmatically (support any suffix) in the future, rather than hard-coding suffixes.
-            for gname_pair in self.open_close_pairs_unencoded.items():
-                if gname_pair[0] in self.open_close_pairs_unencoded.items() and gname_pair[1] in self.open_close_pairs_unencoded.items(): # If both are in there:
-                    # print('Debug: Open/Close situation 7')
-                    open_close_string += self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0]) + self.gname_to_sc_string(gname_pair[1]) + self.gname_to_sc_string(gname_pair[0])
-                    break
-                elif pair[0] == gname_pair[0]:
-                    # print('Debug: Open/Close situation 8')
-                    open_close_string += l_sc + r_sc + self.gname_to_sc_string(gname_pair[1])
-                    break
-                elif pair[1] == gname_pair[1]:
-                    # print('Debug: Open/Close situation 9')
-                    open_close_string += self.gname_to_sc_string(gname_pair[0]) + l_sc + r_sc
-                    break
-                # Now reverse to close/open
-                elif pair[0] == gname_pair[1]:
-                    # print('Debug: Open/Close situation 10')
-                    open_close_string += l_sc + r_sc + self.gname_to_sc_string(gname_pair[0])
-                    break
-                elif pair[1] == gname_pair[0]:
-                    # print('Debug: Open/Close situation 11')
-                    open_close_string += self.gname_to_sc_string(gname_pair[1]) + l_sc + r_sc
-                    break
+            # Open and close
+            # If the left is an open. And the close is in the font
+            elif open_close_pair[0] == left_search and ord(open_close_pair[1]) in unis_in_font:
+                if self.debug: print('Debug: Open/Close situation 3')
+                # Get the close/open equivalent suffixed for open/close
+                close_with_l_suff = self.gname_to_sc_string(self.get_gname_from_char(self.open_close_pairs[left_search]) + l_suff)
+                open_close_string = l_sc + r_sc + close_with_l_suff
+                break
+            # If the right is a close. And the open is in the font
+            elif open_close_pair[1] == right_search and ord(open_close_pair[0]) in unis_in_font:
+                if self.debug: print('Debug: Open/Close situation 4')
+                open_with_r_suff  = self.gname_to_sc_string(self.get_gname_from_char(get_key(self.open_close_pairs, right_search)) + r_suff) 
+                open_close_string = open_with_r_suff + l_sc + r_sc
+                break
 
-        print('Open/close string:', open_close_string)
+            # Now close and open
+            # If the right is an open. And the close is in the font
+            elif open_close_pair[0] == right_search and ord(open_close_pair[1]) in unis_in_font:
+                if self.debug: print('Debug: Open/Close situation 5')
+                close_with_r_suff = self.gname_to_sc_string(self.get_gname_from_char(self.open_close_pairs[right_search]) + r_suff)
+                open_close_string = close_with_r_suff + l_sc + r_sc
+                break
+            # If the left is a close. And the open is in the font
+            elif open_close_pair[1] == left_search and ord(open_close_pair[0]) in unis_in_font:
+                if self.debug: print('Debug: Open/Close situation 6')
+                open_with_l_suff  = self.gname_to_sc_string(self.get_gname_from_char(get_key(self.open_close_pairs, left_search)) + l_suff)
+                open_close_string =  l_sc + r_sc + open_with_l_suff
+                break
+
+        if self.debug: print('Open/close string:', open_close_string)
         return open_close_string + ' '
            
 
@@ -517,7 +498,7 @@ class MM2SC_Tool(Subscriber):
         '''
 
         left, right = self.get_pair_in_sc_strings(pair)
-        return left + right + left + right + '  ' 
+        return left + right + left + right + ' ' 
 
 
     def words_for_pair(self, ):
@@ -624,11 +605,8 @@ class MM2SC_Tool(Subscriber):
 
         text = ' '.join([mirror_text, open_close_text, spacing_string]) + words_text
         text = text.lstrip()
-        text = re.sub(r'\s{3,}', '  ', text)  # Replace any 3+ spaces with 2 spaces. We keep 2 spaces, because of /glyphnames_
+        # text = re.sub(r'\s{3,}', '  ', text)  # Replace any 3+ spaces with 2 spaces. We keep 2 spaces, because of /glyphnames_
         self.set_space_center(self.font, text)
-
-
-
 
 
 
