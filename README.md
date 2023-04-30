@@ -1,4 +1,4 @@
-# MetricsMachine 2 Space Center
+# MetricsMachine2SpaceCenter
 
 This extension generates a list of words in RoboFont’s Space Center based on the current pair you’re kerning in the [MetricsMachine](https://extensionstore.robofont.com/extensions/metricsMachine/) extension by Tal Leming.
 
@@ -25,6 +25,7 @@ Pull requests are greatly appreciated. 🙏
 
 * remember user’s settings automatically
 * apply Space Center’s Show Kerning upon use
+* open-close and automatic spacing strings are now compatible with unencoded suffixed glyphs.
 
 ##### Future considerations:
 
