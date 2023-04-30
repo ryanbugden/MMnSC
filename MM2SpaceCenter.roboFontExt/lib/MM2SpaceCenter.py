@@ -287,16 +287,27 @@ class MM2SC_Tool(Subscriber):
 
     def get_gname_from_char(self, char):
         uni = ord(char)
-        gname = str(get_key(GN2UV, uni))
+        if uni in GN2UV.values():
+            gname = str(get_key(GN2UV, uni))
+        else:
+            gname = ''
         return gname
+
+
+    def get_char_from_gname(self, gname):
+        if gname in GN2UV.keys():
+            char = chr(GN2UV[gname])
+        else:
+            char = ''
+        return char
 
 
     def get_pair_string(self, pair):
         return self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
 
 
-    def gname_to_sc_string(self, gname, chr_only=False):
-        if not self.check_encoded(gname) and not chr_only:
+    def gname_to_sc_string(self, gname):
+        if not self.check_encoded(gname):
             sc_string = '/' + gname + ' '
         else:
             uni = self.font[gname].unicodes[0]
@@ -410,9 +421,9 @@ class MM2SC_Tool(Subscriber):
         unis_in_font = [u for glyph in CurrentFont() for u in glyph.unicodes]
 
         # Left and right, to compare against the dictionary
-        left, right = self.gname_to_sc_string(pair[0], chr_only=True),  self.gname_to_sc_string(pair[1], chr_only=True)
+        left, right = self.get_char_from_gname(pair[0]), self.get_char_from_gname(pair[1])
         # Left and right, to add to the Space Center
-        l_sc, r_sc  = self.gname_to_sc_string(pair[0], chr_only=False), self.gname_to_sc_string(pair[1], chr_only=False)
+        l_sc, r_sc  = self.gname_to_sc_string(pair[0]), self.gname_to_sc_string(pair[1])
         is_left_encoded  = self.check_encoded(pair[0])
         is_right_encoded = self.check_encoded(pair[1])
 
@@ -682,24 +693,25 @@ class MM2SpaceCenterPopover(ezui.WindowController):
         )
         self.wordCountField   = self.w.getItem('wordCount')
         self.wordCountField.set(initial_word_count)
+        self.languageField    = self.w.getItem('language')
+        self.languageField.set(4)
         # May not need these:
         self.activateToggle   = self.w.getItem('activateToggle')
-        self.languageField    = self.w.getItem('language')
         self.contextField     = self.w.getItem('context')
         self.listOutput       = self.w.getItem('listOutput')
         self.openCloseContext = self.w.getItem('openCloseContext')
         self.mirroredPair     = self.w.getItem('mirroredPair')
         self.allUppercase     = self.w.getItem('allUppercase')
-    
-    def flush_and_register_defaults(self):
-        setExtensionDefault(EXTENSION_KEY, {})  # This might not be necessary anymore.
-        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
-        print(getExtensionDefault(EXTENSION_KEY))  # Print a readout of the user’s updated MM2SC settings
 
     def started(self):
         self.w.open()
         values = getExtensionDefault(EXTENSION_KEY, fallback=self.w.getItemValues())
         self.w.setItemValues(values)  # Set the previous preferences from user
+    
+    def flush_and_register_defaults(self):
+        setExtensionDefault(EXTENSION_KEY, {})  # This might not be necessary anymore.
+        setExtensionDefault(EXTENSION_KEY, self.w.getItemValues(), validate=True)
+        print(getExtensionDefault(EXTENSION_KEY))  # Print a readout of the user’s updated MM2SC settings
         
     def activateToggleCallback(self, sender):
         self.flush_and_register_defaults()
