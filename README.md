@@ -26,6 +26,7 @@ Pull requests are greatly appreciated. 🙏
 * remember user’s settings automatically
 * apply Space Center’s Show Kerning upon use
 * open-close and automatic spacing strings are now compatible with unencoded suffixed glyphs.
+* you may have multiple Space Centers open at once, with MM2SC affecting all of them. this way, you can kern while looking at different sizes/line-heights/tracking/alignment simultaneously.
 
 ##### Future considerations:
 

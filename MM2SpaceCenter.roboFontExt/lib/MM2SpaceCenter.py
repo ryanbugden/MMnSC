@@ -17,23 +17,18 @@ import codecs
 import ezui
 import re
 
-'''
-MM2SpaceCenter by CJ Dunn
-2019
 
-Thanks to Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, 
-Nina Stössinger for help and inspiration with this script
+'''
+MM2SpaceCenter by CJ Dunn, 2019
+Special thanks: Tal Leming, Andy Clymer, David Jonathan Ross, Jackson Cavanaugh, Nina Stössinger
+Additional development: Wei Huang, Stephen Nixon, Ryan Bugden, Gustavo Ferreira
 
 To do:       
-- Remember pre-MM2 "Show Kerning" setting, revert when MM2 closes?
+- If no words, look for next member of the kern group. (Some way of showing/saying this has been done, though? “Words from group: “?)
 - Add ability to change word length
-- Handle multiple SCs at once. Need subscriber?
-- If no words, look for next member of the kern group. (Some way of showing/saying this has been done, though?)
-- Underline the pair in Space Center. Add pref
-- Handle suffixes, for open/close for instance (.cap, etc.)
-- Make spacing string such that you can compare open/close around a control glyph, next to current pair
+- Underline the pair in Space Center. Add preference, once this is made possible.
+- Make spacing string such that you can compare open/close around a control glyph, next to current pair.
 '''
-
 
 
 EXTENSION_KEY = 'com.cjtype.mms2sc.settings'
@@ -582,8 +577,7 @@ class MM2SC_Tool(Subscriber):
         if word_list:
             if list_output: # If 'Output as list' is checked:
                 sorted_text = self.sort_words_by_width(word_list)
-                join_string = '\\n'
-                words_text = join_string.join(map(str, sorted_text))
+                words_text = '\\n'.join(map(str, sorted_text))
             else:
                 words_text = ' '.join(map(str, word_list))
 
@@ -605,7 +599,6 @@ class MM2SC_Tool(Subscriber):
 
         text = ' '.join([mirror_text, open_close_text, spacing_string]) + words_text
         text = text.lstrip()
-        # text = re.sub(r'\s{3,}', '  ', text)  # Replace any 3+ spaces with 2 spaces. We keep 2 spaces, because of /glyphnames_
         self.set_space_center(self.font, text)
 
 
