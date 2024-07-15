@@ -46,7 +46,3 @@ Thanks to [@arrowtype](https://github.com/arrowtype) there are now options to:
 
 * Show open+closed context
 * Show mirrored pair 
-
-
-[Metrics Machine]: https://extensionstore.robofont.com/extensions/metricsMachine/
-[word-o-mat]: https://github.com/ninastoessinger/word-o-mat

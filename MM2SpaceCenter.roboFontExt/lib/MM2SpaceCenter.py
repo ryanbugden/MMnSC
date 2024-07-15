@@ -80,6 +80,7 @@ class MM2SC_Tool(Subscriber):
         x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
         b_h = h - inset_b * 2
 
+        # Maybe it makes more sense to put it after the After box?
         # Resize glyph line input
         self.sc.top.glyphLineInput.setPosSize((x, y, w - b_w - gutter, h))
         x, y, w, h = self.sc.top.glyphLineInput.getPosSize()
@@ -116,12 +117,12 @@ class MM2SC_Tool(Subscriber):
 
     def activate_module(self):
         addObserver(self, 'MM_pair_changed', 'MetricsMachine.currentPairChanged')
-        print('MM2SC observer is now activated.')
+        # print('MM2SC observer is now activated.')
         
         
     def deactivate_module(self):
         removeObserver(self, 'MetricsMachine.currentPairChanged')
-        print('MM2SC observer is deactivated.')
+        # print('MM2SC observer is deactivated.')
 
 
     def load_dictionaries(self):
