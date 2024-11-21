@@ -1,7 +1,7 @@
 
 
 # MMnSC
-**MMnSC** is a fork of MM2SpaceCenter. The main difference is that the UI is not embedded into Space Center, rather than being a separate window. There have been other changes, detailed below.
+**MMnSC** (rename not fully implemented yet) is a fork of MM2SpaceCenter. The main difference is that the UI is not embedded into Space Center, rather than being a separate window. There have been other changes, detailed below.
 
 ![](_images/new_popover.png)
 ##### UI revamp:
