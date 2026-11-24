@@ -237,7 +237,8 @@ class MM2SC_Tool(Subscriber):
         try:
             self.sc.setRaw(text)
             # Make sure 'Show Kerning' is on in the Space Center
-            if not self.sc.glyphLineView.getApplyKerning():
+            lv = self.sc.glyphLineView
+            if not lv.getApplyKerning():
                 lv.setApplyKerning(True)
         except AttributeError:
             print('Opening Space Center. Go back to MetricsMachine.')
